@@ -5,6 +5,13 @@
 El sitio estará dedicado a la venta de respuestos para automotores utilitarios. Apuntará a clientes que realicen diferentes actividades, dado que los repuestos a la venta se corresponden con rodados destinados a trabajos de la industria, el transporte y el agro. Si bien no se brindará un servicio post-venta ni de instalación, se ofrecerá una red de talleres mecánicos de confianza distribuidos en el país. 
 Por último, tendrá un espacio dedicado integramente al Rastrojero (único automóvil diseñado, desarrollado y producido íntegramente en el Argentina), el cual además de ofrecer respuestos para el mismo, contará la historia de este utilitario que se dejó de fabricar hace 40 años y aún hoy en día es utilizado en el interior del país, principalmente por pequeños chacareros.  
 
+#### Sitios de referencia:
+* Formato página principal - https://partesyrodajes.com.ar/
+* Por interfaz de usuario - https://www.mercadolibre.com.ar/c/accesorios-para-vehiculos#menu=categories
+* Por interfaz de usuario - https://stadleraccesorios.com/
+* Por interfaz de producto -https://www.agrofy.com.ar/maza-rueda-ctrol-prof-1470-compatible-c-agrometal.html
+* Formato página principal - https://www.autodo.com.ar/
+
 ### Descripción de los integrantes:
 
 * Agustín Narvaez:
