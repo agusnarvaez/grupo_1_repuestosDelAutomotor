@@ -24,5 +24,5 @@ Al igual que Agustin, vivo en Gral San martin y tengo 28 años. Hace 8 años que
 Vivo en Palermo (CABA), tengo 36 años. Soy Contador Público (UBA). He orientado mi carrera a la especialización en Impuestos. Trabajé mucho años en Cías y  en Estudio nacionales grandes. Este año, he decidido independizarme, lo cual me da tiempo para realizar el Curso en Digital House y evaluar a futuro un posible cambio de profesión.
 
 * **Nicolas Di Renzo:**
-
+Vivo en Munro (Vicente López), y tengo 19 años. Desde chico me encanta todo el mundo de los negocios y de la tecnología. Debido a esto, hace 2 años comencé enfocando mi carrera al comercio electrónico. Habiendo comenzado por un emprendimiento, y capacitándome mediante nuevos cursos, continué haciendo esto mismo a la par para una empresa distribuidora de autopartes. Actualmente estoy enfocando mi aprendizaje al área del software debido al gran futuro y las enormes posibilidades que hay en la complementación de ésta con el comercio y los negocios en línea.
 <!-- Probando comentario -->
