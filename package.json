@@ -1,0 +1,25 @@
+{
+  "name": "proyecto-integrador-dh",
+  "version": "1.0.0",
+  "description": "\\*Agustín Narvaez:\r Vivo en Gral San Martín, tengo 26 años, trabajo en Siemens en el sector Mobility que se encarga de proyectos de electrificación y señalamiento ferroviario. Actualmente además del curso de Digital House estoy estudiando Tecnicatura Universitaria en Programación Informática en la UNSAM.",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "app.js",
+    "start":"nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agusnarvaez/grupo1_-_proyectoIntegradorDH.git"
+  },
+  "author": "Agustín Narvaez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agusnarvaez/grupo1_-_proyectoIntegradorDH/issues"
+  },
+  "homepage": "https://github.com/agusnarvaez/grupo1_-_proyectoIntegradorDH#readme"
+}
