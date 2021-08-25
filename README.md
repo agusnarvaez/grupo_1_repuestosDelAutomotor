@@ -1,5 +1,7 @@
 # Marketplace :truck::gear::hammer::shopping_cart:
 
+#### Tablero Trello: https://trello.com/b/9EKdPL7u/proyecto-integrador-dh-grupo-1
+
 ### Descripción del sitio:
 
 El sitio estará dedicado a la venta de respuestos para automotores utilitarios. Apuntará a clientes que realicen diferentes actividades, dado que los repuestos a la venta se corresponden con rodados destinados a trabajos de la industria, el transporte y el agro. Si bien no se brindará un servicio post-venta ni de instalación, se ofrecerá una red de talleres mecánicos de confianza distribuidos en el país. 
