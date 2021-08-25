@@ -9,61 +9,73 @@
             <!--Palabras clave para que busque la página-->
     <link rel="icon" href=""> <!--Ícono de la pestaña-->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <meta name="author"content="Grupo 1 - Agustín Narvaez, Diego Pistorio, Juan Pablo Carta y Nicolas Di Renzo">
     <title>Proyecto integrador DH</title>
 </head>
 <body>
     <header>
-        <img src="" alt="LOGO"> <!--Logo -->
-        <a href=""><img src="./images/iconos/home.png" alt="HOME" height=25px></a> <!--Home -->
-        <ul>
-            <li><a href="">Nosotros</a></li>
-            <li><a href="">Productos</a></li>
-            <li><a href="">Red</a></li>
-            <li><a href="">Contacto</a></li>
-        </ul>
-        <a href=""><img src="./images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
+        <img class="burger-menu" src="./images/iconos/menu.png">
+        <img class="logo" src="./images/iconos/logo.png" alt="LOGO"> <!--Logo -->
+        <div class="menu">
+            <a href=""><img src="./images/iconos/home.png" alt="HOME" height=25px></a> <!--Home -->
+            <ul>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Red</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+            <a href=""><img src="./images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
+        </div>
     </header>
     <main>
         <section class="filtro">
-            <ul>
-                <li>Categoría</li>
-                <li>Marca</li>
-                <li>Año</li>
-                <li>Año</li>
-                <li>Modelo</li>
-            </ul>
-            <form action="gracias.html" method="Get">
-                <!-- action sirve para poner la página a la que direccionará después de llenar el formulario-->
-                <!-- method get y post sirve para mantener el texto una vez llenado-->
-            <select name="Categoría">
-                <Option value="0">Motor</Option>
-                <Option value="1">Suspensión y dirección</Option>
-                <Option value="2">Iluminación</Option>
-                <Option value="3">Distribución</Option>
-                <Option value="4">Electricidad</Option>
-            </select>
-            <select name="Marcas" >
-                <Option value="0">Fiat</Option>
-                <Option value="1">Ford</Option>
-                <Option value="2">Peugeot</Option>
-                <Option value="3">Renault</Option>
-                <Option value="4">Volkswagen</Option>
-            </select>
-            <input type="number" min="1952" max="2021">
-            <p>Modelo</p> <!-- El modelo depende de la marca, hay que hacer script -->
-            <input type="button" value="Filtrar">
-            <!--<ul>
-            <li>Repuestos</li>
-            <li>Marcas</li>
-            <li>Año</li>
-            <li>Modelo</li>
-        </ul>-->
-        </form>
-        <form>
-        <textarea>Buscar</textarea>
-        <input type="button" value="Buscar">
-        </form>
+            <div class="filter-select">
+                    <p>Filtros</p>
+                    <img src="./images/iconos/down-arrow.png" alt="arrow">
+            </div>
+            <div class="filtros">
+                <ul>
+                    <li>Categoría</li>
+                    <li>Marca</li>
+                    <li>Año</li>
+                    <li>Año</li>
+                    <li>Modelo</li>
+                </ul>
+                <form action="gracias.html" method="Get">
+                        <!-- action sirve para poner la página a la que direccionará después de llenar el formulario-->
+                        <!-- method get y post sirve para mantener el texto una vez llenado-->
+                    <select name="Categoría">
+                        <Option value="0">Motor</Option>
+                        <Option value="1">Suspensión y dirección</Option>
+                        <Option value="2">Iluminación</Option>
+                        <Option value="3">Distribución</Option>
+                        <Option value="4">Electricidad</Option>
+                    </select>
+                    <select name="Marcas" >
+                        <Option value="0">Fiat</Option>
+                        <Option value="1">Ford</Option>
+                        <Option value="2">Peugeot</Option>
+                        <Option value="3">Renault</Option>
+                        <Option value="4">Volkswagen</Option>
+                    </select>
+                    <input type="number" min="1952" max="2021">
+                    <p>Modelo</p> <!-- El modelo depende de la marca, hay que hacer script -->
+                    <input type="button" value="Filtrar">
+                    <!--<ul>
+                    <li>Repuestos</li>
+                    <li>Marcas</li>
+                    <li>Año</li>
+                    <li>Modelo</li>
+                    </ul>-->
+                </form>
+            </div>
+            <form class="search">
+                <textarea>Buscar marcas, repuestos</textarea>
+                <input type="button" value="Buscar">
+            </form>
         </section>
         <section>
             <p>flecha der</p>

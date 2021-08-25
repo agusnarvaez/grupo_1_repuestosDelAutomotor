@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "app.js",
+    "test": "node app.js",
     "start":"nodemon app.js"
   },
   "repository": {

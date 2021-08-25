@@ -1,7 +1,65 @@
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 header {
   background-color: gray;
 }
 
+.burger-menu {
+  display: inline-block;
+  margin: 2%;
+  padding: 1%;
+  width: 10%;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: #ebebeb;
+}
+.logo {
+  display: inline-block;
+  margin-left: 26%;
+  width: 15%;
+}
+
 .filtro {
   background-color: lightgray;
+}
+.filter-select p {
+  display: inline-block;
+  text-align: center;
+  margin-left: 42%;
+  font-size: 18px;
+}
+
+.filter-select img {
+  display: inline-block;
+  height: 20px;
+  margin-left: 36%;
+}
+.search {
+  text-align: center;
+  margin: auto;
+}
+.search textarea {
+  text-align: center;
+  width: 50%;
+}
+
+.menu {
+  display: none;
+}
+
+.filtros {
+  display: none;
+}
+@media (min-width: 460px) {
+  .menu {
+    display: inline;
+  }
+  .burger-menu {
+    display: none;
+  }
 }
