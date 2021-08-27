@@ -13,3 +13,13 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/index.html'));
 });
 
+app.get('/register', (req, res) => {
+    //let htmlPath = path.resolve(__dirname, './views/register.html');
+    res.sendFile(path.resolve(__dirname, './views/register.html'));
+});
+
+app.get('/login', (req, res) => {
+    //let htmlPath = path.resolve(__dirname, './views/login.html');
+    res.sendFile(path.resolve(__dirname, './views/login.html'));
+});
+

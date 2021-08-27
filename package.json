@@ -10,7 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "node app.js",
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
