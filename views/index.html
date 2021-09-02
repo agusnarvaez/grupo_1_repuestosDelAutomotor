@@ -9,30 +9,34 @@
             <!--Palabras clave para que busque la página-->
     <link rel="icon" href=""> <!--Ícono de la pestaña-->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <meta name="author"content="Grupo 1 - Agustín Narvaez, Diego Pistorio, Juan Pablo Carta y Nicolas Di Renzo">
     <title>Proyecto integrador DH</title>
 </head>
 <body>
-    <header>
-        <img class="burger-menu" src="./images/iconos/menu.png">
+    <header class="mainHeader">
+        <img class="burgerMenu" src="./images/iconos/menu.png">
         <img class="logo" src="./images/iconos/logo.png" alt="LOGO"> <!--Logo -->
+        <div class="mainHeaderAuxiliar"></div>
         <div class="menu">
-            <a href=""><img src="./images/iconos/home.png" alt="HOME" height=25px></a> <!--Home -->
+            <a href=""><img class="home" src="./images/iconos/home.png" alt="HOME" height=25px></a> <!--Home -->
             <ul>
                 <li><a href="">Nosotros</a></li>
                 <li><a href="">Productos</a></li>
                 <li><a href="">Red</a></li>
                 <li><a href="">Contacto</a></li>
             </ul>
-            <a href=""><img src="./images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
+            <a href="/login"><img class="login" src="./images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
         </div>
     </header>
     <main>
         <section class="filtro">
-            <div class="filter-select">
+            <div class="filterSelect">
                     <p>Filtros</p>
                     <img src="./images/iconos/down-arrow.png" alt="arrow">
             </div>
@@ -72,50 +76,54 @@
                     </ul>-->
                 </form>
             </div>
-            <form class="search">
-                <textarea>Buscar marcas, repuestos</textarea>
-                <input type="button" value="Buscar">
-            </form>
+            <div class="search">
+                <textarea>Buscar marcas, repuestos</textarea><i class="fas fa-search"></i>
+            </div>
         </section>
-        <section>
-            <p>flecha der</p>
-            <b>Carrousel</b>
-            <p>flecha izq</p>
-            <p>círculo</p>
-            <p>círculo</p>
-            <p>círculo</p>
-            <p>círculo</p>
-            <img src="" alt="IMG1">
+        <section class="carrousel">
+            <i class="fas fa-arrow-circle-right"></i>
+            <img src="./images/carrousel/banner-utilitarios.jpeg" alt="carrousel">
+            <i class="fas fa-arrow-circle-left"></i>
+            <div class="carrouselIndicadores">
+                <div><i class="far fa-circle"></i></div>
+                <div><i class="fas fa-circle"></i></div>
+                <div><i class="fas fa-circle"></i></div>
+                <div><i class="fas fa-circle"></i></div>
+            </div>
+            <!--<img src="" alt="IMG1">
             <img src="" alt="IMG2">
             <img src="" alt="IMG3">
-            <img src="" alt="IMG4">
+            <img src="" alt="IMG4">-->
         </section>
-        <section>
-            <p>Marcas</p>
-            <img src="" alt="IMG1">
-            <img src="" alt="IMG2">
-            <img src="" alt="IMG3">
-            <img src="" alt="IMG4">
-            <img src="" alt="IMG5">
+        <section class="marcas">
+            <h2>Marcas</h2>
+            <div class="marcasTop">
+                <img src="./images/logos-marcas/logo-renault.jpg" alt="IMG1">
+                <img src="./images/logos-marcas/logo-fiat.jpg" alt="IMG2">
+                <img src="./images/logos-marcas/logo-volkswagen.jpg" alt="IMG3">
+            </div>}
+            <div class="marcasBottom">
+                <img src="./images/logos-marcas/logo-chevrolet.jpg" alt="IMG4">
+                <img src="./images/logos-marcas/logo-peugeot.jpg" alt="IMG5">
+            </div>
         </section>
     </main>
-    <footer>
-        <section>Barra a derfinir</section>
-        <section>
-            <a href=""><img src="" alt="LOGO"></a>
-            <a href=""></a><img src="" alt="TWITTER"></a>
-            <a href=""></a><img src="" alt="FACEBOOK"></a>
-            <a href=""></a><img src="" alt="INSTAGRAM"></a>
-        </section>
-        <section>
-            <a href=""></a><p>Nosotros</p></a>
-        </section>
-        <section>
+    <footer class="mainFooter">
+        <div class=mainFooterRed>
             <a href=""></a><p>Conocé nuestra red de mecánicos recomendados</p></a>
+        </div>     
+        <section class="mainFooterLogos">
+            <img class="logo" src="./images/iconos/logo.png" alt="LOGO">
+            <div class="sociales"> 
+                <a href=""></a><i class="fab fa-twitter"></i></a>
+                <a href=""></a><i class="fab fa-facebook"></i></a>
+                <a href=""></a><i class="fab fa-instagram"></i></a>
+            </div>
         </section>
-        <section>
-            Copyright © 2021 El Rastrojero S.R.L.
-        </section>
+
+        <div class="copyright">
+            <p>Copyright © 2021 El Rastrojero S.R.L.</p>
+        </div>
     </footer>
 </body>
 </html>

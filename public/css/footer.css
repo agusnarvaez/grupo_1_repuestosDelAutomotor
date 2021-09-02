@@ -1,0 +1,42 @@
+.mainFooter {
+  background-color: #847b5a;
+  padding: 1%;
+}
+.mainFooterRed {
+  text-align: center;
+  pad: 2%;
+  font-size: 15px;
+}
+.sociales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  margin: auto;
+}
+.fa-facebook {
+  border-right: 1px solid #141414;
+  border-left: 1px solid #141414;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.fa-twitter {
+  padding-right: 15%;
+}
+.fa-instagram {
+  padding-left: 15%;
+}
+.mainFooterLogos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 2%;
+}
+.mainFooter .logo {
+  width: 30px;
+}
+.copyright {
+  text-align: center;
+  padding: 1%;
+  font-size: 12px;
+}
