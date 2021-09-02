@@ -1,0 +1,26 @@
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+.galery{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mainImage{
+    display:flex;
+    justify-items: center;
+    justify-content: center;
+}
+
+.detalleProducto{
+    display: flex;
+    flex-direction: column;
+}
+
+.features{
+    display:flex;
+    flex-direction: column;
+}
