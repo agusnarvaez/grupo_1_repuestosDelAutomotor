@@ -22,6 +22,3 @@ app.get('/login', (req, res) => {
     //let htmlPath = path.resolve(__dirname, './views/login.html');
     res.sendFile(path.resolve(__dirname, './views/login.html'));
 });
-
-
-
