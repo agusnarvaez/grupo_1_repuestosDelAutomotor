@@ -21,7 +21,7 @@ app.get('/login', (req, res) => { //Enviamos página de logueo
     res.sendFile(path.resolve(__dirname, './views/login.html'));
 });
 
-app.get('/detalleProducto', (req, res) => { //Enviamos página de logueo
+app.get('/detalleProducto', (req, res) => { //Enviamos página de detalleProducto
     res.sendFile(path.resolve(__dirname, './views/detalleProducto.html'));
 });
 
