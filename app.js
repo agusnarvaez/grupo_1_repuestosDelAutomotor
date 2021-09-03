@@ -17,7 +17,7 @@ app.get('/register', (req, res) => { //Enviamos página de registro
     res.sendFile(path.resolve(__dirname, './views/register.html'));
 });
 
-app.get('/login', (req, res) => { //Enviamos página de logueo
+app.get('/login', (req, res) => { //Enviamos página de login
     res.sendFile(path.resolve(__dirname, './views/login.html'));
 });
 
