@@ -5,34 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/detalleProducto.css">
-    <title>Document</title>
+    <title>Detalle del producto</title>
 </head>
 <body>
-    <header>
-        <link rel="stylesheet" href="./css/styles.css">
-            <img class="burger-menu" src="./images/iconos/menu.png">
+    <header class="mainHeader">
+        <link rel="stylesheet" href="./css/header.css">        
+            <img class="burgerMenu" src="./images/iconos/menu.png">
             <img class="logo" src="./images/iconos/logo.png" alt="LOGO"> <!--Logo -->
+            <div class="mainHeaderAuxiliar"></div>
             <div class="menu">
-                <a href=""><img src="./images/iconos/home.png" alt="HOME" height=25px></a> <!--Home -->
+                <a href=""><img class="home" src="./images/iconos/home.png" alt="HOME" height=25px></a> <!--Home -->
                 <ul>
                     <li><a href="">Nosotros</a></li>
                     <li><a href="">Productos</a></li>
                     <li><a href="">Red</a></li>
                     <li><a href="">Contacto</a></li>
                 </ul>
-                <a href=""><img src="./images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
+                <a href="/login"><img class="login" src="./images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
             </div>
     </header>
-    <section class="main">
+    
+        
+        <section class="filtro">
+            <link rel="stylesheet" href="./css/header.css">      
+            <div class="filterSelect">
+                    <p>Filtros</p>
+                    <img src="./images/iconos/down-arrow.png" alt="arrow">
+            </div>
+            <div class="filtros">
+                <ul>
+                    <li>Categoría</li>
+                    <li>Marca</li>
+                    <li>Año</li>
+                    <li>Año</li>
+                    <li>Modelo</li>
+                </ul>
+                <form action="gracias.html" method="Get">
+                        <!-- action sirve para poner la página a la que direccionará después de llenar el formulario-->
+                        <!-- method get y post sirve para mantener el texto una vez llenado-->
+                    <select name="Categoría">
+                        <Option value="0">Motor</Option>
+                        <Option value="1">Suspensión y dirección</Option>
+                        <Option value="2">Iluminación</Option>
+                        <Option value="3">Distribución</Option>
+                        <Option value="4">Electricidad</Option>
+                    </select>
+                    <select name="Marcas" >
+                        <Option value="0">Fiat</Option>
+                        <Option value="1">Ford</Option>
+                        <Option value="2">Peugeot</Option>
+                        <Option value="3">Renault</Option>
+                        <Option value="4">Volkswagen</Option>
+                    </select>
+                    <input type="number" min="1952" max="2021">
+                    <p>Modelo</p> <!-- El modelo depende de la marca, hay que hacer script -->
+                    <input type="button" value="Filtrar">
+                    <!--<ul>
+                    <li>Repuestos</li>
+                    <li>Marcas</li>
+                    <li>Año</li>
+                    <li>Modelo</li>
+                    </ul>-->
+                </form>
+            </div>
+            <div class="search">
+                <textarea>Buscar marcas, repuestos</textarea><i class="fas fa-search"></i>
+            </div>
+        </section>
+
+    <main>
         <div class="galery">
-            <a href=""><img src="#" alt="Ej" height=25px></a>
-            <a href=""><img src="#" alt="Ej" height=25px></a>
-            <a href=""><img src="#" alt="Ej" height=25px></a>
-            <a href=""><img src="#" alt="Ej" height=25px></a>
+            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 1" ></a>
+            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 2" ></a>
+            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 3" ></a>
+            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 4" ></a>
         </div>
 
         <div class="mainImage">
-            <a href="$"><img src="#" alt="Principal" height=25px></a>
+            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Principal" height=25px></a>
         </div>
 
         <div class="detalleProducto">
@@ -41,7 +91,7 @@
             </p>
 
         </div>
-    </section>
+    </main>
     
     <section class="features">
     
