@@ -141,7 +141,6 @@ main{
     font-size: x-large;
     margin-top: 3vw;
     margin-right: 4vw;
-    margin: 3px solid green;
 }
 
 .opcionesDePago{
@@ -161,7 +160,7 @@ main{
 }
 
 .comprarButton{
-    margin: 2px solid black;
+    border: 2px solid black;
     width: 19vh;
     height: 5vh;
     margin-right: 1vw;
@@ -178,6 +177,82 @@ main{
     align-content: center;
 }
 
+.features{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 100vw;
+    height: 100vh;
+    justify-items: flex-start;
+    align-items: flex-start;
+    padding: 2%;
+    margin-top: 2vh;
+}
+
+.mainFeature{
+    display: flex;
+    flex-direction: column;
+    font: medium;
+    padding: 2%;
+    border: 2px solid black;
+}
+
+.mainFeature div{
+    display:flex;
+    flex-direction: row;
+    padding: 0.5%;
+    font: x-small;
+    border: 2px solid black;
+}
+
+.mainItemFeature{
+    display: flex;
+    flex-direction: column;
+    font: medium;
+    padding: 2%;
+    margin-top: 0.5vh;
+    border: 2px solid black;
+}
+
+.mainItemFeature h3{
+    padding: 0.5%;
+    margin-bottom: 0.5vh;
+    border: 2px solid black;
+}
+
+.mainItemFeature div{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5%;
+    font: x-small;
+    border: 2px solid black;
+}
+
+.partsFeatures{
+    display:flex;
+    flex-direction: column;
+    padding: 2.5%;
+    font: smaller;
+    border: 2px solid black;
+}
+
+.partsFeatures div{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5%;
+    font: x-small;
+    border: 2px solid black;
+}
+
+.partsFeatures div div{
+    display: flex;
+    flex-direction: row;
+}
+.description{
+    margin-top: 1.5vh;
+    padding: 2%;
+    border: 2px solid black;
+}
 
 @media (min-width: 768px) {
     main{
