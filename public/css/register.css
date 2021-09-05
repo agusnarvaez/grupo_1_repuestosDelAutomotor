@@ -61,3 +61,15 @@ height: 15px;
 
 }
 
+
+
+    input:focus {
+      color: blue;
+      font-weight: bold;
+      }
+
+      input:focus { border-color: yellow; } 
+
+      input:hover {
+        background-color: gold;
+        }
