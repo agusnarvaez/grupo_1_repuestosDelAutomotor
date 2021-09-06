@@ -62,6 +62,7 @@ main{
     font-size: 100%;
     max-height: 5vh;
     margin-top: 2%;
+    width: 50vw;
 
 }
 
@@ -91,7 +92,7 @@ main{
     justify-content: center;
     margin-right: 5vw;
     margin-top: 1vh;
-    border: 3px solid black;
+    border: 3px solid gray;
     justify-content: space-between;
     padding: 2%;
 }
@@ -131,7 +132,8 @@ main{
     flex-direction: column;
     max-width: 50vw;
     align-items: flex-end;
-    margin-left: 2%;
+    margin-left: 0.5%;
+    padding-right: 10vw;
 }
 
 .precio{
@@ -157,6 +159,7 @@ main{
     justify-content: center;
     align-content: center;
     align-items: center;
+    padding-top: 8.5%;
 }
 
 .comprarButton{
@@ -168,7 +171,7 @@ main{
 }
 
 .iconoCarrito{
-    margin: 2px solid black;
+    border: 2px solid black;
     width: 4vh;
     height: 4vh;
     background-color: blue;
@@ -194,15 +197,17 @@ main{
     flex-direction: column;
     font: medium;
     padding: 2%;
-    border: 2px solid black;
+    background-color: #db9f51;
+    border-radius: 10px;
 }
 
-.mainFeature div{
+.mainFeature section{
     display:flex;
     flex-direction: row;
     padding: 0.5%;
     font: x-small;
     border: 2px solid black;
+    width: 90vw;
 }
 
 .mainItemFeature{
@@ -211,7 +216,9 @@ main{
     font: medium;
     padding: 2%;
     margin-top: 0.5vh;
-    border: 2px solid black;
+    margin-bottom: 0.5vh;
+    background-color: #d1a871;
+    border-radius: 10px;
 }
 
 .mainItemFeature h3{
@@ -220,38 +227,59 @@ main{
     border: 2px solid black;
 }
 
-.mainItemFeature div{
+.mainItemFeature section{
     display: flex;
     flex-direction: row;
     padding: 0.5%;
     font: x-small;
     border: 2px solid black;
+    width: 80vw;
 }
 
 .partsFeatures{
     display:flex;
     flex-direction: column;
-    padding: 2.5%;
+    padding-top: 0.5%;
+    padding-bottom: 1.5%;
+    padding-right: 1.5%;
     font: smaller;
     border: 2px solid black;
+    width: 55vw;
 }
 
 .partsFeatures div{
     display: flex;
     flex-direction: column;
-    padding: 0.5%;
+    padding-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    padding-left: 3.5%;
     font: x-small;
-    border: 2px solid black;
+    background-color: #cfb491;
+    border-radius: 10px;
+
 }
 
-.partsFeatures div div{
+.partsFeatures div section{
     display: flex;
     flex-direction: row;
+    border: 2px solid black;
 }
 .description{
-    margin-top: 1.5vh;
     padding: 2%;
     border: 2px solid black;
+    height: 20vh;
+}
+
+.features section div section p{
+    padding-left: 1%;
+}
+
+.features section section p{
+    padding-left: 1%;
+}
+
+.tituloDescripcion{
+    margin-bottom: 0.5%;
 }
 
 @media (min-width: 768px) {
