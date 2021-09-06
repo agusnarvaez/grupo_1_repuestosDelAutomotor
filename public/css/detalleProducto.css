@@ -17,7 +17,7 @@ main {
   display: flex;
   justify-items: center;
   justify-content: center;
-  background-color: burlywood;
+  background-color: rgba(0, 0, 0, 0.507);
   height: 50vh;
   width: 50vh;
   align-self: center;
@@ -41,7 +41,7 @@ main {
   flex-wrap: wrap;
 }
     .galery a{
-    background-color: rgb(224, 163, 82);
+    background-color: rgba(0, 0, 0, 0.473);
     margin: 2%;
     height: 10vh;
     width: 10vh;
@@ -100,12 +100,13 @@ main {
             display: flex;
             justify-content: center;
             margin-right: 5vw;
-            margin-top: 1vh;
+            margin-top: 2vh;
             border: 2px solid gray;
             justify-content: space-between;
-            padding: 1%;
-            margin-left: 1vw;
+            padding: 1.5%;
+            margin-left: 7vw;
             border-radius: 20px;
+            width: 30vw;
         }
             .menos {
             display: flex;
@@ -155,12 +156,15 @@ main {
     align-self: center;
     font-size: x-large;
     margin-top: 5%;
+    width: 20vw;
     }
     .opcionesDePago {
     display: flex;
     flex-direction: row;
     justify-self: center;
-    margin-top: 2%;
+    margin-top: 5%;
+    width: 40vw;
+    padding-left: 5%;
     font-size: smaller;
     }
 
@@ -171,7 +175,7 @@ main {
         justify-content: center;
         align-content: center;
         align-items: center;
-        margin-top: 13%;
+        padding-top: 15%;
         margin-right: 5vw;
     }
         .comprarButton {
@@ -209,7 +213,7 @@ main {
   justify-items: flex-start;
   align-items: flex-start;
   padding: 2%;
-  margin-top: 2vh;
+  margin-top: 1vh;
 }
     .mainFeature{
         display: flex;
@@ -224,9 +228,11 @@ main {
             flex-direction: row;
             font: x-small;
             border: 2px solid black;
+            border-radius: 5px;
             width: 90vw;
             padding-left: 1%;
             align-items: center;
+            margin-top: 1px;
         }
 
 
@@ -234,31 +240,34 @@ main {
         display: flex;
         flex-direction: column;
         font: medium;
-        padding: 2%;
+        padding-top: 0.5%;
+        padding-right: 2%;
+        padding-left: 2%;
+        padding-bottom: 2%;
         margin-top: 0.5vh;
-        margin-bottom: 0.5vh;
         background-color: #d1a871;
         border-radius: 10px;
     }
-        .mainItemFeature h3 {
-        padding: 0.5%;
-        margin-bottom: 0.5vh;
-        }
         .mainItemFeature section{
             display: flex;
             flex-direction: row;
             font: x-small;
             border: 2px solid black;
+            border-radius: 5px;
+            margin-top: 1px;
             width: 80vw;
             padding-left: 1%;
             align-items: center;
         }
+            .mainItemFeature p{
+                font-size: small;
+                font-weight: bolder;
+            }
 
     .partsFeatures{
         display:flex;
         flex-direction: column;
         padding-top: 0.5%;
-        padding-bottom: 1.5%;
         padding-right: 1.5%;
         font: smaller;
         width: 55vw;
@@ -266,9 +275,11 @@ main {
         .partsFeatures div{
             display: flex;
             flex-direction: column;
-            padding-top: 0.5vh;
             margin-bottom: 0.5vh;
-            padding: 3.5%;
+            padding-top: 1%;
+            padding-right: 3.5%;
+            padding-left: 3.5%;
+            padding-bottom: 3.5%;
             font: x-small;
             background-color: #cfb491;
             border-radius: 10px;
@@ -278,25 +289,41 @@ main {
                 display: flex;
                 flex-direction: row;
                 border: 2px solid black;
+                border-radius: 5px;
                 padding-left: 1.5%;
                 align-items: center;
+                margin-top: 1px;
             }
 
 
     .description{
-        padding: 2%;
-        border: 2px solid black;
-        height: 20vh;
+        padding: 1%;
+        padding-left: 0%;
+        height: 30vh;
     }
     .tituloDescripcion{
         margin-bottom: 0.5%;
+        padding-left: 1%;
+    }
+    .description p{
+        border: 1px solid #cfb491;
+        border-radius: 5px;
+        height: 40vh;
+        padding-left: 2%;
+        padding-right: 1.5%;
+        padding-top: 1.5%;
+        padding-bottom: 1.5%;
     }
 
 .features section div section p{
     padding-left: 1%;
+    font-size: smaller;
+    font-weight: bolder;
 }
 .features section section p{
     padding-left: 1%;
+    font-size: smaller;
+    font-weight: bolder;
 }
 
 @media (min-width: 768px) {
