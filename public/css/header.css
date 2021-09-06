@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   padding: 1%;
+  height: 8vh;
 }
 
 .burgerMenu {
@@ -26,7 +27,7 @@
   display: inline-block;
   width: 15%;
   max-width: 60px;
-  align-self: flex-end;
+  align-self: center;
 }
 .mainHeaderAuxiliar {
   width: 10%;
@@ -34,6 +35,7 @@
 .filtro {
   background-color: lightgray;
   padding: 1%;
+  height: 10vh;
 }
 .filterSelect p {
   display: inline-block;
