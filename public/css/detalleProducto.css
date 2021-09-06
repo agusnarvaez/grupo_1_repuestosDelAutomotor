@@ -93,6 +93,7 @@ main {
     border: 3px solid gray;
     justify-content: space-between;
     padding: 2%;
+    border-radius: 20px;
 }
 
 .menos {
@@ -222,7 +223,6 @@ main {
 .mainItemFeature h3 {
   padding: 0.5%;
   margin-bottom: 0.5vh;
-  border: 2px solid black;
 }
 
 .mainItemFeature section{
@@ -241,7 +241,6 @@ main {
     padding-bottom: 1.5%;
     padding-right: 1.5%;
     font: smaller;
-    border: 2px solid black;
     width: 55vw;
 }
 
@@ -250,7 +249,7 @@ main {
     flex-direction: column;
     padding-top: 0.5vh;
     margin-bottom: 0.5vh;
-    padding-left: 3.5%;
+    padding: 3.5%;
     font: x-small;
     background-color: #cfb491;
     border-radius: 10px;
