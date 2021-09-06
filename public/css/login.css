@@ -1,0 +1,39 @@
+body {
+  height: 500px;
+}
+main {
+  width: 100%;
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  max-height: 700px;
+}
+main h2 {
+  text-align: center;
+  padding: 1%;
+}
+
+.loginForm {
+  background-color: lightgray;
+  margin: 0 auto;
+  width: 75%;
+  height: 75%;
+  padding: 10%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.submit {
+  padding: 1%;
+  max-width: 100px;
+}
+.loginForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-decoration: none;
+  color: black;
+}
