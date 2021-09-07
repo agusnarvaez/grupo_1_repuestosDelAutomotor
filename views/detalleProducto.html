@@ -91,39 +91,39 @@
 
     <main>
         <div class="galery">
-            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 1" ></a>
-            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 2" ></a>
-            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 3" ></a>
-            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Ej 4" ></a>
+            <a><img src="./images/ejemplos/productoEjemplo.jpg" alt="Ej 1" ></a>
+            <a><img src="./images/ejemplos/productoEjemplo.jpg" alt="Ej 2" ></a>
+            <a><img src="./images/ejemplos/productoEjemplo.jpg" alt="Ej 3" ></a>
+            <a><img src="./images/ejemplos/productoEjemplo.jpg" alt="Ej 4" ></a>
         </div>
 
         <div class="mainImage">
-            <a><img src="./public/images/ejemplos/productoEjemplo.jpg" alt="Principal" height=25px></a>
+            <a><img src="./images/ejemplos/productoEjemplo.jpg" alt="Principal" height=25px></a>
         </div>
 
         <div class="detalleProducto">
             <section class="detalle1">
                 <h4 class="titulo"><i><b>Titulo Demasiado Unico Original y Exclusivo</b></i></h4>
-                <section class="envio">
-                    <img class="iconoEnvio" src="#" alt="">
-                    <a href="#" class="leyendaEnvio"><p>Envío gratis a domicilio</p></a>
+
+                <section class="envio"> <!-- De acá saldrá el PopUp para elegir otros medios de transporte disponibles -->
+                    <img class="iconoEnvio" src="./images/iconos/free-shipping.png" alt="">
+                    <a href="#" class="leyendaEnvio"><p>Envío gratis a domicilio</p></a> 
                 </section>
 
                 <section class="cantidad">
-                    <p class="menos">-</p>
-                    <p class="n"><b>1</b></p>
-                    <p class="mas">+</p>
+                    <button type="button" class="menos">-</button>
+                    <p class="n"> <b>1</b> </p>
+                    <button type="button"class="mas">+</button>
                 </section>
             </section>
 
             <section class="detalle2">
-                <p class="precio">$999</p>
-                <a href="#"><p class="opcionesDePago">18 Cuotas sin interés</p></a>
+                <p class="precio"><b>$999</b></p>
+                <a href="#"><p class="opcionesDePago">18 Cuotas sin interés</p></a> <!-- De acá saldrá el PopUp para elegir otros medios de pago -->
 
                 <section class="opcionesCompra">
-                    <button type="button" class="comprarButton">COMPRAR</button>
-                    <button type="button" class="iconoCarrito"></button><img src="#" alt=""></button>
-            
+                    <button type="button" class="comprarButton"><b>COMPRAR</b></button> <!-- Botón de comprar (checkout directo)-->
+                    <button type="button" class="iconoCarrito"><img src="./images/iconos/add-to-cart.png" alt=""></button> <!-- Botón de agregar al carrito-->
                 </section>
 
 
@@ -133,43 +133,41 @@
     
     <section class="features">
         <section class="mainFeature">
-            <h2>Características</h2>
-            <div>  <h4><b>Marca: </b></h4>  <p><i>Dayco</i></p>  </div>
-            <div>  <h4><b>Origen: </b></h4>  <p><i>Argentina</i></p>  </div>
-            <div>  <h4><b>Compatibilidades: </b></h4>  <p><i>ATB1080</i></p>  </div>
-
-
+                <section>  <h4><b>Marca: </b></h4>  <p><i>Dayco</i></p>  </section>
+                <section>  <h4><b>Origen: </b></h4>  <p><i>Argentina</i></p>  </section>
+                <section>  <h4><b>Compatibilidades: </b></h4>  <p><i>Fiat Fiorino 1.2 Fire</i></p>  </section>
         </section>    
 
         <section class="mainItemFeature">
             <h3>Kit de distribución</h3>
-                <div>  <h5><b>Correa: </b></h5>  <p><i>109SP250H</i></p>  </div>
-                <div>  <h5><b>Tensor: </b></h5>  <p><i>ATB2510</i></p>  </div>
-                <div>  <h5><b>Polea: </b></h5>  <p><i>ATB1080</i></p>  </div>
-
+                <section>  <h5><b>Correa: </b></h5>  <p><i>109SP250H</i></p>  </section>
+                <section>  <h5><b>Tensor: </b></h5>  <p><i>ATB2510</i></p>  </section>
+                <section>  <h5><b>Polea: </b></h5>  <p><i>ATB1080</i></p>  </section>
         </section> 
 
         <section class="partsFeatures">
             <div class="1_itemFeature">
                 <h4>Correa de distribución</h4>
-                <div>  <h6><b>Nº de dientes: </b></h6>  <p><i>109</i></p>  </div>
-                <div>  <h6><b>Ancho: </b></h6>  <p><i>25mm</i></p>  </div>
-                <div>  <h6><b>Material: </b></h6>  <p><i>Caucho</i></p>  </div>
+                    <section>  <h6><b>Nº de dientes: </b></h6>  <p><i>109</i></p>  </section>
+                    <section>  <h6><b>Ancho: </b></h6>  <p><i>25mm</i></p>  </section>
+                    <section>  <h6><b>Material: </b></h6>  <p><i>Caucho</i></p>  </section>
             </div>
     
             <div class="2_itemFeature">
                 <h4>Tensor</h4>
-                <div>  <h6><b>Diametro externo: </b></h6>  <p><i>36mm</i></p>  </div>
-                <div>  <h6><b>Diametro interno: </b></h6>  <p><i>25mm</i></p>  </div>
-                <div>  <h6><b>Ancho: </b></h6>  <p><i>28mm</i></p>  </div>
-                <div>  <h6><b>Material: </b></h6>  <p><i>Plástico</i></p>  </div>
+                    <section>  <h6><b>Diametro externo: </b></h6>  <p><i>36mm</i></p>  </section>
+                    <section>  <h6><b>Diametro interno: </b></h6>  <p><i>25mm</i></p>  </section>
+                    <section>  <h6><b>Ancho: </b></h6>  <p><i>28mm</i></p>  </section>
+                    <section>  <h6><b>Material: </b></h6>  <p><i>Plástico</i></p>  </section>
             </div>
         </section>
+        
+        <section class="description">
+            <h3 class="tituloDescripcion">Descripción</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </section>
 
-            <!--<section class="description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Porttitor massa id neque aliquam vestibulum morbi blandit cursus risus. Pharetra sit amet aliquam id diam maecenas. Ac felis donec et odio pellentesque diam volutpat. Pretium nibh ipsum consequat nisl vel pretium. Tellus id interdum velit laoreet id donec ultrices tincidunt arcu.     
-                </p>
-            </section>-->
     </section>
 
     <footer class="mainFooter">
