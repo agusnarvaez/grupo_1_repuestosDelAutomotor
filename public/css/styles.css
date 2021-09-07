@@ -73,7 +73,9 @@ main {
   max-width: 25%;
   border-radius: 50%;
   border: 2px solid #141414;
+  transition: all 500ms;
 }
+
 @media (min-width: 460px) {
   .menu {
     display: inline;

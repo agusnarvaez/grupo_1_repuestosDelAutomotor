@@ -18,7 +18,6 @@
   width: 10%;
   padding: auto;
   margin: auto 0;
-  border: 1px solid #000;
   border-radius: 50%;
   background-color: #eec643;
 }
@@ -83,8 +82,6 @@
 .filtros {
   display: none;
 }
-
-
 
 @media (min-width: 768px) {
   .mainHeaderAuxiliar {
