@@ -9,6 +9,7 @@ main {
   display: flex;
   background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
+  margin-top: 30px;
 }
 
 .sideBar {
@@ -19,8 +20,11 @@ main {
 
 .principal {
   margin: auto;
-  border: solid red 3px;
   width: 80vw;
+}
+
+.selectedProducts {
+  margin-bottom: 30px;
 }
 
 .selectedProduct {
@@ -31,7 +35,16 @@ main {
   margin: auto;
   border-radius: 2%;
   text-align: center;
-  border: solid yellow 3px;
+}
+
+.addingProduct {
+  width: 70vw;
+  height: 40vh;
+  background-color: whitesmoke;
+  margin-top: 15px;
+  margin: auto;
+  border-radius: 2%;
+  text-align: center;
 }
 
 .addingProduct {
@@ -47,7 +60,6 @@ main {
 
 .addingProductText {
   margin: 0 auto;
-  border: solid pink 3px;
   max-width: 80%;
   width: 80%;
   height: 80%;
@@ -75,9 +87,8 @@ main {
 }
 
 .shippingAndPayment {
+  margin-top: 60px;
   height: 30vh;
-  margin: auto;
-  border: black solid 3px;
 }
 
 .shippingOptions {
@@ -108,7 +119,6 @@ button {
   .selectedProducts {
     width: 55vw;
     border: green solid 3px;
-
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -117,26 +127,50 @@ button {
   .shippingAndPayment {
     width: 55vw;
     border: green solid 3px;
+    margin: auto;
+  }
+}
 
+@media (min-width: 481px) {
+  .sideBar {
+    display: block;
+    width: 30vw;
+    margin-top: 15px;
+  }
+
+  .principal {
+    width: 60vw;
+    text-align: center;
+    align-items: center;
+  }
+
+  .selectedProducts {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .shippingAndPayment {
+    width: 55vw;
     margin: auto;
   }
 
+  .addingProduct,
   .selectedProduct {
-    border: solid yellow 3px;
     margin: auto;
     margin-top: 15px;
     max-width: 1500px;
+    width: 45%;
   }
 
   .addingProduct {
-    border: solid gray 3px;
-    margin: auto;
+    padding-top: 50px;
     margin-top: 15px;
     max-width: 1500px;
   }
 
   h6 {
-    border: orange solid 3px;
     height: 70px;
     font-size: 50px;
     padding: 0;
