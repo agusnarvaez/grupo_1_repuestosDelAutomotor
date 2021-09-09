@@ -3,7 +3,7 @@ body {
 }
 main {
   width: 100%;
-  background-color: bisque;
+  background-color: #eef0f2;
   display: flex;
   flex-direction: column;
   height: 75%;
@@ -20,15 +20,37 @@ main h2 {
   width: 75%;
   height: 75%;
   padding: 10%;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+}
+.loginForm form {
+  align-items: center;
+}
+.campo {
+  background-color: rgb(255, 255, 255);
+  padding: 1.5%;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  width: 50vw;
 }
 .submit {
   padding: 1%;
   max-width: 100px;
+  border: none;
+  border-radius: 7px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+.submit:hover {
+  background-color: gray;
+}
+
+.submit:active {
+  background-color: lightgray;
+  color: black;
 }
 .loginForm form {
   display: flex;

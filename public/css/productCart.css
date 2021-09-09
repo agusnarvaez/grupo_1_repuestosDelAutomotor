@@ -1,204 +1,144 @@
-
 * {
-        font-family: "Lato", sans-serif;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-
-
-
-main{
-
-display: flex;
-background-color: rgba(0,0,0,.1);
-width: 100%;
-
-
-
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.sideBar{
-
-    display: none;
-    background-color: whitesmoke;
-    border-radius: 2%;
-  
-    
-    
+main {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-
-.principal{
-
-    margin: auto;
-    border: solid red 3px;
-    width: 80vw;
+.sideBar {
+  display: none;
+  background-color: whitesmoke;
+  border-radius: 2%;
 }
 
-
-
-
-
-
-.selectedProduct{
-
-width: 70vw;
-height: 40vh;
-background-color: whitesmoke;
-margin-top: 15px;
-margin: auto; 
-border-radius: 2%;
-text-align: center;
-border: solid yellow 3px;
-
-
-
+.principal {
+  margin: auto;
+  border: solid red 3px;
+  width: 80vw;
 }
 
-.addingProduct{
+.selectedProduct {
+  width: 70vw;
+  height: 40vh;
+  background-color: whitesmoke;
+  margin-top: 15px;
+  margin: auto;
+  border-radius: 2%;
+  text-align: center;
+  border: solid yellow 3px;
+}
 
-    width: 70vw;
-    height: 40vh;
-    border: solid yellow 3px;
-    background-color: whitesmoke;
-    margin-top: 15px;
-    margin: auto; 
-    border-radius: 2%;
-
-
-    display: flex;
-
+.addingProduct {
+  width: 70vw;
+  height: 40vh;
+  border: solid yellow 3px;
+  background-color: whitesmoke;
+  margin-top: 15px;
+  margin: auto;
+  border-radius: 2%;
+  display: flex;
 }
 
 .addingProductText {
-
-margin: 0 auto;
-border: solid pink 3px;
-max-width: 80%;
-width: 80%;
-height: 80%;
-margin-bottom: 0px;
-font-size: 100%;
-color: lightslategray;
-align-self: center;
-
+  margin: 0 auto;
+  border: solid pink 3px;
+  max-width: 80%;
+  width: 80%;
+  height: 80%;
+  margin-bottom: 0px;
+  font-size: 100%;
+  color: lightslategray;
+  align-self: center;
 }
 
-
-
-.productimages{
-
-width: 80%;
-max-height: 80%;
-margin: 30px, 30px, 30px, 30px ;
-max-width: 60%;
-vertical-align: top;
-
+.productimages {
+  width: 80%;
+  max-height: 80%;
+  margin: 30px, 30px, 30px, 30px;
+  max-width: 60%;
+  vertical-align: top;
 }
 
-
-.tambiénTePuedeInteresar{
-
-text-align: center;
-font-weight: bold;
-
+.tambiénTePuedeInteresar {
+  text-align: center;
+  font-weight: bold;
 }
 
 .tambiénTePuedeInteresar h6 {
-font-size: 20px;
-
-
+  font-size: 20px;
 }
 
 .shippingAndPayment {
-
-height: 30vh;
-margin: auto;
-border: black solid 3px;
-
+  height: 30vh;
+  margin: auto;
+  border: black solid 3px;
 }
 
-.shippingOptions{
-display: inline;
-size: 80%;
-margin: auto;
-width: 40vw;
-
-
+.shippingOptions {
+  display: inline;
+  size: 80%;
+  margin: auto;
+  width: 40vw;
 }
-button{
-
-    display: inline;
-    width: 30vw;
-    margin: auto;
-    align-self: right;
+button {
+  display: inline;
+  width: 30vw;
+  margin: auto;
+  align-self: right;
 }
-
-
 
 @media (min-width: 481px) {
-    .sideBar{
-border: solid blue 3px;
-        display: block;
-        width: 30vw;
-    }
-    
-    .principal{
-width: 60vw;
-text-align: center;
-align-items: center;
+  .sideBar {
+    border: solid blue 3px;
+    display: block;
+    width: 30vw;
+  }
 
-    }
-    .selectedProducts{
-        width: 55vw;
-        border: green solid 3px;
- 
-margin: auto;
-display: flex;
-flex-wrap: wrap;
-            }
+  .principal {
+    width: 60vw;
+    text-align: center;
+    align-items: center;
+  }
+  .selectedProducts {
+    width: 55vw;
+    border: green solid 3px;
 
-            .shippingAndPayment {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-                width: 55vw;
-                border: green solid 3px;
-         
-        margin: auto;
-                }
+  .shippingAndPayment {
+    width: 55vw;
+    border: green solid 3px;
 
+    margin: auto;
+  }
 
-
-
-    
-    .selectedProduct{
-    
+  .selectedProduct {
     border: solid yellow 3px;
     margin: auto;
-    margin-top: 15px; 
-    max-width: 1500px;      
-    }
+    margin-top: 15px;
+    max-width: 1500px;
+  }
 
-
-
-    .addingProduct{
-    
+  .addingProduct {
     border: solid gray 3px;
     margin: auto;
-    margin-top: 15px;  
-    max-width: 1500px;      
-    }
+    margin-top: 15px;
+    max-width: 1500px;
+  }
 
-h6{
-
-border: orange solid 3px;
-height: 70px;
-font-size: 50px;
-padding: 0;
-}
-
-
-    
-
+  h6 {
+    border: orange solid 3px;
+    height: 70px;
+    font-size: 50px;
+    padding: 0;
+  }
 }

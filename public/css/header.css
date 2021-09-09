@@ -35,7 +35,9 @@
   background-color: lightgray;
   padding: 1%;
   padding-top: 0.5%;
-  height: 10vh;
+}
+.filterSelect {
+  padding-bottom: 0.5%;
 }
 .filterSelect p {
   display: inline-block;
