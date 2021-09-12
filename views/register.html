@@ -7,7 +7,7 @@
    <meta name="keywords" content="repuestos">   <!--Palabras clave para que busque la página-->
    <meta name="robots" content="folow"> <!-- Se permite el rastreo de links a google-->
    <link rel="icon" href="">   <!--Ícono de la pestaña-->
-   <link rel="stylesheet" href="./css/login.css" type="text/css"> <!-- Link a estilo de main-->
+   <link rel="stylesheet" href="./css/register.css" type="text/css"> <!-- Link a estilo de main-->
    <link rel="stylesheet" href="./css/header.css" type="text/css"> <!-- Link a estilo de header-->
    <link rel="stylesheet" href="./css/footer.css" type="text/css"> <!-- Link a estilo de footer header-->
    <link rel="preconnect" href="https://fonts.googleapis.com">   <!--Fuente de google-->
@@ -40,55 +40,56 @@
 
 
 <main>
-   <h2>Registro de Usuario</h2>
+   <h2>REGISTRO DE USUARIO</h2>
 
-   <form class="form" action="" method="POST"> 
+   <form class="form" action="" method=""> 
          
       <div> 
          <label for="nombre">Nombre</label> <br>
-         <input type="text" name="nombre"  placeholder="  Ingrese su nombre" id="nombre" required>
+         <input class="input" type="text" name="nombre"  placeholder="  Ingrese su nombre" id="nombre" required>
       </div>
       
       <div>
          <label for="apellido">Apellido</label> <br>
-         <input type="text" name="apellido" placeholder="  Ingrese su apellido" id="apellido" required>
+         <input class="input" type="text" name="apellido" placeholder="  Ingrese su apellido" id="apellido" required>
       </div>
 
       <div>
          <label for="usuario">Usuario</label> <br>
-         <input type="text" name="usuario" placeholder="  Elija un nombre de usuario" id="usuario" required>
+         <input class="input" type="text" name="usuario" placeholder="  Elija un nombre de usuario" id="usuario" required>
       </div>
       
       <div>
          <label for="codigoPostal">Código Postal</label> <br>
-         <input type="text" name="codigoPostal" placeholder="  Ingrese su código postal" id="codigoPostal" required>
+         <input class="input" type="text" name="codigoPostal" placeholder="  Ingrese su código postal" id="codigoPostal" required>
       </div>
 
       <div>
          <label for="email">Email</label> <br>
-         <input type="email" name="email" placeholder="  email@correo.com" id="email" required>
+         <input class="input" type="email" name="email" placeholder="  email@correo.com" id="email" required>
       </div>
 
       <div>
          <label for="contraseña">Contraseña</label> <br>
-         <input type="password" name="contraseña" placeholder="  ***********" id="contraseña" required>
+         <input class="input" type="password" name="contraseña" placeholder="  ***********" id="contraseña" required>
       </div>
 
       <div>
          <label for="repetirContraseña">Repetir contraseña</label> <br>
-         <input type="password" name="repetirContraseña" placeholder="  ***********" id="repetirContraseña"required>
+         <input class="input" type="password" name="repetirContraseña" placeholder="  ***********" id="repetirContraseña"required>
       </div>
 
       <div>
          
 
-      <button type="submit" formaction="/login"> ENVIAR </button>
-
+         <button type="submit" formaction="/">ENVIAR</button>
+         <button type="reset" > BORRAR </button>
       </div>
 
-      <div>
+      <div class="checkbox">
+         <input  type="checkbox" >
          <label class="radio">
-         <input class="radio" type="checkbox"> Deseo recibir correos con información y ofertas de la página.
+          Deseo recibir correos con información y ofertas de la página.
          </label>
          
       </div>

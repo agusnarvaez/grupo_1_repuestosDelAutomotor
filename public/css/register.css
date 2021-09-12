@@ -5,71 +5,89 @@
     padding: 0;
   }
 
-  .form {
- 
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  main {
+  width: 100%;
+  background-color: bisque;
+  height: fit-content;
+  box-sizing: content-box;
+  padding-top: 15px;
+  padding-bottom: 15px;
   
+  }
 
+h2{
 
-  @media (min-width: 500px){
-    .form {
- margin: 0;
- display: block;
- 
-    }
-    }
+  margin-bottom: 15px;
+  margin-left: 8px;
 
-
-h2 {
-border-bottom:solid black;
-} 
-
-input {
-color: gray;
-width: 300px;
-border-radius: 5px;
-border: solid black 1px;
-height: 30px; 
 }
 
-label {
-font-weight: bold;
+.input{
+
+    
+    
+  min-width: 300px;
+  border: none;
+  font-size: 14px;
+  height: 20px;
+  border-radius: 5px;
+  padding-left: 5px;
+  background-color: whitesmoke;
+  margin-left: 8px;
+  font-weight: bold;
+    
+
 }
 
-div {
-margin: 10px 7px ;
+
+.checkbox input{
+
+  margin-left: 8px;
+
+
+}
+
+main label{
+  
+  margin-bottom: 3px;
+  margin-left: 8px;
+  font-weight: bold;
+  
+  
+}
+
+div{
+
+  margin-bottom: 10px;
+
 }
 
 button {
-font-weight: bold;
-color: white;
-background-color: rgb(71, 71, 184);
-padding: 3px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(71, 71, 184);
+  padding: 5px;
+  margin-left: 8px;
+  border-radius: 5px;
+  border: none;
+  }
+
+
+
+input:focus {
+  color: blue;
+  font-weight: bold;
+  }
+
+input:focus { border-color: yellow; } 
+
+  input:hover {
+    background-color: gold;
+    }
+
+a{
+
+text-decoration: none;
+color: whitesmoke;
+
 }
-
-.radio {
-margin-top: 15px;
-margin-left: 0px;
-width: 30px;
-
-height: 15px;
-
-}
-
-
-
-    input:focus {
-      color: blue;
-      font-weight: bold;
-      }
-
-      input:focus { border-color: yellow; } 
-
-      input:hover {
-        background-color: gold;
-        }

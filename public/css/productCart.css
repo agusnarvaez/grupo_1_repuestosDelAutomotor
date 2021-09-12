@@ -7,15 +7,18 @@
 
 main {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: bisque;;
   width: 100%;
-  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
 }
 
 .sideBar {
   display: none;
   background-color: whitesmoke;
   border-radius: 2%;
+  margin-left: 15px;
 }
 
 .principal {
@@ -37,36 +40,59 @@ main {
   text-align: center;
 }
 
-.addingProduct {
-  width: 70vw;
-  height: 40vh;
-  background-color: whitesmoke;
-  margin-top: 15px;
-  margin: auto;
-  border-radius: 2%;
-  text-align: center;
-}
+
 
 .addingProduct {
   width: 70vw;
   height: 40vh;
-  border: solid yellow 3px;
   background-color: whitesmoke;
   margin-top: 15px;
   margin: auto;
   border-radius: 2%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+
+.addingProduct:hover {
+
+  box-shadow: 0px 0px 30px rgb(100, 100, 100);
+
+}
+
+
+.addingProduct {
+
+transition: box-shadow 500ms;
+
+}
+
+.selectedProduct:hover {
+
+  box-shadow: 0px 0px 30px rgb(100, 100, 100);
+
+}
+
+
+.selectedProduct {
+
+transition: box-shadow 500ms;
+
+}
+
+
+
+
 .addingProductText {
-  margin: 0 auto;
-  max-width: 80%;
-  width: 80%;
-  height: 80%;
-  margin-bottom: 0px;
-  font-size: 100%;
+
+  display: block;
+  margin: auto;
+  font-weight: bold;
   color: lightslategray;
   align-self: center;
+  font-size: 30px;
+  
 }
 
 .productimages {
@@ -75,6 +101,7 @@ main {
   margin: 30px, 30px, 30px, 30px;
   max-width: 60%;
   vertical-align: top;
+  padding-top: 5px;
 }
 
 .tambiénTePuedeInteresar {
@@ -89,6 +116,8 @@ main {
 .shippingAndPayment {
   margin-top: 60px;
   height: 30vh;
+  display: flex;
+  
 }
 
 .shippingOptions {
@@ -96,17 +125,48 @@ main {
   size: 80%;
   margin: auto;
   width: 40vw;
+  font-weight: bold;
+  color: rgb(71, 71, 184);
 }
+
 button {
   display: inline;
   width: 30vw;
   margin: auto;
   align-self: right;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(71, 71, 184);
+  padding: 5px;
+  margin-left: 8px;
+  border-radius: 5px;
+  border: none;
 }
+
+.descriptionProduct {
+
+  font-weight: bold;
+  padding-top: 10px;
+
+}
+
+.shippingAndPayment i{
+
+transition: transform 1000ms;
+
+} 
+
+.shippingAndPayment i:hover {
+
+  transform: rotate(-90deg)
+
+}
+
+
 
 @media (min-width: 481px) {
   .sideBar {
-    border: solid blue 3px;
+    
     display: block;
     width: 30vw;
   }
@@ -116,34 +176,7 @@ button {
     text-align: center;
     align-items: center;
   }
-  .selectedProducts {
-    width: 55vw;
-    border: green solid 3px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .shippingAndPayment {
-    width: 55vw;
-    border: green solid 3px;
-    margin: auto;
-  }
-}
-
-@media (min-width: 481px) {
-  .sideBar {
-    display: block;
-    width: 30vw;
-    margin-top: 15px;
-  }
-
-  .principal {
-    width: 60vw;
-    text-align: center;
-    align-items: center;
-  }
-
+ 
   .selectedProducts {
     width: 100%;
     margin: auto;
@@ -156,23 +189,24 @@ button {
     margin: auto;
   }
 
+  h6 {
+    
+    font-size: 50px;
+    padding-top: 15px;
+  }
+
   .addingProduct,
   .selectedProduct {
-    margin: auto;
+    
     margin-top: 15px;
     max-width: 1500px;
     width: 45%;
   }
 
-  .addingProduct {
-    padding-top: 50px;
-    margin-top: 15px;
-    max-width: 1500px;
   }
 
-  h6 {
-    height: 70px;
-    font-size: 50px;
-    padding: 0;
-  }
-}
+
+
+
+
+
