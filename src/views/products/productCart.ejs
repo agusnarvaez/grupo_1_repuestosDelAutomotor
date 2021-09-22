@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs') %> <!-- Head -->
+    <link rel="stylesheet" href="css/productCart.css">
+    <title>Product cart</title>
+</head>
+<body>
+<%- include('../partials/header.ejs') %> <!--Header -->
+<main>
+
+    <section class="sideBar">
+        <div class="tambiénTePuedeInteresar">
+            <h6>También te puede interesar</h6>
+        </div>
+    </section>
+
+    <section class="principal">
+        <section class="selectedProducts">
+            <div class="selectedProduct">
+                <img class ="productimages" src="/images/kitdedistribucion.jpg" alt="product photo">
+                <p class="descriptionProduct">DESCRIPCIÓN PRODUCTO ELEGIDO 1</p>
+
+            </div>
+            <div class="selectedProduct">
+                <img class ="productimages" src="/images/kitdedistribucion.jpg" alt="product photo">
+                <p class="descriptionProduct">DESCRIPCIÓN PRODUCTO ELEGIDO 2</p>
+            </div>
+
+            <div class="selectedProduct">
+                <img class ="productimages" src="/images/kitdedistribucion.jpg" alt="product photo">
+                <p class="descriptionProduct">DESCRIPCIÓN PRODUCTO ELEGIDO 3</p>
+            </div>
+        
+            <div class="addingProduct">
+                <p class="addingProductText">Agregar item al carrito <i class="fas fa-cart-plus"></i></p>
+                
+            </div>
+    </section>
+
+    <section class="shippingAndPayment">
+        <p class="shippingOptions">Opciones de Envío <i class="fas fa-truck"></i></p>
+        <button>Finalizar Compra</button>
+    </section>
+
+</main>
+
+<%- include('../partials/footer.ejs') %> <!--Footer  -->
+</body>
+</html>

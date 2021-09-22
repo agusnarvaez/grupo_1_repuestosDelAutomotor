@@ -4,7 +4,7 @@ const path = require('path');
 const productCartController = {
 
         cart: function(req,res) {
-        res.render('productCart');
+        res.render('./products/productCart');
     },
    
 };

@@ -1,0 +1,45 @@
+<section class="filtro">
+    <div class="filterSelect">
+        <p>Filtros</p>
+        <img src="./images/iconos/down-arrow.png" alt="arrow">
+    </div>
+    <div class="filtros">
+        <ul>
+            <li>Categoría</li>
+            <li>Marca</li>
+            <li>Año</li>
+            <li>Año</li>
+            <li>Modelo</li>
+        </ul>
+        <form action="gracias.html" method="Get">
+            <!-- action sirve para poner la página a la que direccionará después de llenar el formulario-->
+            <!-- method get y post sirve para mantener el texto una vez llenado-->
+            <select name="Categoría">
+                <Option value="0">Motor</Option>
+                <Option value="1">Suspensión y dirección</Option>
+                <Option value="2">Iluminación</Option>
+                <Option value="3">Distribución</Option>
+                <Option value="4">Electricidad</Option>
+            </select>
+            <select name="Marcas">
+                <Option value="0">Fiat</Option>
+                <Option value="1">Ford</Option>
+                <Option value="2">Peugeot</Option>
+                <Option value="3">Renault</Option>
+                <Option value="4">Volkswagen</Option>
+            </select>
+            <input type="number" min="1952" max="2021">
+            <p>Modelo</p> <!-- El modelo depende de la marca, hay que hacer script -->
+            <input type="button" value="Filtrar">
+            <!--<ul>
+                    <li>Repuestos</li>
+                    <li>Marcas</li>
+                    <li>Año</li>
+                    <li>Modelo</li>
+                    </ul>-->
+        </form>
+    </div>
+    <div class="search">
+        <textarea>Buscar marcas, repuestos</textarea><i class="fas fa-search"></i>
+    </div>
+</section>
