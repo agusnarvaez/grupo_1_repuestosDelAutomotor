@@ -3,6 +3,7 @@
 SPRINT 1
 
 **Start Doing:**
+Las actividades más complejas tratar de resolverlas en conjunto .
 
 **Stop Doing:**
 
@@ -10,9 +11,9 @@ SPRINT 1
 Aplazar reuniones.
 
 **Keep Doing:**
-Organizarnos con Trello
-Mantener reuniones regulares
-Dividirnos las tareas 
+Organizarnos con Trello.
+Mantener reuniones regulares.
+Dividirnos las tareas .
 
 **More of:**
 Regularizar más las reuniones.
@@ -29,6 +30,7 @@ Pasar las reuniones de semanales a dailys.
 **Less Of:**
 
 **Keep Doing:**
+Ayudarnos mutuamente cuando nos trabamos en algo.
 
 **More of:**
 Realizar ciertos trabajos específicos de forma colaborativa.
