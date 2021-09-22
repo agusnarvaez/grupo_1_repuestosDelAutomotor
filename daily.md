@@ -1,6 +1,6 @@
 # Daily
 
-##22/09
+## 22/09
 * Que se hizo:
   * Juan Pablo:
     * Que Establercer modelo MVC. Se crearon controladores y rutas.
