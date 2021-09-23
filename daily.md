@@ -30,7 +30,7 @@
   * Agustín:
     * Revisar como armar el partials de head diámico
   * Nico:
-    * Finalizar Sprint 2.
+    * Finalizar Retro Sprint 2.
 * Impedimentos:
   * Agustín:
     * Partials de Head dinámico - Hablar con Guido o Diego
