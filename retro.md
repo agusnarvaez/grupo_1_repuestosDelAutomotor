@@ -29,8 +29,10 @@ Pasar las reuniones de semanales a dailys.
 Comentar más los códigos. 
 
 _Stop Doing:_
+Mezclar spanglish en el código.
 
 _Less Of:_
+Utilizar medidas fijas en css.
 
 _Keep Doing:_
 Ayudarnos mutuamente cuando nos trabamos en algo.
