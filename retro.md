@@ -22,7 +22,7 @@ Indentar más el código.
 
 
 
-## :Star:SPRINT 2
+## :star:SPRINT 2
 
 _Start Doing:_
 Pasar las reuniones de semanales a dailys.
