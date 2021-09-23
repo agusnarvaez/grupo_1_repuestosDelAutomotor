@@ -1,38 +1,39 @@
-*Starfish retrospective*
+# *Starfish retrospective*
 
-SPRINT 1
+## SPRINT 1
 
-**Start Doing:**
-Las actividades más complejas tratar de resolverlas en conjunto .
+_Start Doing:_
+Las actividades más complejas tratar de resolverlas en conjunto.
 
-**Stop Doing:**
+_Stop Doing:_
+Dejar actividades para el final, como en el caso del propio retro.
 
-**Less Of:**
+_Less Of:_
 Aplazar reuniones.
 
-**Keep Doing:**
+_Keep Doing:_
 Organizarnos con Trello.
 Mantener reuniones regulares.
 Dividirnos las tareas .
 
-**More of:**
+_More of:_
 Regularizar más las reuniones.
+Indentar más el código.
 
 
 
-SPRINT 2
+## SPRINT 2
 
-**Start Doing:**
+_Start Doing:_
 Pasar las reuniones de semanales a dailys.
+Comentar más los códigos. 
 
-**Stop Doing:**
+_Stop Doing:_
 
-**Less Of:**
+_Less Of:_
 
-**Keep Doing:**
+_Keep Doing:_
 Ayudarnos mutuamente cuando nos trabamos en algo.
 
-**More of:**
+_More of:_
 Realizar ciertos trabajos específicos de forma colaborativa.
-
-
