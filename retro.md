@@ -1,6 +1,6 @@
 # *Starfish retrospective*
 
-## SPRINT 1
+## :star:SPRINT 1
 
 _Start Doing:_
 Las actividades más complejas tratar de resolverlas en conjunto.
@@ -22,7 +22,7 @@ Indentar más el código.
 
 
 
-## SPRINT 2
+## :Star:SPRINT 2
 
 _Start Doing:_
 Pasar las reuniones de semanales a dailys.
