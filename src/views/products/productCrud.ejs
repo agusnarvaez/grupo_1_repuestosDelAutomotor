@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../partials/head.ejs') %>
+    <title>Product CRUD</title>
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <!-- Header -->
+    <main>
+      <form method="POST" action="../#">
+        <label for="name">Nombre de producto</label>
+        <input name="name" id="name" type="text" />
+        <br />
+        <label for="description">Descripción</label>
+        <input name="description" id="description" type="text" />
+        <br />
+        <label for="image">Imagen</label>
+        <input name="image" id="image" type="file" />
+        <br />
+        <label for="category">Categoría</label>
+        <input name="category" id="category" type="text" />
+        <br />
+        <label for="variable">Variables</label>
+        <input value="Agregar variantes" id="variable" type="button" />
+        <br />
+        <label for="price">Precio</label>
+        <input name="price" id="price" type="text" />
+        <br />
+        <input value="CREAR" type="submit" />
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+    <!-- Footer -->
+  </body>
+</html>
