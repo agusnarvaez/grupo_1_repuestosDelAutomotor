@@ -5,13 +5,12 @@
   padding: 0;
 }
 
-main {
+main{
   display: flex;
-  background-color: bisque;;
+  background-color: bisque;
   width: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
-
 }
 
 .sideBar {
@@ -56,43 +55,33 @@ main {
 
 
 .addingProduct:hover {
-
   box-shadow: 0px 0px 30px rgb(100, 100, 100);
-
 }
 
 
 .addingProduct {
-
 transition: box-shadow 500ms;
-
 }
 
 .selectedProduct:hover {
-
   box-shadow: 0px 0px 30px rgb(100, 100, 100);
-
 }
 
 
 .selectedProduct {
-
 transition: box-shadow 500ms;
-
 }
 
 
 
 
 .addingProductText {
-
   display: block;
   margin: auto;
   font-weight: bold;
   color: lightslategray;
   align-self: center;
   font-size: 30px;
-  
 }
 
 .productimages {
@@ -144,22 +133,16 @@ button {
 }
 
 .descriptionProduct {
-
   font-weight: bold;
   padding-top: 10px;
-
 }
 
 .shippingAndPayment i{
-
 transition: transform 1000ms;
-
 } 
 
 .shippingAndPayment i:hover {
-
   transform: rotate(-90deg)
-
 }
 
 
