@@ -1,6 +1,6 @@
 let express = require("express");
 
-let productCartController = require("../controllers/productCrudController.js");
+let productCrudController = require("../controllers/productCrudController.js");
 
 let router = express.Router();
 

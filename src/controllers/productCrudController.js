@@ -2,8 +2,8 @@ const path = require("path");
 
 const productCrudController = {
   crud: function (req, res) {
-    res.render("./products/productCart");
+    res.render("./products/productCrud");
   },
 };
 
-module.exports = productCartController;
+module.exports = productCrudController;
