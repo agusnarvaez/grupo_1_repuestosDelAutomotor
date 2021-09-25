@@ -34,3 +34,14 @@
 * Impedimentos:
   * Agustín:
     * Partials de Head dinámico - Hablar con Guido o Diego
+
+## 24/09
+* Que se hizo:
+  * Nico:
+    * Avance en 
+
+* Que se va a hacer hoy:
+  * Agustín:
+    * Revisar como armar el partials de head diámico
+  * Nico:
+    * Trabajar en retrospectivas sprints y en página de creación de producto
