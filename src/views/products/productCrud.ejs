@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%- include('../partials/head.ejs') %>
-    <link rel="stylesheet" href="css/productCrud.css">
-    <title>Product CRUD</title>
-  </head>
-  <body>
-    <%- include('../partials/header.ejs') %>
-    <!-- Header -->
-
-    <main>
-      <form method="POST" action="#">
-        <label for="name">Nombre de producto</label>
-        <input name="name" id="name" type="text" />
-        <label for="description">Descripción</label>
-        <input name="description" id="description" type="text" />
-        <label for="image">Imagen</label>     
-        <input name="image" id="image" type="file" />
-        <label for="category">Categoría</label>
-        <input name="category" id="category" type="text" />
-        <label for="variable">Color</label>
-        <input value="Agregar variantes" id="variable" type="color" />
-        <label for="price">Precio</label>
-        <input name="price" id="price" type="text" />
-        <br>
-        <input class="button" value="CREAR" type="submit" />
-      </form>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-    <!-- Footer -->
-  </body>
+<head>
+  <%- include('../partials/head.ejs') %>
+  <link rel="stylesheet" href="css/productCrud.css" type="text/css">
+  <title>Product CRUD</title>
+</head>
+<body>
+  <%- include('../partials/header.ejs') %>
+  <!-- Header -->
+<main>
+  <h2>Edición de productos</h2>
+  <div class="productCrudForm">
+    <form method="POST" action="#">
+      <div class= "campo">
+        <label for="name">Nombre de producto</label> <br>
+        <input class="input" name="name" id="name" type="text">
+      </div>
+      <div class= "campo">
+        <label for="description">Descripción</label> <br>
+        <input class="input" name="description" id="description" type="text">
+      </div>
+      <div class= "campo">
+        <label for="image">Imagen</label> <br>     
+        <input class="inputImage" name="image" id="image" type="file">
+      </div>
+      <div class= "campo">
+        <label for="category">Categoría</label> <br>
+        <input class="input" name="category" id="category" type="text">
+      </div>
+      <div class= "campo">
+        <label for="variable">Color</label> <br>
+        <input class="color" value="Agregar variantes" id="variable" type="color">
+      </div>
+      <div class= "campo">
+        <label for="price">Precio</label> <br>
+        <input class="input" name="price" id="price" type="text" placeholder="$">
+      </div>
+      <div class="buttons">
+        <input class="button" value="CREAR" type="submit">
+      </div>
+    </form>
+</div>
+</main>
+<%- include('../partials/footer.ejs') %>
+<!-- Footer -->
+</body>
 </html>
