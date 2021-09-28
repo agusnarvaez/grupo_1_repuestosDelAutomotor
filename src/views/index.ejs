@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('./partials/head.ejs') %> <!-- Head -->
-    <title>El rastrojero</title>
-</head>
+    <%- include('./partials/head.ejs', {partialHead: partialHead}) %> <!-- Head -->
 <body>
 <%- include('./partials/header.ejs') %> <!--Header -->
 <%- include('./partials/filter.ejs') %> <!--Filter -->

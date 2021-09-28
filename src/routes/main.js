@@ -1,6 +1,6 @@
-let express = require('express');
+let express = require('express'); //Requer
 
-let mainController = require('../controllers/mainController.js')    
+let mainController = require('../controllers/mainController.js');
 
 let router = express.Router();
 
