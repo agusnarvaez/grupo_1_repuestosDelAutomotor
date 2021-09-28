@@ -13,6 +13,8 @@ app.set('views', __dirname + '/views'); // sin este redireccionamiento de la car
 
 app.set('view engine', 'ejs'); //establezco a ejs como motor de plantilla
 
+app.use(express.urlencoded({ extended: false })); //Se indica a la aplicación que todo lo que recibamos proveniente de un formulario lo capture en forma de objeto literal
+app.use(express.json()); //Nos permite convertir el objeto literal de la línea anterior a un formto JSON, si es que así lo queremos
 
 
 
@@ -70,3 +72,6 @@ app.get('/detalleProducto', (req, res) => { //Enviamos página de detalleProduct
     res.sendFile(path.resolve(__dirname, './views/detalleProducto.html'));
 });
  */
+
+const rutasProductCrud = require('./routes/productCrud.js')
+app.use('/productCrud', rutasProductCrud)

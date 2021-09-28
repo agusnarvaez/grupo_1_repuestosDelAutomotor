@@ -1,0 +1,91 @@
+* {
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+
+
+main {
+  width: 100%;
+  background-color: bisque;
+  height: fit-content;
+  box-sizing: content-box;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+  input{
+
+    
+    
+    min-width: 300px;
+    border: none;
+    font-size: 14px;
+    height: 20px;
+    border-radius: 5px;
+    padding-left: 5px;
+    background-color: whitesmoke;
+    margin-left: 8px;
+    font-weight: bold;
+      
+  
+  }
+
+  .checkbox input{
+
+    margin-left: 8px;
+  
+  
+  }
+  
+  main label{
+    
+    display: block;
+    margin-top: 10px;
+    margin-left: 8px;
+    font-weight: bold;
+    width: fit-content;
+    
+    
+  }
+  
+  div{
+  
+    margin-bottom: 10px;
+  
+  }
+  
+  .button {
+    font-weight: bold;
+    color: white;
+    background-color: rgb(71, 71, 184);
+    padding: 10px;
+    margin-left: 8px;
+    border-radius: 5px;
+    border: none;
+    height: fit-content;
+    margin-top: 10px;
+    }
+  
+  
+  
+  input:focus {
+    color: blue;
+    font-weight: bold;
+    }
+  
+  input:focus { border-color: yellow; } 
+  
+    input:hover {
+      background-color: gold;
+      }
+  
+  a{
+  
+  text-decoration: none;
+  color: whitesmoke;
+  
+  }
