@@ -19,8 +19,12 @@
         "title": "Product Carrito",
         "style": "../css/productCart.css"
     },
-    "productCrud": {
-        "title": "Product Crud",
+    "productCreation": {
+        "title": "Product Creation",
         "style": "../css/productCrud.css"
+    },
+    "productEdition": {
+        "title": "Product Edition",
+        "style": "../../css/productCrud.css"
     }
 }

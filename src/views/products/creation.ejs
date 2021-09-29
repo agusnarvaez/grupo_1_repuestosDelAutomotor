@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head dinámico -->
+<body>
+  <%- include('../partials/header.ejs') %>  <!-- Header -->
+<main>
+  <h2>Creación de producto</h2>
+  <div class="productCrudForm">
+    <form method="POST" action="/products/crud">
+      <div class= "campo">
+        <label for="name">Nombre de producto</label> <br>
+        <input class="input" name="name" id="name" type="text">
+      </div>
+      <div class= "campo">
+        <label for="description">Descripción</label> <br>
+        <input class="input" name="description" id="description" type="text">
+      </div>
+      <div class= "campo">
+        <label for="image">Imagen</label> <br>     
+        <input class="inputImage" name="image" id="image" type="file">
+      </div>
+      <div class= "campo">
+        <label for="category">Categoría</label> <br>
+        <input class="input" name="category" id="category" type="text">
+      </div>
+      <div class= "campo">
+        <label for="variable">Color</label> <br>
+        <input class="color" value="Agregar variantes" id="variable" type="color">
+      </div>
+      <div class= "campo">
+        <label for="price">Precio</label> <br>
+        <input class="input" name="price" id="price" type="text" placeholder="$">
+      </div>
+      <div class="buttons">
+        <input class="button" value="CREAR" type="submit">
+      </div>
+    </form>
+</div>
+</main>
+<%- include('../partials/footer.ejs') %>  <!-- Footer -->
+</body>
+</html>

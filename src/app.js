@@ -1,11 +1,12 @@
 const express = require('express'); // Requerimos Express
 const app = express(); //Generamos app de express
-const host = 3000; //Establezco host a utilizar
+const host = 5000; //Establezco host a utilizar
 
-const path = require('path'); // Re querimos módulo Path
+const path = require('path'); // Requerimos módulo Path
 
-const publicPath = path.resolve(__dirname, '../public');
-app.use(express.static(publicPath)); //Armamos el enlace público
+//Armamos el enlace público
+const publicPath = path.resolve(__dirname, '../public'); 
+app.use(express.static(publicPath)); 
 
 
 app.listen(host, () => { //Corremos el servidor indicado en la variable host
