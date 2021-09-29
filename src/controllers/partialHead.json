@@ -5,22 +5,22 @@
     },
     "login": {
         "title": "Login",
-        "style": "login.css"
+        "style": "../css/login.css"
     },
     "register": {
         "title": "Register",
-        "style": "register.css"
+        "style": "../css/register.css"
     },
     "productDetail": {
         "title": "Product Detail",
-        "style": "productDetail.css"
+        "style": "../css/productDetail.css"
     },
     "productCart": {
-        "title": "Product Cart",
-        "style": "productCart.css"
+        "title": "Product Carrito",
+        "style": "../css/productCart.css"
     },
     "productCrud": {
         "title": "Product Crud",
-        "style": "productCrud.css"
+        "style": "../css/productCrud.css"
     }
 }

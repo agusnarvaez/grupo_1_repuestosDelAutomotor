@@ -1,12 +1,12 @@
-let express = require('express'); //Requer
+let express = require('express'); // Solicitud de Express
+let router = express.Router(); //Módulo Router de Express
 
+/* *****Controlador de main***** */
 let mainController = require('../controllers/mainController.js');
 
-let router = express.Router();
-
+/* *****A página index***** */
 router.get('/', mainController.index);
 
 
 
-
-module.exports = router;
+module.exports = router; // Exportación ruteo

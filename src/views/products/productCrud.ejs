@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs', {partialHead: partialHead}) %>
+  <%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head dinámico -->
 <body>
-  <%- include('../partials/header.ejs') %>
-  <!-- Header -->
+  <%- include('../partials/header.ejs') %>  <!-- Header -->
 <main>
   <h2>Edición de productos</h2>
   <div class="productCrudForm">
-    <form method="POST" action="#">
+    <form method="POST" action="/products/crud">
       <div class= "campo">
         <label for="name">Nombre de producto</label> <br>
         <input class="input" name="name" id="name" type="text">
@@ -38,7 +37,6 @@
     </form>
 </div>
 </main>
-<%- include('../partials/footer.ejs') %>
-<!-- Footer -->
+<%- include('../partials/footer.ejs') %>  <!-- Footer -->
 </body>
 </html>

@@ -1,42 +1,17 @@
-let express = require('express');
-const path = require('path');
-//const fs = require('fs');
-//let partialHeadPrueba = JSON.parse(fs.readFileSync("./partialHead.json", "utf-8"));
+let express = require('express'); // Solicitud de Express
+const path = require('path'); //Módulo Path de Express
+const fs = require('fs'); //Solicito módulo de archivos
 
-const partialHead = {
-    index: {
-        title: 'El rastrojero',
-        style: 'styles.css'
-    },
-    login: {
-        title: 'Login',
-        style: '../css/login.css'
-    },
-    register: {
-        title: 'Register',
-        style: '../css/register.css'
-    },
-    productDetail: {
-        title: 'Product Detail',
-        style: '../css/productDetail.css'
-    },
-    productCart: {
-        title: 'Product Cart',
-        style: '../css/productCart.css'
-    },
-    productCrud: {
-        title: 'Product Crud',
-        style: '../css/productCrud.css'
-    }
-}
+/* *****Objeto literal que contiene datos para head dinámico ***** */
+let partialHead = JSON.parse(fs.readFileSync("src/controllers/partialHead.json", "utf-8"));
 
+/* *****Controlador principal***** */
 const mainController = {
 
-    index: function (req, res) {
-        console.log(partialHead);
+    index: function (req, res) { //A página index
         res.render('index', { partialHead: partialHead.index });
     }
 };
 
-module.exports = mainController;
+module.exports = mainController; // Exportación de controlador principal
 
