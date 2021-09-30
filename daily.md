@@ -56,6 +56,8 @@
     * Creación de página /product/edition en base a página /product/creation
   * Nico:
     * Finalización retrospectiva sobre sprint 2
+    * Avance en el css del register
+    * Avance en el css del product creation
 
 * Que se va a hacer hoy:
   * Agustín, Nico y Juan Pablo:
