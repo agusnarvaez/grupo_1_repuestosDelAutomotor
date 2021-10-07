@@ -62,3 +62,17 @@
 * Que se va a hacer hoy:
   * Agustín, Nico y Juan Pablo:
     * Revisar sprint 4 y asignar tareas
+ 
+ 
+ 
+## 06/10
+* Que se hizo:
+    * Definición de campos de usuario
+  * Nico:
+    * Revisar campos de producto
+
+* Que se va a hacer hoy:
+  * Agustín y Juan Pablo:
+    * Crear archivo .json de usuario
+  * Nico:
+    * Crear archivo .json de productos
