@@ -6,7 +6,6 @@
     "password": "1234",
     "category": "vendedor",
     "image": "perfil.jpg",
-    "address": "Belgrano 5180",
-    "CP": "1653",
-    "city": "General San Martín"
+    "address": "Belgrano 5180, General San Martín",
+    "CP": "1653"
 }]
