@@ -4,32 +4,28 @@
 <body>
   <%- include('../partials/header.ejs') %>  <!-- Header -->
 <main>
-  <h2>Edición de producto <%= id %> </h2>
+  <h2>Edición de producto <%= product.id %> </h2>
   <div class="productCrudForm">
-    <form method="POST" action="/products/crud">
+    <form method="POST" action="/products/edition/<%= product.id %>?_method=PUT">
       <div class= "campo">
         <label for="name">Nombre de producto</label> <br>
-        <input class="input" name="name" id="name" type="text">
+        <input class="input" name="name" id="name" type="text" value="<%= product.productName %>">
       </div>
       <div class= "campo">
         <label for="description">Descripción</label> <br>
-        <input class="input" name="description" id="description" type="text">
+        <input class="input" name="description" id="description" type="text" value="<%= product.description %>">
       </div>
       <div class= "campo">
-        <label for="image">Imagen</label> <br>     
-        <input class="inputImage" name="image" id="image" type="file">
+        <label for="img">Imagen</label> <br>     
+        <input class="inputImage" name="img" id="image" type="file">
       </div>
       <div class= "campo">
         <label for="category">Categoría</label> <br>
-        <input class="input" name="category" id="category" type="text">
-      </div>
-      <div class= "campo">
-        <label for="variable">Color</label> <br>
-        <input class="color" value="Agregar variantes" id="variable" type="color">
+        <input class="input" name="category" id="category" type="text" value="<%= product.category %>">
       </div>
       <div class= "campo">
         <label for="price">Precio</label> <br>
-        <input class="input" name="price" id="price" type="text" placeholder="$">
+        <input class="input" name="price" id="price" type="text" placeholder="$" value="<%= product.price %>">
       </div>
       <div class="buttons">
         <input class="button" value="CREAR" type="submit">

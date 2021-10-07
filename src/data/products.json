@@ -1,0 +1,8 @@
+[{
+    "id": "1",
+    "productName":"Producto Ejemplo 1", 
+    "description":"Descripción del producto ejemplo 1", 
+    "img":"1", 
+    "category": "Categoria ejemplo 1", 
+    "price":"999"
+    }]

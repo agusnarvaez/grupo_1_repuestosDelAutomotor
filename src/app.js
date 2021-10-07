@@ -8,6 +8,10 @@ const path = require('path'); // Requerimos módulo Path
 const publicPath = path.resolve(__dirname, '../public'); 
 app.use(express.static(publicPath)); 
 
+//Habilitamos los métodos PUT y DELETE
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
 
 app.listen(host, () => { //Corremos el servidor indicado en la variable host
     console.log('Servidor corriendo => http://localhost:'+host+'/');

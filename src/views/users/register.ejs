@@ -8,44 +8,44 @@
 <main>
    <h2>Registre su cuenta</h2>
    <div class="registerForm">
-      <form class="form" action="" method="">          
+      <form class="form" action="/user/register?_method=PUT" method="POST">          
          <div class= "campo"> 
-            <label for="nombre">Nombre</label> <br>
-            <input class="input" type="text" name="nombre"  placeholder="  Ingrese su nombre" id="nombre" required>
+            <label for="name">Nombre</label> <br>
+            <input class="input" type="text" name="name"  placeholder="  Ingrese su nombre" id="nombre" required>
          </div>
          <div class= "campo">
-            <label for="apellido">Apellido</label> <br>
-            <input class="input" type="text" name="apellido" placeholder="  Ingrese su apellido" id="apellido" required>
+            <label for="lastName">Apellido</label> <br>
+            <input class="input" type="text" name="lastName" placeholder="  Ingrese su apellido" id="apellido" required>
          </div>
          <div class= "campo">
-            <label for="usuario">Usuario</label> <br>
-            <input class="input" type="text" name="usuario" placeholder="  Elija un nombre de usuario" id="usuario" required>
-         </div>
-         <div class= "campo">
-            <label for="codigoPostal">Código Postal</label> <br>
-            <input class="input" type="text" name="codigoPostal" placeholder="  Ingrese su código postal" id="codigoPostal" required>
+            <label for="zipCode">Código Postal</label> <br>
+            <input class="input" type="text" name="zipCode" placeholder="  Ingrese su código postal" id="codigoPostal" required>
          </div>
          <div class= "campo">
             <label for="email">Email</label> <br>
             <input class="input" type="email" name="email" placeholder="  email@correo.com" id="email" required>
          </div>
          <div class= "campo">
-            <label for="contraseña">Contraseña</label> <br>
-            <input class="input" type="password" name="contraseña" placeholder="  ***********" id="contraseña" required>
+            <label for="nickname">Usuario</label> <br>
+            <input class="input" type="text" name="nickname" placeholder="  Elija un nombre de usuario" id="usuario" required>
          </div>
          <div class= "campo">
-            <label for="repetirContraseña">Repetir contraseña</label> <br>
-            <input class="input" type="password" name="repetirContraseña" placeholder="  ***********" id="repetirContraseña"required>
+            <label for="password">Contraseña</label> <br>
+            <input class="input" type="password" name="password" placeholder="  ***********" id="contraseña" required>
          </div>
-         <div class="buttons campo">
-            <button type="submit" formaction="/">ENVIAR</button>
-            <button type="reset" > BORRAR </button>
+         <div class= "campo">
+            <label for="repeatPassword">Repetir contraseña</label> <br>
+            <input class="input" type="password" name="repeatPassword" placeholder="  ***********" id="repetirContraseña"required>
          </div>
          <div class="checkbox campo">
             <input  type="checkbox" >
             <label class="radio">
             Deseo recibir correos con información y ofertas de la página.
             </label>
+         </div>
+         <div class="buttons campo">
+            <button type="submit">ENVIAR</button>
+            <button type="reset" > BORRAR </button>
          </div>
       </form>
 </div>

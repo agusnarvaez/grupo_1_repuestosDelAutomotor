@@ -6,6 +6,7 @@ let userController = require('../controllers/userController.js');
 
 /* *****A página register***** */
 router.get('/register', userController.register);
+router.put('/register', userController.create)
 
 /* *****A página login***** */
 router.get('/login', userController.login);

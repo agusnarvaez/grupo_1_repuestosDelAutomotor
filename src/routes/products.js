@@ -14,7 +14,7 @@ router.get('/detail', productController.detail);
 
 /* *****Métodos para registro de producto ***** */
 router.get("/creation", productController.register); /* A página registro de producto */
-router.post("/creation", productController.create); /* *****Creación de producto***** */
+router.put("/creation", productController.create); /* *****Creación de producto***** */
 
 /* *****Métodos para registro de producto ***** */
 router.get("/edition/:id", productController.edition); /* A página edición de producto */
