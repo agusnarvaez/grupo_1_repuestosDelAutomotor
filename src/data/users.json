@@ -1,0 +1,12 @@
+[{
+    "id": "1",
+    "firstName": "Agustín",
+    "lastName": "Narvaez",
+    "email": "agus.narvaez@outlook.com",
+    "password": "1234",
+    "category": "vendedor",
+    "image": "perfil.jpg",
+    "address": "Belgrano 5180",
+    "CP": "1653",
+    "city": "General San Martín"
+}]
