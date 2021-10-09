@@ -6,19 +6,19 @@
     <%- include('../partials/filter.ejs') %> <!--Filter -->
     <main class="mainProductDetail">
         <div class="galery">
-            <a><img src="../images/ejemplos/productoEjemplo.jpg" alt="Ej 1" ></a>
-            <a><img src="../images/ejemplos/productoEjemplo.jpg" alt="Ej 2" ></a>
-            <a><img src="../images/ejemplos/productoEjemplo.jpg" alt="Ej 3" ></a>
-            <a><img src="../images/ejemplos/productoEjemplo.jpg" alt="Ej 4" ></a>
+            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 1" ></a>
+            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 2" ></a>
+            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 3" ></a>
+            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 4" ></a>
         </div>
 
         <div class="mainImage">
-            <a><img src="../images/ejemplos/productoEjemplo.jpg" alt="Principal" height=25px></a>
+            <a><img src="../../data/productsImages/<% product.img %>" alt="Principal" height=25px></a>
         </div>
 
         <div class="detalleProducto">
             <section class="detalle1">
-                <h4 class="titulo"><i><b>Titulo Demasiado Unico Original y Exclusivo</b></i></h4>
+                <h4 class="titulo"><i><b><% product.productName %></b></i></h4>
 
                 <section class="envio"> <!-- De acá saldrá el PopUp para elegir otros medios de transporte disponibles -->
                     <img class="iconoEnvio" src="../images/iconos/free-shipping.png" alt="">
@@ -33,7 +33,7 @@
             </section>
 
             <section class="detalle2">
-                <p class="precio"><b>$999</b></p>
+                <p class="precio"><b><%= product.price %></b></p>
                 <a href="#"><p class="opcionesDePago">18 Cuotas sin interés</p></a> <!-- De acá saldrá el PopUp para elegir otros medios de pago -->
 
                 <section class="opcionesCompra">
@@ -79,8 +79,7 @@
         
         <section class="description">
             <h3 class="tituloDescripcion">Descripción</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+            <p><%= product.description %></p>
         </section>
 
     </section>
