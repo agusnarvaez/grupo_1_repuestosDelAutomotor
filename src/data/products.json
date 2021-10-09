@@ -1,8 +1,1 @@
-[{
-    "id": "1",
-    "productName":"Producto Ejemplo 1", 
-    "description":"Descripción del producto ejemplo 1", 
-    "img":"1", 
-    "category": "Categoria ejemplo 1", 
-    "price":"999"
-    }]
+[{"id":"1","productName":"Producto Ejemplo 1 Editado","description":"Descripción del producto ejemplo 1 Editado","img":"","category":"Categoria ejemplo 1","price":"999"}]

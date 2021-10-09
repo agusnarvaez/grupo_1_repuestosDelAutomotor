@@ -18,6 +18,6 @@ router.put("/creation", productController.create); /* *****Creación de producto
 
 /* *****Métodos para registro de producto ***** */
 router.get("/edition/:id", productController.edition); /* A página edición de producto */
-router.put("/edition/:id", productController.edit); /* *****Edición de producto***** */
+router.put("/edition", productController.edit); /* *****Edición de producto***** */
 
 module.exports = router; // Exportación ruteo

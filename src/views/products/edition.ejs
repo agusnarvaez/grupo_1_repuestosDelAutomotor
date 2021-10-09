@@ -6,7 +6,10 @@
 <main>
   <h2>Edición de producto <%= product.id %> </h2>
   <div class="productCrudForm">
-    <form method="POST" action="/products/edition/<%= product.id %>?_method=PUT">
+    <form method="POST" action="/products/edition?_method=PUT">
+      <div class= "hiddenCamp productId">
+        <input class="hiddenInput productId" name="productId" id="productId" type="text" value="<%= product.id %>">
+      </div>
       <div class= "campo">
         <label for="name">Nombre de producto</label> <br>
         <input class="input" name="name" id="name" type="text" value="<%= product.productName %>">
@@ -28,7 +31,7 @@
         <input class="input" name="price" id="price" type="text" placeholder="$" value="<%= product.price %>">
       </div>
       <div class="buttons">
-        <input class="button" value="CREAR" type="submit">
+        <input class="button" value="Editar" type="submit">
       </div>
     </form>
 </div>

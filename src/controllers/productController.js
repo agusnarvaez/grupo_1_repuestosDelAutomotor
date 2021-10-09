@@ -39,12 +39,13 @@ const productController = {
         res.render("./products/edition", { partialHead: partialHead.productEdition , product: product});
     },
     edit: function (req, res) { //Edición de producto
-        let product = products.find(product => product.id == req.params.id);
-        products[product.id - 1].productName = req.body.name
+        let product = products.find(product => product.id == req.body.productId);
+        products[product.id - 1].productName = req.body.name,
         products[product.id - 1].description = req.body.description,
         products[product.id - 1].category = req.body.category,
         products[product.id - 1].price = req.body.price,
         products[product.id - 1].img = req.body.img,
+        fs.writeFileSync('src/data/products.json', (JSON.stringify(products)))
         res.redirect('../../');
     }
 };
