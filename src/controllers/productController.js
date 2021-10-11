@@ -13,6 +13,9 @@ const products = JSON.parse(fs.readFileSync('src/data/products.json', 'utf-8'));
 
 /* *****Controlador de productos***** */
 const productController = {
+    index: function (req, res) { //Página de products
+        res.render("./products/products", { partialHead: partialHead.products, products:products })
+    },
     register: function (req, res) { //Página de registro de producto
         res.render("./products/creation", { partialHead: partialHead.productCreation });
     },
@@ -26,9 +29,9 @@ const productController = {
             img: '1_' + req.body.name + '.jpg',
         };
 
-        products.push(newProduct)
-        fs.writeFileSync('src/data/products.json', (JSON.stringify(products)))
-        res.redirect('./detail/' + newProduct.id);
+        products.push(newProduct);
+        fs.writeFileSync('src/data/products.json', (JSON.stringify(products, null, " "))); //Se agrega null y " " para que mantenga la estructura de objeto
+        res.redirect('detail/' + newProduct.id);
     },
     cart: function(req,res) { //Página de carrito de productos
         res.render('./products/cart', { partialHead: partialHead.productCart });

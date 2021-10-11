@@ -9,6 +9,9 @@ let productController = require('../controllers/productController.js');
 
 let imagesCounter = '1' /* Variable que en un futuro usaremos para subir más de una imágen*/
 
+/* *****A página productos**** */
+router.get('/', productController.index);
+
 
 /* *****A página carrito**** */
 router.get('/cart', productController.cart);
@@ -28,8 +31,7 @@ router.put("/creation",
     filename: function (req, file, cb){
         cb(null, (imagesCounter + '_' + req.body.productName + '.jpg'))
     }
-})).single('image'),
- productController.create); /* *****Creación de producto***** */
+})).single('image'), productController.create); /* *****Creación de producto***** */
 
 /* *****Métodos para registro de producto ***** */
 router.get("/edition/:id", productController.edition); /* A página edición de producto */
@@ -42,7 +44,6 @@ multer(
     filename: function (req, file, cb){
         cb(null, (imagesCounter + '_' + req.body.productName + '.jpg'))
     }
-})).single('image'), 
-productController.edit); /* *****Edición de producto***** */
+})).single('image'), productController.edit); /* *****Edición de producto***** */
 
 module.exports = router; // Exportación ruteo
