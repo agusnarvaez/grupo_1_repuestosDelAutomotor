@@ -30,11 +30,11 @@ main{
 }
 
 .selectedProduct {
+  display:block;
   width: 70vw;
   height: 40vh;
   background-color: whitesmoke;
-  margin-top: 15px;
-  margin: auto;
+  margin: 15px auto 15px auto;
   border-radius: 2%;
   text-align: center;
 }
@@ -51,6 +51,7 @@ main{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 
