@@ -6,7 +6,7 @@
 <main>
   <h2>Creación de producto</h2>
   <div class="productCrudForm">
-    <form method="POST" action="/products/creation?_method=PUT">
+    <form method="POST" enctype="multipart/form-data" action="/products/creation?_method=PUT">
       <div class= "campo">
         <label for="name">Nombre de producto</label> <br>
         <input class="input" name="name" id="name" type="text">

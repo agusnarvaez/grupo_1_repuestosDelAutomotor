@@ -2,7 +2,8 @@ const path = require("path"); //Módulo Path de Express
 
 const fs = require('fs'); //Solicito módulo de archivos
 
-const { platform } = require('os')
+const { platform } = require('os');
+const { nextTick } = require("process");
 
 /* *****Objeto literal que contiene datos para head dinámico ***** */
 let partialHead = JSON.parse(fs.readFileSync("src/controllers/partialHead.json", "utf-8"));
@@ -19,7 +20,15 @@ const productController = {
     register: function (req, res) { //Página de registro de producto
         res.render("./products/creation", { partialHead: partialHead.productCreation });
     },
-    create: function (req, res) { //Creación de producto
+    create: function (req, res, next) { //Creación de producto
+        let file = req.file
+        if (!file){
+            let error = new Error('Es necesaria una imágen para crear el producto')
+            error.httpStatusCode = 400
+            return next(error)
+        }
+
+
         let newProduct = {
             id: products.length + 1,
             productName: req.body.name,
@@ -51,7 +60,7 @@ const productController = {
         products[product.id - 1].category = req.body.category,
         products[product.id - 1].price = req.body.price,
         products[product.id - 1].img = '1_' + req.body.name + '.jpg',
-        fs.writeFileSync('src/data/products.json', (JSON.stringify(products)))
+        fs.writeFileSync('src/data/products.json', (JSON.stringify(products, null, " ")))
         res.redirect('./detail/' + product.id);
     }
 };
