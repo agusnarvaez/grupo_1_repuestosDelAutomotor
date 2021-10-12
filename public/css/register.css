@@ -47,6 +47,7 @@ h2{
   padding: 1.5%;
   border: 1px solid rgb(255, 255, 255);
   font-weight: bold;
+  outline: none;
 }
 
 main label{

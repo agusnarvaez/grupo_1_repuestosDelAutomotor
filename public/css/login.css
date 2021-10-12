@@ -36,6 +36,7 @@ main h2 {
   border-radius: 5px;
   width: 50vw;
   font-weight: bold;
+  outline: none;
 }
 .submit {
   padding: 5px;
