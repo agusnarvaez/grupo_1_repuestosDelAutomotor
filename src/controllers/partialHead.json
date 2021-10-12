@@ -13,7 +13,7 @@
     },
     "productDetail": {
         "title": "Product Detail",
-        "style": "../css/productDetail.css"
+        "style": "../../css/productDetail.css"
     },
     "productCart": {
         "title": "Product Carrito",
@@ -26,5 +26,9 @@
     "productEdition": {
         "title": "Product Edition",
         "style": "../../css/productCrud.css"
+    },
+    "products": {
+        "title": "Productos",
+        "style": "../css/products.css"
     }
 }

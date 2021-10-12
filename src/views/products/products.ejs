@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head -->
+
+<body>
+    <%- include('../partials/header.ejs') %> <!--Header -->
+<main>
+    <%- include('../partials/filter.ejs') %> <!-- Filter -->
+    <section class="sideBar">
+        <div class="tambiénTePuedeInteresar">
+            <h6>También te puede interesar</h6>
+        </div>
+    </section>
+
+    <section class="principal">
+        <section class="selectedProducts">
+            <article class="selectedProduct">
+                <img class ="productimages" src="/images/kitdedistribucion.jpg" alt="product photo">
+                <p class="descriptionProduct">DESCRIPCIÓN PRODUCTO ELEGIDO 1</p>
+
+            </article>
+    </section>
+
+</main>
+
+<%- include('../partials/footer.ejs') %> <!--Footer  -->
+</body>
+</html>
