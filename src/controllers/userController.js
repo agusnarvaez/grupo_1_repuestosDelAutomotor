@@ -18,7 +18,7 @@ const userController = {
     create: function (req, res) { //Creación de producto
         let user = {
             id: users.length + 1,
-            name: req.body.name,
+            firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             nickname: req.body.nickname,

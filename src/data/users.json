@@ -1,21 +1,20 @@
 [
  {
-  "id": "1",
+  "id": 1,
   "firstName": "Agustín",
   "lastName": "Narvaez",
   "email": "agus.narvaez@outlook.com",
-  "password": "1234",
-  "image": "perfil.jpg",
-  "address": "Belgrano 5180, General San Martín",
-  "CP": "1653"
+  "nickname": "Agus",
+  "password": "123456",
+  "zipCode": "1653"
  },
  {
   "id": 2,
-  "name": "Pepe",
-  "lastName": "Perez",
-  "email": "pepe@hotmail.com",
-  "nickname": "peperez",
-  "password": "1223456789",
-  "zipCode": "1653"
+  "firstName": "Juan Pablo",
+  "lastName": "Carta",
+  "email": "juanpcarta@gmail.com",
+  "nickname": "Maceta",
+  "password": "123456",
+  "zipCode": "1425"
  }
 ]

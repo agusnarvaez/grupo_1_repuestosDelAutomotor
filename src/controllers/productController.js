@@ -32,8 +32,6 @@ const productController = {
             error.httpStatusCode = 400
             return next(error)
         }
-
-
         let newProduct = {
             id: products.length + 1,
             productName: req.body.name,
@@ -42,7 +40,6 @@ const productController = {
             price: req.body.price,
             img: req.file.filename
         };
-
         products.push(newProduct);
         fs.writeFileSync('src/data/products.json', (JSON.stringify(products, null, " "))); //Se agrega null y " " para que mantenga la estructura de objeto
         res.redirect('detail/' + newProduct.id);
