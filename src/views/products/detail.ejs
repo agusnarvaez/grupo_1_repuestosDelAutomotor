@@ -6,14 +6,14 @@
     <%- include('../partials/filter.ejs') %> <!--Filter -->
     <main class="mainProductDetail">
         <div class="galery">
-            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 1" ></a>
-            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 2" ></a>
-            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 3" ></a>
-            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 4" ></a>
+            <a><img src="../../images/productsImages/<%= product.img %>" alt="Ej 1" ></a>
+            <a><img src="../../images/productsImages/<%= product.img %>" alt="Ej 2" ></a>
+            <a><img src="../../images/productsImages/<%= product.img %>" alt="Ej 3" ></a>
+            <a><img src="../../images/productsImages/<%= product.img %>" alt="Ej 4" ></a>
         </div>
 
         <div class="mainImage">
-            <a><img src="../../data/productsImages/<%= product.img %>" alt="Principal" height=25px></a>
+            <a><img src="../../images/productsImages/<%= product.img %>" alt="Principal" height=25px></a>
         </div>
 
         <div class="detalleProducto">
@@ -33,7 +33,7 @@
             </section>
 
             <section class="detalle2">
-                <p class="precio"><b><%= product.price %></b></p>
+                <p class="precio"><b>$<%= product.price %></b></p>
                 <a href="#"><p class="opcionesDePago">18 Cuotas sin interés</p></a> <!-- De acá saldrá el PopUp para elegir otros medios de pago -->
 
                 <section class="opcionesCompra">

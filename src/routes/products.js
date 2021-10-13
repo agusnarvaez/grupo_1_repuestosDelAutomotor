@@ -9,14 +9,14 @@ let imagesCounter = '1' /* Variable que en un futuro usaremos para subir más de
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb){
-        cb(null, '../data/productsImages')
+        cb(null, './public/images/productsImages')
     },
     filename: function (req, file, cb){
-        cb(null, (imagesCounter + '_' + req.body.productName +  '.jpg'))
+        cb(null, (imagesCounter + '_' + req.body.name +  '.jpg'))
     }
 })
 
-const productCrud = multer({ storage })
+const productCrud = multer({ storage: storage })
 
 /* *****A página productos**** */
 router.get('/', productController.index);
