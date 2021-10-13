@@ -52,6 +52,62 @@
   "description": "Cigueñal",
   "category": "Motor",
   "price": "1500",
-  "img": "1634085898305.jpg"
+  "img": "1_Correa distribución.jpg"
+ },
+ {
+  "id": 15,
+  "productName": "Intento de subirimagen",
+  "description": "imagen3",
+  "category": "",
+  "price": "99999",
+  "img": "1_Intento de subirimagen.jpg"
+ },
+ {
+  "id": 16,
+  "productName": "intento99",
+  "description": "intento99cargaimagenes",
+  "category": "",
+  "price": "995",
+  "img": "1_intento99.jpg"
+ },
+ {
+  "id": 17,
+  "productName": "intento99",
+  "description": "intento99cargaimagenes",
+  "category": "",
+  "price": "995",
+  "img": "1_intento99.jpg"
+ },
+ {
+  "id": 18,
+  "productName": "intento99",
+  "description": "intento99cargaimagenes",
+  "category": "",
+  "price": "995",
+  "img": "1_intento99.jpg"
+ },
+ {
+  "id": 19,
+  "productName": "intento99",
+  "description": "intento99cargaimagenes",
+  "category": "",
+  "price": "995",
+  "img": "1_intento99.jpg"
+ },
+ {
+  "id": 20,
+  "productName": "intento99",
+  "description": "intento99cargaimagenes",
+  "category": "",
+  "price": "995",
+  "img": "1_intento99.jpg"
+ },
+ {
+  "id": 21,
+  "productName": "intento99",
+  "description": "intento99cargaimagenes",
+  "category": "",
+  "price": "995",
+  "img": "1_intento99.jpg"
  }
 ]

@@ -17,6 +17,7 @@ main {
   width: 70vw;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 /*.product {
   width: ;
@@ -76,8 +77,4 @@ main {
 }
 
 @media (min-width: 481px) {
-
-
-
-
 }
