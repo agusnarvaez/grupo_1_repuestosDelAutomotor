@@ -1,26 +1,27 @@
 [
  {
   "id": "1",
-  "productName": "Producto Ejemplo 1 Editado",
+  "productName": "Producto Ejemplo 1 edited",
   "description": "Descripción del producto ejemplo 1 Editado",
-  "img": "",
   "category": "Categoria ejemplo 1",
-  "price": "999"
+  "price": "1000",
+  "img": "1634018897822.png"
  },
  {
   "id": 2,
+  "productName": "",
   "description": "Producto de ejemplo para probar la carga de imágenes",
   "category": "Motor/Distribución/Correa accesorios",
   "price": "1100",
-  "img": "1_undefined.jpg"
+  "img": "1634018626713.png"
  },
  {
   "id": 3,
+  "productName": "Producto Ejemplo",
   "description": "Producto de ejemplo para probar la carga de imágenes",
   "category": "Motor/Distribución/Correa accesorios",
   "price": "1150",
-  "img": "1_undefined.jpg",
-  "productName": "Producto Ejemplo"
+  "img": "1634018568255.png"
  },
  {
   "id": 4,
@@ -39,74 +40,18 @@
  },
  {
   "id": 6,
-  "productName": "Correa de distribución - Renault Kangoo 1.6",
-  "description": "Es una correa de distribución",
+  "productName": "Distribución",
+  "description": "Distribución",
   "category": "Motor",
-  "price": "1500",
-  "img": "1_Correa de distribución - Renault Kangoo 1.6.jpg"
+  "price": "1555",
+  "img": "1634018344754.png"
  },
  {
   "id": 7,
-  "productName": "Correa de distribución",
-  "description": "Correa distribución",
-  "category": "Motor",
-  "price": "15000",
-  "img": "1_Correa de distribución.jpg"
- },
- {
-  "id": 8,
-  "productName": "Correa distribución",
-  "description": "Correa distrubicón",
-  "category": "Motor",
-  "price": "15000",
-  "img": "1_Correa distribución.jpg"
- },
- {
-  "id": 9,
-  "productName": "Correa distribución",
-  "description": "Correa distrubicón",
-  "category": "Motor",
-  "price": "15000",
-  "img": "1_Correa distribución.jpg"
- },
- {
-  "id": 10,
-  "productName": "Correa distribucion",
-  "description": "Correa distribución",
+  "productName": "Cigueñal Renault Kangoo 1.6",
+  "description": "Cigueñal",
   "category": "Motor",
   "price": "1500",
-  "img": "1_Correa distribucion.jpg"
- },
- {
-  "id": 11,
-  "productName": "Correa distribución",
-  "description": "Correa distribución",
-  "category": "Motor",
-  "price": "1500",
-  "img": "1_Correa distribución.jpg"
- },
- {
-  "id": 12,
-  "productName": "Correa distribución",
-  "description": "Correa distribución",
-  "category": "Motor",
-  "price": "1500",
-  "img": "1_Correa distribución.jpg"
- },
- {
-  "id": 13,
-  "productName": "Correa distribución",
-  "description": "Correa distribución",
-  "category": "Motor",
-  "price": "1500",
-  "img": "1_Correa distribución.jpg"
- },
- {
-  "id": 14,
-  "productName": "Correa distribución",
-  "description": "Correa distribución",
-  "category": "Motor",
-  "price": "1500",
-  "img": "1_Correa distribución.jpg"
+  "img": "1634085898305.jpg"
  }
 ]

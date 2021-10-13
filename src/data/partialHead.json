@@ -1,7 +1,7 @@
 {
     "index": {
         "title": "El rastrojero",
-        "style": "styles.css"
+        "style": "../../css/styles.css"
     },
     "login": {
         "title": "Login",

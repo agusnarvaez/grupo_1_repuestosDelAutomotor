@@ -6,7 +6,7 @@
 <main>
   <h2>Creación de producto</h2>
   <div class="productCrudForm">
-    <form method="POST" action="/products/creation?_method=PUT">
+    <form method="POST" action="/products/creation" enctype="multipart/form-data">
       <div class= "campo">
         <label for="name">Nombre de producto</label> <br>
         <input class="input" name="name" id="name" type="text">
@@ -17,7 +17,7 @@
       </div>
       <div class= "campo">
         <label for="image">Imagen</label> <br>     
-        <input class="inputImage" name="image" id="image" type="file">
+        <input type="file" name="image" class="inputImage"  id="image" >
       </div>
       <div class= "campo">
         <label for="category">Categoría</label> <br>

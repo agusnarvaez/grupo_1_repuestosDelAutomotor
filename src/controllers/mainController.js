@@ -3,7 +3,7 @@ const path = require('path'); //Módulo Path de Express
 const fs = require('fs'); //Solicito módulo de archivos
 
 /* *****Objeto literal que contiene datos para head dinámico ***** */
-let partialHead = JSON.parse(fs.readFileSync("src/controllers/partialHead.json", "utf-8"));
+let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"));
 
 /* *****Controlador principal***** */
 const mainController = {

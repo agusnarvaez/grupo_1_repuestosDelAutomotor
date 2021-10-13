@@ -5,21 +5,19 @@
 
 <body>
     <%- include('../partials/header.ejs') %> <!--Header -->
+    
 <main>
     <%- include('../partials/filter.ejs') %> <!-- Filter -->
-    <section class="sideBar">
-        <div class="tambiénTePuedeInteresar">
-            <h6>También te puede interesar</h6>
-        </div>
-    </section>
 
-    <section class="principal">
-        <section class="selectedProducts">
-            <article class="selectedProduct">
-                <img class ="productimages" src="/images/kitdedistribucion.jpg" alt="product photo">
-                <p class="descriptionProduct">DESCRIPCIÓN PRODUCTO ELEGIDO 1</p>
+    <section class="products">
+        <% products.forEach(product => { %>
+        
+            <article class="product">
+                <img class ="productimages" src="../../../public/images/productos/<%=product.img%>" alt="product photo">
+                <p class="descriptionProduct"><%= product.description %></p>
 
             </article>
+        <% }) %>
     </section>
 
 </main>

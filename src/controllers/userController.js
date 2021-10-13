@@ -5,7 +5,7 @@ const fs = require('fs'); //Solicito módulo de archivos
 const { platform } = require('os')
 
 /* *****Objeto literal que contiene datos para head dinámico ***** */
-let partialHead = JSON.parse(fs.readFileSync("src/controllers/partialHead.json", "utf-8"));
+let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"));
 
 /* Array con los usuarios del sitio */
 const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));
@@ -25,11 +25,9 @@ const userController = {
             password: req.body.password,
             zipCode: req.body.zipCode,
         };
-        console.log(users)
-        console.log(user)
         users.push(user)
-        console.log(users)
-        fs.writeFileSync('src/data/users.json', (JSON.stringify(users)))
+        //console.log(users)
+        fs.writeFileSync('src/data/users.json', (JSON.stringify(users,null," ")))
         res.redirect('../');
     },
     login: function(req,res) { //A página login

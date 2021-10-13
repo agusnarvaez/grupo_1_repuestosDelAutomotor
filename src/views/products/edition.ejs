@@ -6,7 +6,7 @@
 <main>
   <h2>Edición de producto <%= product.id %> </h2>
   <div class="productCrudForm">
-    <form method="POST" action="/products/edition?_method=PUT">
+    <form method="POST" action="/products/edition/<%= product.id%>?_method=PUT" enctype="multipart/form-data">
       <div class= "hiddenCamp productId">
         <input class="hiddenInput productId" name="productId" id="productId" type="text" value="<%= product.id %>">
       </div>
@@ -20,7 +20,7 @@
       </div>
       <div class= "campo">
         <label for="image">Imagen</label> <br>     
-        <input class="inputImage" name="image" id="image" type="file">
+        <input class="inputImage" name="edited-product-image" id="image" type="file">
       </div>
       <div class= "campo">
         <label for="category">Categoría</label> <br>

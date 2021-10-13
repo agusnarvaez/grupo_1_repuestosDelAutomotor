@@ -3,25 +3,24 @@
     <%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head -->
 <body>
     <%- include('../partials/header.ejs') %> <!--Header -->
-    <%- include('../partials/filter.ejs') %> <!--Filter -->
     <main class="mainProductDetail">
         <div class="galery">
-            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 1" ></a>
-            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 2" ></a>
-            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 3" ></a>
-            <a><img src="../../data/productsImages/<% product.img %>" alt="Ej 4" ></a>
+            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 1" ></a>
+            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 2" ></a>
+            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 3" ></a>
+            <a><img src="../../data/productsImages/<%= product.img %>" alt="Ej 4" ></a>
         </div>
 
         <div class="mainImage">
-            <a><img src="../../data/productsImages/<% product.img %>" alt="Principal" height=25px></a>
+            <a><img src="../../images/productos/<%= product.img %>" alt="<%= product.img %>" height=25px></a>
         </div>
 
         <div class="detalleProducto">
             <section class="detalle1">
-                <h4 class="titulo"><i><b><% product.productName %></b></i></h4>
+                <h4 class="titulo"><i><b><%= product.productName %></b></i></h4>
 
                 <section class="envio"> <!-- De acá saldrá el PopUp para elegir otros medios de transporte disponibles -->
-                    <img class="iconoEnvio" src="../images/iconos/free-shipping.png" alt="">
+                    <img class="iconoEnvio" src="../../../images/iconos/free-shipping.png" alt="">
                     <a href="#" class="leyendaEnvio"><p>Envío gratis a domicilio</p></a> 
                 </section>
 
@@ -38,7 +37,7 @@
 
                 <section class="opcionesCompra">
                     <button type="button" class="comprarButton"><b>COMPRAR</b></button> <!-- Botón de comprar (checkout directo)-->
-                    <button type="button" class="iconoCarrito"><img src="../images/iconos/add-to-cart.png" alt=""><b class="iconoCarritoLeyenda">Agregar al carrito</b></button> <!-- Botón de agregar al carrito-->
+                    <button type="button" class="iconoCarrito"><img src="../../../images/iconos/add-to-cart.png" alt=""><b class="iconoCarritoLeyenda">Agregar al carrito</b></button> <!-- Botón de agregar al carrito-->
                 </section>
 
 

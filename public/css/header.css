@@ -31,62 +31,8 @@
 .mainHeaderAuxiliar {
   width: 10%;
 }
-.filtro {
-  background-color: lightgray;
-  padding: 1%;
-  padding-top: 0.5%;
-}
-.filterSelect {
-  padding-bottom: 0.5%;
-}
-.filterSelect p {
-  display: inline-block;
-  text-align: center;
-  margin-left: 42%;
-  font-size: 18px;
-}
-
-.filterSelect img {
-  display: inline-block;
-  height: 20px;
-  margin-left: 36%;
-}
-.search {
-  width: 49%;
-  display: flex;
-  margin: auto;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
-  border-radius: 10px;
-  flex-wrap: wrap;
-  padding: 0.5%;
-  text-align: center;
-  
-}
-.search textarea {
-  display: inline-block;
-  width: 90%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  border: solid 1px rgb(255, 255, 255);
-  border-radius: 5px;
-  color: #666;
-  resize: none;
-  outline: none;
-}
-.search i {
-  width: 10%;
-  padding: auto;
-  margin: auto;
-  text-align: center;
-}
 
 .menu {
-  display: none;
-}
-
-.filtros {
   display: none;
 }
 

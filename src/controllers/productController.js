@@ -5,7 +5,7 @@ const fs = require('fs'); //Solicito módulo de archivos
 const { platform } = require('os')
 
 /* *****Objeto literal que contiene datos para head dinámico ***** */
-let partialHead = JSON.parse(fs.readFileSync("src/controllers/partialHead.json", "utf-8"));
+let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"));
 
 /* Array con los productos del sitio */
 const products = JSON.parse(fs.readFileSync('src/data/products.json', 'utf-8'));
@@ -19,14 +19,15 @@ const productController = {
     register: function (req, res) { //Página de registro de producto
         res.render("./products/creation", { partialHead: partialHead.productCreation });
     },
-    create: function (req, res) { //Creación de producto
-        let newProduct = {
-            id: products.length + 1,
+    create: function (req, res) { //Creación de producto (POST)
+        // console.log(req.file);
+        const newProduct = {
+            id: products[products.length - 1].id + 1,
             productName: req.body.name,
             description: req.body.description,
             category: req.body.category,
             price: req.body.price,
-            img: '1_' + req.body.name + '.jpg',
+            img: req.file.filename
         };
 
         products.push(newProduct);
@@ -40,19 +41,31 @@ const productController = {
         let product = products.find(product => product.id == req.params.id);
         res.render('./products/detail', { partialHead: partialHead.productDetail, product: product });
     },
-    edition: function (req, res) { //Página de edición de producto
+    edition: function (req, res) { //Página de edición de producto (PUT)
         let product = products.find(product => product.id == req.params.id);
         res.render("./products/edition", { partialHead: partialHead.productEdition , product: product});
     },
     edit: function (req, res) { //Edición de producto
-        let product = products.find(product => product.id == req.body.productId);
-        products[product.id - 1].productName = req.body.name,
+        const id = req.body.productId;
+        let productToEdit = products.find(product => product.id == id);
+        /*products[product.id - 1].productName = req.body.name,
         products[product.id - 1].description = req.body.description,
         products[product.id - 1].category = req.body.category,
         products[product.id - 1].price = req.body.price,
-        products[product.id - 1].img = '1_' + req.body.name + '.jpg',
-        fs.writeFileSync('src/data/products.json', (JSON.stringify(products)))
-        res.redirect('./detail/' + product.id);
+        products[product.id - 1].img = '../../images/productos/1_' + req.body.name + '.jpg',*/
+        productToEdit = {
+            id: productToEdit.id,
+            productName: req.body.name,
+            description: req.body.description,
+            category: req.body.category,
+            price: req.body.price,
+            img: req.file ? req.file.filename : productToEdit.img
+        };
+        
+        let newProducts = products;
+        newProducts[id - 1] = productToEdit;
+        fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
+        res.redirect('/products/detail/' + productToEdit.id);
     }
 };
 
