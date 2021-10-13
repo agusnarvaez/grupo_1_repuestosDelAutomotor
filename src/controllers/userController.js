@@ -18,7 +18,7 @@ const userController = {
     create: function (req, res) { //Creación de producto
         let user = {
             id: users.length + 1,
-            name: req.body.name,
+            firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             nickname: req.body.nickname,
@@ -29,7 +29,7 @@ const userController = {
         console.log(user)
         users.push(user)
         console.log(users)
-        fs.writeFileSync('src/data/users.json', (JSON.stringify(users)))
+        fs.writeFileSync('src/data/users.json', (JSON.stringify(users, null, " ")))
         res.redirect('../');
     },
     login: function(req,res) { //A página login
