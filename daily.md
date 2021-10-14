@@ -76,3 +76,26 @@
     * Crear archivo .json de usuario
   * Nico:
     * Crear archivo .json de productos
+
+## 13/10
+* Que se hizo:
+  * Nico:
+    * Implementación creación y edición de productos
+  * Agustín:
+    * Inicio creación página products
+  * Juna Pablo:
+    * Corrección de bugs en código
+* Que se va a hacer:
+  * Agustín:
+    * Arreglar link a imágenes de producto
+    * Cambiar ruta de detalle de producto eliminando el /detail
+    * Resolver conflictos de creación de producto con Nico
+
+  * Juan Pablo:
+    * Iniciar retrospectiva
+    * Agregar botón de EDIT en detail
+    * Agregar botón DELETE en detail
+    * Cambiar métodos PUT a POST en creación de producto y usuario
+    * Actualizar JSON de producto 1
+    * Cambiar creation por create en ruta
+ * Próxima reunión 14/10
