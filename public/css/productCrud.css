@@ -106,7 +106,7 @@ main label{
   justify-content: space-around;
 }
 .button {
-  margin-top: 1%;
+  margin: 1% 10% 0 10%;
   justify-self: center;
   align-items: center;
   font-weight: bold;
@@ -116,7 +116,9 @@ main label{
   border-radius: 5px;
   border: none;
 }
-  
+#delete-button{
+  background-color: rgb(238, 58, 58);
+}
   
   
 input:focus {

@@ -39,6 +39,7 @@ const productController = {
             category: req.body.category,
             price: req.body.price,
             img: req.file.filename
+            /* img: '1_' + req.body.name + '.jpg' */
         };
         products.push(newProduct);
         fs.writeFileSync('src/data/products.json', (JSON.stringify(products, null, " "))); //Se agrega null y " " para que mantenga la estructura de objeto
@@ -56,6 +57,7 @@ const productController = {
         res.render("./products/edition", { partialHead: partialHead.productEdition , product: product});
     },
     edit: function (req, res) { //Edición de producto
+        console.log('2')
         const id = req.body.productId;
         let productToEdit = products.find(product => product.id == id);
         /*products[product.id - 1].productName = req.body.name,
@@ -63,22 +65,40 @@ const productController = {
         products[product.id - 1].category = req.body.category,
         products[product.id - 1].price = req.body.price,
         products[product.id - 1].img = '../../images/productos/1_' + req.body.name + '.jpg',*/
-        /*productToEdit = {
+
+        let fileUpdate = function (imgNew) {
+            if (imgNew) {
+                fs.unlinkSync(('public/images/productsImages/') + productToEdit.img);
+                return imgNew;
+            }
+            else {
+                return productToEdit.img;
+            }
+        }
+        console.log('3');
+        productToEdit = {
             id: productToEdit.id,
             productName: req.body.name,
             description: req.body.description,
             category: req.body.category,
             price: req.body.price,
-            img: req.file ? req.file.filename : productToEdit.img
-        };*/
-        
+            img: /*req.file ?*/ fileUpdate(req.file.filename) /* : productToEdit.img*/
+        };
+        console.log(productToEdit.img);
         let newProducts = products;
         newProducts[id - 1] = productToEdit;
         fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
         res.redirect('/products/detail/' + productToEdit.id);
-        products[product.id - 1].img = '1_' + req.body.name + '.jpg',
-        fs.writeFileSync('src/data/products.json', (JSON.stringify(products, null, " ")))
-        res.redirect('./detail/' + product.id);
+    },
+    delete: function(req, res) {
+        console.log(req.params.id);
+        let newProducts = products;
+        let productToEdit = products.find(product => product.id == req.params.id);
+        
+        newProducts.splice((req.params.id - 1), 1);
+        fs.unlinkSync(('public/images/productsImages/') + productToEdit.img);
+        fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
+        res.redirect('../');
     }
 };
 

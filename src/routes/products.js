@@ -23,7 +23,9 @@ const storage = multer.diskStorage({
         cb(null, './public/images/productsImages')
     },
     filename: function (req, file, cb){
-        cb(null, (imagesCounter + '_' + req.body.name +  '.jpg'))
+        /*cb(null, (imagesCounter + '_' + req.body.name +  '.jpg'))*/
+        /*cb(null, (this.req.file.filename))*/
+        cb(null, (Date.now() + path.extname(file.originalname)));
     }
 })
 
@@ -41,13 +43,15 @@ router.get('/cart', productController.cart);
 router.get('/detail/:id', productController.detail);
 
 /* *****Métodos para registro de producto ***** */
-router.get("/creation", productController.register); /* A página registro de producto */
+router.get("/creation", productController.register); /* A página creación de producto */
 // router.post("/creation", upload.single("image"), productController.create); OJO, DEBERÍA SER POST Y NO PUT/* *****Creación de producto***** */
-router.put("/creation", productCrud.single('image'), productController.create); /* *****Creación de producto***** */
+router.post("/creation", productCrud.single('image'), productController.create); /* *****Creación de producto***** */
 
 /* *****Métodos para edición de producto ***** */
 router.get("/edition/:id", productController.edition); /* A página edición de producto */
 // router.put("/edition/:id", upload.single("edited-product-image"), productController.edit); Generado por AN /* *****Edición de producto***** */
-router.put("/edition", productCrud.single('image'), productController.edit); /* *****Edición de producto***** */
+router.put("/edition/:id", productCrud.single('image'), productController.edit); /* *****Edición de producto***** */
+
+router.delete("/delete/:id", productController.delete)
 
 module.exports = router; // Exportación ruteo

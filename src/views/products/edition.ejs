@@ -20,7 +20,7 @@
       </div>
       <div class= "campo">
         <label for="image">Imagen</label> <br>     
-        <input class="inputImage" name="edited-product-image" id="image" type="file">
+        <input class="inputImage" name="image" id="image" type="file">
       </div>
       <div class= "campo">
         <label for="category">Categoría</label> <br>
@@ -34,6 +34,11 @@
         <input class="button" value="Editar" type="submit">
       </div>
     </form>
+    <form method="POST" action="/products/delete/<%= product.id%>?_method=DELETE" enctype="multipart/form-data">
+        <!--<input class="button" id="delete-button" value="Eliminar" type="submit">-->
+        <button  method="POST" type="submit" class="action-button  button delete">ELIMINAR</button> 
+    </form>
+
 </div>
 </main>
 <%- include('../partials/footer.ejs') %>  <!-- Footer -->

@@ -1,14 +1,6 @@
 [
  {
-  "id": "1",
-  "productName": "Producto Ejemplo 1 edited",
-  "description": "Descripción del producto ejemplo 1 Editado",
-  "category": "Categoria ejemplo 1",
-  "price": "1000",
-  "img": "1634018897822.png"
- },
- {
-  "id": 2,
+  "id": 1,
   "productName": "",
   "description": "Producto de ejemplo para probar la carga de imágenes",
   "category": "Motor/Distribución/Correa accesorios",
@@ -16,7 +8,7 @@
   "img": "1634018626713.png"
  },
  {
-  "id": 3,
+  "id": 2,
   "productName": "Producto Ejemplo",
   "description": "Producto de ejemplo para probar la carga de imágenes",
   "category": "Motor/Distribución/Correa accesorios",
@@ -24,14 +16,14 @@
   "img": "1634018568255.png"
  },
  {
-  "id": 4,
+  "id": 3,
   "description": "Producto Ejemplo para probar la carga de imágenes pt2",
   "category": "Correas de accesorios",
   "price": "1001",
   "img": "1_undefined.jpg"
  },
  {
-  "id": 5,
+  "id": 4,
   "productName": "Intento 1000",
   "description": "Producto de prueba 1000",
   "category": "",
@@ -40,14 +32,6 @@
  },
  {
   "id": 6,
-  "productName": "Distribución",
-  "description": "Distribución",
-  "category": "Motor",
-  "price": "1555",
-  "img": "1634018344754.png"
- },
- {
-  "id": 7,
   "productName": "Cigueñal Renault Kangoo 1.6",
   "description": "Cigueñal",
   "category": "Motor",
@@ -55,83 +39,33 @@
   "img": "1_Correa distribución.jpg"
  },
  {
-  "id": 15,
-  "productName": "Intento de subirimagen",
-  "description": "imagen3",
-  "category": "",
-  "price": "99999",
-  "img": "1_Intento de subirimagen.jpg"
+  "id": 7,
+  "productName": "Kit distribución Berlingo",
+  "description": "Kit de distribución Dayco KTB417 p/ Citroen Berlingo ",
+  "category": "Kits de correa de distribución",
+  "price": "13150a",
+  "img": "aa"
  },
  {
-  "id": 16,
-  "productName": "intento99",
-  "description": "intento99cargaimagenes",
-  "category": "",
-  "price": "995",
-  "img": "1_intento99.jpg"
+  "id": 8,
+  "productName": "Kit distribución Berlingo",
+  "description": "Kit de distribución Dayco KTB417 p/ Citroen Berlingo ",
+  "category": "Kits de correa de distribución",
+  "price": "13150"
  },
  {
-  "id": 17,
-  "productName": "intento99",
-  "description": "intento99cargaimagenes",
-  "category": "",
-  "price": "995",
-  "img": "1_intento99.jpg"
+  "id": 9,
+  "productName": "aaaaa",
+  "description": "aaaa",
+  "category": "Correa de distribución",
+  "price": "3605"
  },
  {
-  "id": 18,
-  "productName": "intento99",
-  "description": "intento99cargaimagenes",
-  "category": "",
-  "price": "995",
-  "img": "1_intento99.jpg"
- },
- {
-  "id": 19,
-  "productName": "intento99",
-  "description": "intento99cargaimagenes",
-  "category": "",
-  "price": "995",
-  "img": "1_intento99.jpg"
- },
- {
-  "id": 20,
-  "productName": "intento99",
-  "description": "intento99cargaimagenes",
-  "category": "",
-  "price": "995",
-  "img": "1_intento99.jpg"
- },
- {
-  "id": 21,
-  "productName": "intento99",
-  "description": "intento99cargaimagenes",
-  "category": "",
-  "price": "995",
-  "img": "1_intento99.jpg"
- },
- {
-  "id": 22,
-  "productName": "product1",
-  "description": "product1",
-  "category": "Category",
-  "price": "9191",
-  "img": "1_product1.jpg"
- },
- {
-  "id": 23,
-  "productName": "product1",
-  "description": "product1",
-  "category": "Category",
-  "price": "9191",
-  "img": "1_product1.jpg"
- },
- {
-  "id": 24,
-  "productName": "testproduct123",
-  "description": "Producto Prueba",
-  "category": "",
-  "price": "11100",
-  "img": "1_testproduct123.jpg"
+  "id": 10,
+  "productName": "Cigueñal",
+  "description": "Cigueñal12",
+  "category": "Cigueñales",
+  "price": "3505",
+  "img": "1634603962254.jpg"
  }
 ]
