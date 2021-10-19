@@ -14,10 +14,33 @@ main {
 }
 
 .products {
-  width: 70vw;
+  width: 70%;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.product {
+  padding: 1%;
+  width: 30%;
+  background-color: #666;
+  text-align: center;
+  margin: 1%;
+  border-radius: 10px;
+}
+.product h1 {
+  padding: 1%;
+}
+.image {
+  display: flex;
+  margin: auto;
+  min-height: 50%;
+  align-items: center;
+  justify-content: center;
+}
+.image img {
+  max-width: 150px;
+  margin: auto;
+  padding: auto;
 }
 /*.product {
   width: ;

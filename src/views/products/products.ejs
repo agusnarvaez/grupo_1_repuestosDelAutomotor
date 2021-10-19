@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head -->
+<%- include('../partials/head.ejs', {partialHead: partialHead}) %>
+<!-- Head -->
 
 <body>
-    <%- include('../partials/header.ejs') %> <!--Header -->
-    
-<main>
-    <%- include('../partials/filter.ejs') %> <!-- Filter -->
+  <%- include('../partials/header.ejs') %>
+  <!--Header -->
+
+  <main>
+    <%- include('../partials/filter.ejs') %>
+    <!-- Filter -->
 
     <section class="products">
-        <% products.forEach(product => { %>
-        
-            <article class="product">
-                <img class ="productimages" src="../../../public/images/productos/<%=product.img%>" alt="product photo">
-                <p class="descriptionProduct"><%= product.description %></p>
+      <% products.forEach(product => { %>
+      <article class="product" href="/products/detail/<%= product.id %>">
+        <h1><%= product.productName %></h1>
+        <div class="image">
+          <img class="productimages" src="./images/productsImages/<%=product.img%>" alt="<%=product.img%>">
+        </div>
+        <p class="descriptionProduct"><%= product.description %></p>
 
-            </article>
-        <% }) %>
+      </article>
+      <% }) %>
     </section>
 
-</main>
+  </main>
 
-<%- include('../partials/footer.ejs') %> <!--Footer  -->
+  <%- include('../partials/footer.ejs') %>
+  <!--Footer  -->
 </body>
+
 </html>
