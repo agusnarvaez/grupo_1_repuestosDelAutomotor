@@ -39,3 +39,24 @@ Ayudarnos mutuamente cuando nos trabamos en algo.
 
 _More of:_
 Realizar ciertos trabajos específicos de forma colaborativa.
+
+## :star:SPRINT 3
+
+_Start Doing:_
+Comenzar a mejorar el estilo de la página, mediante la aplicación de transiciones, animaciones, mejora en las imágenes y colores.
+Incorporar página con el listado de todos los productos.
+
+_Stop Doing:_
+
+
+_Less Of:_
+Utilizar medidas fijas en css.
+
+_Keep Doing:_
+Ayudarnos mutuamente cuando nos trabamos en algo.
+Comentar los códigos.
+
+
+_More of:_
+Realizar ciertos trabajos específicos de forma colaborativa.
+Pasar las reuniones de semanales a dailys.
