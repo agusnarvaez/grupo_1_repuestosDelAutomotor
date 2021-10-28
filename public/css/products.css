@@ -3,6 +3,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  color: black;
+  
+  
 }
 
 main {
@@ -14,6 +18,7 @@ main {
 }
 
 .products {
+  
   width: 70%;
   display: flex;
   justify-content: space-around;
@@ -22,7 +27,7 @@ main {
 .product {
   padding: 1%;
   width: 30%;
-  background-color: #666;
+  background-color: white;
   text-align: center;
   margin: 1%;
   border-radius: 10px;

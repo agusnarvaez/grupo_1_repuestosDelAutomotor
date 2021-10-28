@@ -26,7 +26,7 @@ const userController = {
             zipCode: req.body.zipCode,
         };
         users.push(user)
-        //console.log(users)
+        
         fs.writeFileSync('src/data/users.json', (JSON.stringify(users,null," ")))
         res.redirect('../');
     },

@@ -22,7 +22,7 @@ const productController = {
     },
 /*  **** Generado por AN ****  
     create: function (req, res) { //Creación de producto (POST)
-        // console.log(req.file);
+        
         const newProduct = {
             id: products[products.length - 1].id + 1,*/
     create: function (req, res, next) { //Creación de producto
@@ -33,7 +33,7 @@ const productController = {
             return next(error)
         }
         let newProduct = {
-            id: products.length + 1,
+            id: products[products.length - 1].id + 1,
             productName: req.body.name,
             description: req.body.description,
             category: req.body.category,
@@ -57,7 +57,7 @@ const productController = {
         res.render("./products/edition", { partialHead: partialHead.productEdition , product: product});
     },
     edit: function (req, res) { //Edición de producto
-        console.log('2')
+       
         const id = req.body.productId;
         let productToEdit = products.find(product => product.id == id);
         /*products[product.id - 1].productName = req.body.name,
@@ -75,7 +75,7 @@ const productController = {
                 return productToEdit.img;
             }
         }
-        console.log('3');
+        
         productToEdit = {
             id: productToEdit.id,
             productName: req.body.name,
@@ -84,21 +84,21 @@ const productController = {
             price: req.body.price,
             img: /*req.file ?*/ fileUpdate(req.file.filename) /* : productToEdit.img*/
         };
-        console.log(productToEdit.img);
+        
         let newProducts = products;
         newProducts[id - 1] = productToEdit;
         fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
         res.redirect('/products/detail/' + productToEdit.id);
     },
     delete: function(req, res) {
-        console.log(req.params.id);
+        
         let newProducts = products;
         let productToEdit = products.find(product => product.id == req.params.id);
         
         newProducts.splice((req.params.id - 1), 1);
-        fs.unlinkSync(('public/images/productsImages/') + productToEdit.img);
+        (('public/images/productsImages/') + productToEdit.img);
         fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
-        res.redirect('../');
+        res.redirect('..');
     }
 };
 
