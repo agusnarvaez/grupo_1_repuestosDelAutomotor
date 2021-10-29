@@ -16,5 +16,15 @@
   "nickname": "Maceta",
   "password": "123456",
   "zipCode": "1425"
+ },
+ {
+  "id": 3,
+  "firstName": "Nicolás",
+  "lastName": "Di Renzo",
+  "email": "correo@correo.com.ar",
+  "nickname": "nicodirenz0",
+  "password": "$2a$10$Koqdbsyrbl83FJBQnFxdLOY7jNmET13jcYSCYNx.4d5JQQRGnC4le",
+  "zipCode": "1605",
+  "img": "1635531554940.png"
  }
 ]

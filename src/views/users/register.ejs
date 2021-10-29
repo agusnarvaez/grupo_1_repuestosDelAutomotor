@@ -8,7 +8,7 @@
 <main>
    <h2>Registre su cuenta</h2>
    <div class="registerForm">
-      <form class="form" action="/user/register?_method=PUT" method="POST">          
+      <form class="form" action="/user/register" method="POST" enctype="multipart/form-data">          
          <div class= "campo"> 
             <label for="firstName">Nombre</label> <br>
             <input class="input" type="text" name="firstName"  placeholder="  Ingrese su nombre" id="firstName" required>
@@ -20,6 +20,10 @@
          <div class= "campo">
             <label for="zipCode">Código Postal</label> <br>
             <input class="input" type="text" name="zipCode" placeholder="  Ingrese su código postal" id="codigoPostal" required>
+         </div>
+         <div class= "campo">
+            <label for="image">Imagen de perfil</label> <br>     
+            <input type="file" name="image" class="inputImage"  id="image" >
          </div>
          <div class= "campo">
             <label for="email">Email</label> <br>

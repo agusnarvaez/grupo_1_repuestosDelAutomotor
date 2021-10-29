@@ -4,6 +4,8 @@ const fs = require('fs'); //Solicito módulo de archivos
 
 const { platform } = require('os')
 
+const bcrypt = require('bcryptjs');
+
 /* *****Objeto literal que contiene datos para head dinámico ***** */
 let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"));
 
@@ -16,14 +18,16 @@ const userController = {
         res.render('./users/register', { partialHead: partialHead.register });
     },
     create: function (req, res) { //Creación de producto
+        let file = req.file
         let user = {
-            id: users.length + 1,
+            id: users[users.length - 1].id + 1,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
             nickname: req.body.nickname,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password, 10),
             zipCode: req.body.zipCode,
+            img: req.file.filename,
         };
         users.push(user)
         

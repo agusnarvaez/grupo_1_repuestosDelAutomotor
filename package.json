@@ -4,6 +4,7 @@
   "description": "\\*Agustín Narvaez:\r Vivo en Gral San Martín, tengo 26 años, trabajo en Siemens en el sector Mobility que se encarga de proyectos de electrificación y señalamiento ferroviario. Actualmente además del curso de Digital House estoy estudiando Tecnicatura Universitaria en Programación Informática en la UNSAM.",
   "main": "app.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-validator": "^6.12.2",
