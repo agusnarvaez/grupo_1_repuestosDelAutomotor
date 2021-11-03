@@ -64,9 +64,8 @@ const userController = {
             }
 
             console.log(req.body.remember)
-        }
-    }*/
-   
+        }*/
+    }
 };
 
 module.exports = userController; // Exportación de controlador de usuario
