@@ -6,6 +6,9 @@ const { platform } = require('os')
 
 const bcrypt = require('bcryptjs');
 
+const { validationResult } = require('express-validator')
+
+
 /* *****Objeto literal que contiene datos para head dinámico ***** */
 let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"));
 
@@ -18,6 +21,16 @@ const userController = {
         res.render('./users/register', { partialHead: partialHead.register });
     },
     create: function (req, res) { //Creación de producto
+        
+        const resultValidation = validationResult(req);
+        
+        
+
+        if (resultValidation.errors.length > 0){
+            return res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body})
+
+        }
+
         let file = req.file
         let user = {
             id: users[users.length - 1].id + 1,

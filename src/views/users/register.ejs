@@ -11,35 +11,78 @@
       <form class="form" action="/user/register" method="POST" enctype="multipart/form-data">          
          <div class= "campo"> 
             <label for="firstName">Nombre</label> <br>
-            <input class="input" type="text" name="firstName"  placeholder="  Ingrese su nombre" id="firstName" required>
+            <input class="input" type="text" name="firstName"  placeholder="  Ingrese su nombre" id="firstName" value = "<%= locals.oldData ? oldData.firstName : null %>" >
+            <% if (locals.errors && errors.firstName){  %> 
+               <div class="text-danger">
+                  <%= errors.firstName.msg %>
+               </div>
+            <% } %>
          </div>
+          
          <div class= "campo">
             <label for="lastName">Apellido</label> <br>
-            <input class="input" type="text" name="lastName" placeholder="  Ingrese su apellido" id="apellido" required>
+            <input class="input" type="text" name="lastName" placeholder="  Ingrese su apellido" id="apellido" value = "<%= locals.oldData ? oldData.lastName : null %>" >
+            <% if (locals.errors && errors.lastName){  %> 
+               <div class="text-danger">
+                  <%= errors.lastName.msg %>
+               </div>
+            <% } %>
          </div>
+         
          <div class= "campo">
             <label for="zipCode">Código Postal</label> <br>
-            <input class="input" type="text" name="zipCode" placeholder="  Ingrese su código postal" id="codigoPostal" required>
+            <input class="input" type="text" name="zipCode" placeholder="  Ingrese su código postal" id="codigoPostal" value = "<%= locals.oldData ? oldData.zipCode : null %>" >
+            <% if (locals.errors && errors.zipCode){  %> 
+               <div class="text-danger">
+                  <%= errors.zipCode.msg %>
+   
+               </div>
+            <% } %>
          </div>
          <div class= "campo">
             <label for="image">Imagen de perfil</label> <br>     
             <input type="file" name="image" class="inputImage"  id="image" >
+            <% if (locals.errors && errors.image){  %> 
+               <div class="text-danger">
+                  <%= errors.image.msg %>
+               </div>
+            <% } %>
          </div>
          <div class= "campo">
             <label for="email">Email</label> <br>
-            <input class="input" type="email" name="email" placeholder="  email@correo.com" id="email" required>
+            <input class="input" type="text" name="email" placeholder="  email@correo.com" id="email" value = "<%= locals.oldData ? oldData.email : null %>" >
+            <% if (locals.errors && errors.email){  %> 
+               <div class="text-danger">
+                  <%= errors.email.msg %>
+               </div>
+            <% } %>
          </div>
          <div class= "campo">
             <label for="nickname">Usuario</label> <br>
-            <input class="input" type="text" name="nickname" placeholder="  Elija un nombre de usuario" id="usuario" required>
+            <input class="input" type="text" name="nickname" placeholder="  Elija un nombre de usuario" id="usuario" value = "<%= locals.oldData ? oldData.nickname : null %>" >
+            <% if (locals.errors && errors.nickname){  %> 
+               <div class="text-danger">
+                  <%= errors.nickname.msg %>
+               </div>
+            <% } %>
          </div>
          <div class= "campo">
             <label for="password">Contraseña</label> <br>
-            <input class="input" type="password" name="password" placeholder="  ***********" id="contraseña" required>
+            <input class="input" type="password" name="password"  id="contraseña" >
+            <% if (locals.errors && errors.password){  %> 
+               <div class="text-danger">
+                  <%= errors.password.msg %>
+               </div>
+            <% } %>
          </div>
          <div class= "campo">
             <label for="repeatPassword">Repetir contraseña</label> <br>
-            <input class="input" type="password" name="repeatPassword" placeholder="  ***********" id="repetirContraseña"required>
+            <input class="input" type="password" name="repeatPassword" id="repetirContraseña">
+            <% if (locals.errors && errors.repeatPassword){  %> 
+               <div class="text-danger">
+                  <%= errors.repeatPassword.msg %>
+               </div>
+            <% } %>
          </div>
          <div class="checkbox campo">
             <input  type="checkbox" >

@@ -5,26 +5,28 @@
   "lastName": "Narvaez",
   "email": "agus.narvaez@outlook.com",
   "nickname": "Agus",
-  "password": "123456",
-  "zipCode": "1653"
+  "password": "$2a$10$j2exIjfT7qLVY7Q.C9/ireGVxfxsL4qC7oz2UNwtKlgTKnr7GzG42",
+  "zipCode": "1653",
+  "img": "1635958088645.jpg"
  },
  {
   "id": 2,
   "firstName": "Juan Pablo",
   "lastName": "Carta",
   "email": "juanpcarta@gmail.com",
-  "nickname": "Maceta",
-  "password": "123456",
-  "zipCode": "1425"
+  "nickname": "Juan",
+  "password": "$2a$10$s6nyMNt4ajvHr0RUmZTj1.EucfVXOSitkqLvQm9lmjNe3I9iBPhqO",
+  "zipCode": "1425",
+  "img": "1635958175306.jpg"
  },
  {
   "id": 3,
   "firstName": "Nicolás",
   "lastName": "Di Renzo",
-  "email": "correo@correo.com.ar",
-  "nickname": "nicodirenz0",
-  "password": "$2a$10$Koqdbsyrbl83FJBQnFxdLOY7jNmET13jcYSCYNx.4d5JQQRGnC4le",
+  "email": "nicodirenzo@gmail.com",
+  "nickname": "Nico",
+  "password": "$2a$10$DJl57omVzoqYfngIatJROOW2rK2QvWQ/OvtJzY.rbpL6bjbv94Y62",
   "zipCode": "1605",
-  "img": "1635531554940.png"
+  "img": "1635958242689.jpg"
  }
 ]

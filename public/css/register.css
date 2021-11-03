@@ -62,6 +62,13 @@ main label{
   margin-bottom: 4%;
 }
 
+.text-danger{
+
+  color: red;
+  font-weight: bold;
+}
+ 
+
 .buttons{
   margin-top: 6%;
   justify-self: center;
