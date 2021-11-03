@@ -12,6 +12,9 @@ app.use(express.static(publicPath));
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
+//Habilitamos las session de la página 
+const session = require('express-session')
+app.use(session( {secret: "El Rastrojero"}))
 
 app.listen(host, () => { //Corremos el servidor indicado en la variable host
     console.log('Servidor corriendo => http://localhost:'+host+'/');
@@ -37,8 +40,6 @@ app.use('/', mainRoutes); //A rutas principales
 app.use('/user', userRoutes) //A rutas de usuarios
 
 app.use('/products', productRoutes); //A rutas de productos
-
-
 /* 
 
 

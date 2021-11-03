@@ -7,9 +7,8 @@ let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8
 
 /* *****Controlador principal***** */
 const mainController = {
-
     index: function (req, res) { //A página index
-        res.render('index', { partialHead: partialHead.index });
+        res.render('index', { partialHead: partialHead.index});
     }
 };
 

@@ -28,5 +28,15 @@
   "password": "$2a$10$DJl57omVzoqYfngIatJROOW2rK2QvWQ/OvtJzY.rbpL6bjbv94Y62",
   "zipCode": "1605",
   "img": "1635958242689.jpg"
+ },
+ {
+  "id": 4,
+  "firstName": "testNombre",
+  "lastName": "testApellido",
+  "email": "nicolas.direnzo@proadistribuciones.com.ar",
+  "nickname": "nicolas.direnzo@proadistribuciones.com.ar",
+  "password": "$2a$10$15ChmWv/rSWEp7h6FnRpiekj/gQiHoGRhDUyuNDJEHVe.2aJ7XXeu",
+  "zipCode": "1600",
+  "img": "1635967003080.png"
  }
 ]

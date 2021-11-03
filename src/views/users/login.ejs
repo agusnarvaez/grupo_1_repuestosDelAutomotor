@@ -6,10 +6,14 @@
     <main>
         <h2>Ingresá a tu cuenta!</h2>
         <div class="loginForm">
-            <form action="" method=""> <!-- Formulario para loguearse -->
-                <input class="campo" type="text" name="nombreUsuari@" id="nombreUsuari@" placeholder="Ingrese su nombre de usuario o mail" required><br> <!-- Nombre de usuario-->
+            <form action="/user/login" method="POST" enctype="multipart/form-data"> <!-- Formulario para loguearse -->
+                <input class="campo" type="text" name="usuario" id="usuario" placeholder="Ingrese su nombre de usuario o mail" required><br> <!-- Nombre de usuario-->
                 <input class="campo" type="password" placeholder="Ingrese su contraseña" required><br> <!-- Contraseña -->
-                <button class="submit" type="submit" formaction="/">ENVIAR</button><br> <!-- Boton de acceso -->
+                <div class="checkbox">
+                    <input  type="checkbox" name="remember">
+                    <label class="radio">¿Recordar usuario? </label>
+                </div>
+                <button class="submit" type="submit">INICIAR</button><br> <!-- Boton de acceso -->
             </form>
             <h5>¿Aún no te registraste?</h5>
             <h5><a class="loginFormRegister" href="/user/register">Registrate aquí</a></h5> <!-- A página de registro de usuario -->

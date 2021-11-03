@@ -58,6 +58,7 @@ router.post('/register', userCrud.single('image'), validations, userController.c
 
 /* *****A página login***** */
 router.get('/login', userController.login);
+router.post('/login', userController.logprocess)
 
 
 
