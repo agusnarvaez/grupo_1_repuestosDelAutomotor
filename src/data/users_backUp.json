@@ -1,0 +1,52 @@
+[
+ {
+  "id": 1,
+  "firstName": "Agustín",
+  "lastName": "Narvaez",
+  "email": "agus.narvaez@outlook.com",
+  "nickname": "Agus",
+  "password": "$2a$10$j2exIjfT7qLVY7Q.C9/ireGVxfxsL4qC7oz2UNwtKlgTKnr7GzG42",
+  "zipCode": "1653",
+  "img": "1635958088645.jpg"
+ },
+ {
+  "id": 2,
+  "firstName": "Juan Pablo",
+  "lastName": "Carta",
+  "email": "juanpcarta@gmail.com",
+  "nickname": "Juan",
+  "password": "$2a$10$s6nyMNt4ajvHr0RUmZTj1.EucfVXOSitkqLvQm9lmjNe3I9iBPhqO",
+  "zipCode": "1425",
+  "img": "1635958175306.jpg"
+ },
+ {
+  "id": 3,
+  "firstName": "Nicolás",
+  "lastName": "Di Renzo",
+  "email": "nicodirenzo@gmail.com",
+  "nickname": "Nico",
+  "password": "$2a$10$DJl57omVzoqYfngIatJROOW2rK2QvWQ/OvtJzY.rbpL6bjbv94Y62",
+  "zipCode": "1605",
+  "img": "1635958242689.jpg"
+ },
+ {
+  "id": 4,
+  "firstName": "testNombre",
+  "lastName": "testApellido",
+  "email": "nicolas.direnzo@proadistribuciones.com.ar",
+  "nickname": "nicolas.direnzo@proadistribuciones.com.ar",
+  "password": "$2a$10$15ChmWv/rSWEp7h6FnRpiekj/gQiHoGRhDUyuNDJEHVe.2aJ7XXeu",
+  "zipCode": "1600",
+  "img": "1635967003080.png"
+ },
+ {
+  "id": 5,
+  "firstName": "Agustin",
+  "lastName": "Narvaez",
+  "email": "agus@hotmail.com",
+  "nickname": "anarvaez",
+  "password": "$2a$10$DFQ5HRj4x0i94D9oLBUuPufpwDejEJpsvZsRVBJrFG1rrb8SIAXGS",
+  "zipCode": "1653",
+  "img": "1635980704572.jpg"
+ }
+]
