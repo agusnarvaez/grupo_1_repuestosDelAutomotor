@@ -24,7 +24,7 @@ const validations = [
     body('repeatPassword').notEmpty().withMessage('Debes repetir la contraseña'),
     body('image').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', 'jpeg'];
+        let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
 
         if (!file) {
             throw new Error('Tienes que subir una imagen');
