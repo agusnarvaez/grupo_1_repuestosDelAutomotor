@@ -40,8 +40,12 @@ const userController = {
         }
         //Chequeo si el usuario existe
         else if (users.find(user => (user.email == req.body.email)) != undefined) {
-            console.log('El usuario existe')
-            res.send('Su usuario ya existe');
+            res.render('./users/register', {
+                partialHead: partialHead.register,
+                errors: { email: { msg: 'Este email ya está registrado' } },
+                oldData: req.body
+            })
+            //res.send('Su usuario ya existe');
         }
         /**Si están todos los campos, y el usuario no existe, se crea**/
         else {
