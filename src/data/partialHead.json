@@ -11,6 +11,10 @@
         "title": "Register",
         "style": "../css/register.css"
     },
+    "profile": {
+        "title": "Profile",
+        "style": "../css/profile.css"
+    },
     "productDetail": {
         "title": "Product Detail",
         "style": "../../css/productDetail.css"

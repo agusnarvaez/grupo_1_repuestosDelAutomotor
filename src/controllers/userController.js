@@ -18,7 +18,7 @@ const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));
 /* *****Controlador de usuario***** */
 const userController = {
     register: function (req, res) { //A página register
-        res.render('./users/register', { partialHead: partialHead.register });
+        res.render('./users/register', { partialHead: partialHead.register, user: undefined });
     },
     create: function (req, res) { //Creación de producto
 
@@ -36,14 +36,15 @@ const userController = {
         }
         //Validación del formulario
         if (resultValidation.errors.length > 0) {
-            return res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body })
+            return res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body, user: undefined })
         }
         //Chequeo si el usuario existe
         else if (users.find(user => (user.email == req.body.email)) != undefined) {
             res.render('./users/register', {
                 partialHead: partialHead.register,
                 errors: { email: { msg: 'Este email ya está registrado' } },
-                oldData: req.body
+                oldData: req.body,
+                user: undefined
             })
             //res.send('Su usuario ya existe');
         }
@@ -69,7 +70,7 @@ const userController = {
     },
     login: function (req, res) { //A página login
         console.log(req.session);
-        res.render('./users/login', { partialHead: partialHead.login });
+        res.render('./users/login', { partialHead: partialHead.login, user: undefined });
     },
     logprocess: function (req, res) {
         let loginValidation = validationResult(req);
@@ -80,7 +81,7 @@ const userController = {
             //console.log(loginValidation.mapped());
             //console.log(req.body.user);
             console.log('Hola');
-            res.render('./users/login', { partialHead: partialHead.login, errors: loginValidation.mapped(), oldData: req.body });
+            res.render('./users/login', { partialHead: partialHead.login, errors: loginValidation.mapped(), oldData: req.body, user: undefined });
         }
 
         /*** Si el formulario está OK, Chequeamos si el mail está en nuestra base de datos***/
@@ -88,7 +89,8 @@ const userController = {
 
             res.render('./users/login', {
                 partialHead: partialHead.login,
-                errors: { user: { msg: 'Este email no está registrado' } }
+                errors: { user: { msg: 'Este email no está registrado' } },
+                user: undefined
             });
         }
         /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
@@ -102,7 +104,8 @@ const userController = {
         else {
             res.render('./users/login', {
                 partialHead: partialHead.login,
-                errors: { user: { msg: 'Las credenciales son inválidas' } }
+                errors: { user: { msg: 'Las credenciales son inválidas' } },
+                user: undefined
             });
         }
         /*let logindata = {
@@ -120,6 +123,11 @@ const userController = {
 
             console.log(req.body.remember)
         }*/
+    },
+    profile: (req, res) => {
+        let user = req.session.userLogged;
+        delete user.password;
+        res.render('./users/profile', { partialHead: partialHead.profile, user })
     },
     deleteUser: (req, res) => {
         let allUsers = users;

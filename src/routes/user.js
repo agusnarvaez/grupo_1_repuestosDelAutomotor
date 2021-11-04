@@ -56,6 +56,7 @@ const registerValidation = [ //Array de validaciones de registro
 const loginValidation = require('../middlewares/logInValidationMiddleware');
 
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 /* *****A página register***** */
 router.get('/register', guestMiddleware, userController.register);
@@ -65,6 +66,6 @@ router.post('/register', userCrud.single('image'), registerValidation, userContr
 router.get('/login', guestMiddleware, userController.login);
 router.post('/login', loginValidation, userController.logprocess)
 
-
+router.get('/profile', authMiddleware, userController.profile);
 
 module.exports = router; // Exportación ruteo
