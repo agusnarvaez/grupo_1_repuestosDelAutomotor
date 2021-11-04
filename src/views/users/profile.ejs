@@ -7,7 +7,8 @@
   <%- include('../partials/header.ejs') %>
   <!--Header -->
   <main>
-    <h1>Bienvenido <%= user.firstName +' ' + user.lastName %> </h1>
+    <h1>Bienvenido <%= user.firstName +' ' + user.lastName %> </h1><br>
+    <h5><a href='/user/logout'>Logout</a></h5>
     <img>
   </main>
   <%- include('../partials/footer.ejs') %>

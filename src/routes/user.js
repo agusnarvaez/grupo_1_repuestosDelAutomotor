@@ -66,6 +66,8 @@ router.post('/register', userCrud.single('image'), registerValidation, userContr
 router.get('/login', guestMiddleware, userController.login);
 router.post('/login', loginValidation, userController.logprocess)
 
+/* ****A página de perfil de usuario ***** */
 router.get('/profile', authMiddleware, userController.profile);
+router.get('/logout', userController.logout);
 
 module.exports = router; // Exportación ruteo

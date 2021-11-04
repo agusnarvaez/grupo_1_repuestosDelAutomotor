@@ -2,7 +2,7 @@ const express = require('express'); // Requerimos Express
 const app = express(); //Generamos app de express
 const host = 5000; //Establezco host a utilizar
 const path = require('path'); // Requerimos módulo Path
-
+const cookies = require('cookie-parser'); //Llamo al módulo para armar cookies
 /***Armamos el enlace público***/
 const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
@@ -26,7 +26,18 @@ app.use(session({ //Se pasa como middleware de APLICACIÓN
     resave: false,  //Propiedad resave
     saveUninitialized: false //Propiedad saveUninitialized
 }));
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
+/**Implementación global cookies ***/
+app.use(cookies());
+
+app.use(userLoggedMiddleware);
+
+
+
+/****** Configuración para CRUD ******/
+app.use(express.urlencoded({ extended: false })); //Se indica a la aplicación que todo lo que recibamos proveniente de un formulario lo capture en forma de objeto literal
+app.use(express.json()); //Nos permite convertir el objeto literal de la línea anterior a un formto JSON, si es que así lo queremos
 
 /***Corremos el servidor indicado en la variable host***/
 app.listen(host, () => {
@@ -34,9 +45,7 @@ app.listen(host, () => {
 });
 
 
-/****** Configuración para CRUD ******/
-app.use(express.urlencoded({ extended: false })); //Se indica a la aplicación que todo lo que recibamos proveniente de un formulario lo capture en forma de objeto literal
-app.use(express.json()); //Nos permite convertir el objeto literal de la línea anterior a un formto JSON, si es que así lo queremos
+
 
 
 /****** Solicitud Rutas ******/

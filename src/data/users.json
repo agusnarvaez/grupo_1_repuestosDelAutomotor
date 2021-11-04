@@ -43,70 +43,20 @@
   "id": 5,
   "firstName": "Agustin",
   "lastName": "Narvaez",
-  "email": "agus@hotmail.com",
-  "nickname": "anarvaez",
-  "password": "$2a$10$DFQ5HRj4x0i94D9oLBUuPufpwDejEJpsvZsRVBJrFG1rrb8SIAXGS",
-  "zipCode": "1653",
-  "img": "1635980704572.jpg"
+  "email": "agus@gmail.com",
+  "nickname": "agus@gmail.com",
+  "password": "$2a$10$gMtGJQnB3vtCXUgv5tTrvOia3WjsfYhpeX0atDGplCkw5piQtony2",
+  "zipCode": "1234",
+  "img": "1636014957597.jpg"
  },
  {
   "id": 6,
-  "firstName": "agus",
-  "lastName": "narvaez",
-  "email": "juan@hotmail.com",
-  "nickname": "juan",
-  "password": "$2a$10$.III1Qw.Kq4stu56FAfb9.N0WxvGIsaRumXD79grD5D.dPKS01.2S",
-  "zipCode": "1653",
-  "img": "1635990962138.jpg"
- },
- {
-  "id": 7,
-  "firstName": "juan",
-  "lastName": "perez",
-  "email": "perez@hotmail.com",
-  "nickname": "perez",
-  "password": "$2a$10$.f/4dVkZOD42.fJP5Fpk8ujLdy01Dt6BHAHX61i9pc7sjlbRJrQ2e",
-  "zipCode": "1234",
-  "img": "1635991079631.jpg"
- },
- {
-  "id": 8,
-  "firstName": "agustin",
-  "lastName": "narvaez",
-  "email": "narvaez@gmail.com",
-  "nickname": "narvez",
-  "password": "$2a$10$iwDGKYSEXZcQBiHUW6nr4e4udjghtv/CULLa6aG85UOscKJtqieLC",
-  "zipCode": "1654",
-  "img": "1635991221854.jpg"
- },
- {
-  "id": 9,
-  "firstName": "pedro",
-  "lastName": "perez",
-  "email": "pedro@hotmail.com",
-  "nickname": "pedro",
-  "password": "$2a$10$YmtRpkaRVT23wmliezTqIumGO1ny6Ay4ZuWfdLKUPRLkAjnayJnr.",
-  "zipCode": "1234",
-  "img": "1635991328923.jpg"
- },
- {
-  "id": 10,
-  "firstName": "maria",
-  "lastName": "rodriguez",
-  "email": "maria@hotmail.com",
-  "nickname": "maria",
-  "password": "$2a$10$7O9LvkrIxXqF9b6emKzD7eTDQ2jpeWuJxrno3TqL1VDsN/f3T2k6y",
-  "zipCode": "1234",
-  "img": "1635991786419.jpg"
- },
- {
-  "id": 11,
-  "firstName": "sebastian",
-  "lastName": "leon",
-  "email": "sebastian@hotmail.com",
-  "nickname": "seba",
-  "password": "$2a$10$eJvkQ6Q2GXk9ld7jRrSj3uPxSMEMP/AMjCBVheu1NPAH2evxl8Am6",
-  "zipCode": "1234",
-  "img": "1635992516225.jpg"
+  "firstName": "Agustin",
+  "lastName": "Narvaez",
+  "email": "agus@hotmail.com",
+  "nickname": "agus@hotmail.com",
+  "password": "$2a$10$441OvuVYukIPurNUr9KP1u7ow30PFN1gfuTXicdjtzqOAE.LOBLky",
+  "zipCode": "1235",
+  "img": "1636017222695.jpg"
  }
 ]

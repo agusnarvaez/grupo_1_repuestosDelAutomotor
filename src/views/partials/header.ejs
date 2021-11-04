@@ -14,9 +14,12 @@
       <li><a href="">Contacto</a></li>
       <li><a href="/products/creation">Crear Producto</a></li>
     </ul>
-    <% if(user){ %>
-    <%= user.email %>
+    <% if(locals.isLogged){ %>
+    <%= locals.userLogged.nickname %>
+    <a href="/user/profile"><img class="login" src="./images/usersImages/<%= locals.userLogged.img %> " alt="profile" height=25px></a> <!-- Login -->
+    <% } else { %>
+    <a href="/user/login">
+      <img class="login" src="../../images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
     <% } %>
-    <a href="/user/login"><img class="login" src="../../images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->
   </div>
 </header>

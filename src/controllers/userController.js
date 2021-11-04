@@ -4,7 +4,7 @@ const fs = require('fs'); //Solicito módulo de archivos
 
 const { platform } = require('os')
 
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 
 const { validationResult } = require('express-validator')
 
@@ -18,7 +18,8 @@ const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));
 /* *****Controlador de usuario***** */
 const userController = {
     register: function (req, res) { //A página register
-        res.render('./users/register', { partialHead: partialHead.register, user: undefined });
+        res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 }); //Método que me permite enviar cookies al navegador => (nombre,contenido,duración)
+        res.render('./users/register', { partialHead: partialHead.register });
     },
     create: function (req, res) { //Creación de producto
 
@@ -36,15 +37,14 @@ const userController = {
         }
         //Validación del formulario
         if (resultValidation.errors.length > 0) {
-            return res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body, user: undefined })
+            return res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body })
         }
         //Chequeo si el usuario existe
         else if (users.find(user => (user.email == req.body.email)) != undefined) {
             res.render('./users/register', {
                 partialHead: partialHead.register,
                 errors: { email: { msg: 'Este email ya está registrado' } },
-                oldData: req.body,
-                user: undefined
+                oldData: req.body
             })
             //res.send('Su usuario ya existe');
         }
@@ -57,7 +57,7 @@ const userController = {
                 lastName: req.body.lastName,
                 email: req.body.email,
                 nickname: req.body.nickname,
-                password: bcrypt.hashSync(req.body.password, 10),
+                password: bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10)),
                 zipCode: req.body.zipCode,
                 img: req.file.filename,
             }
@@ -69,53 +69,76 @@ const userController = {
         }
     },
     login: function (req, res) { //A página login
-        console.log(req.session);
-        res.render('./users/login', { partialHead: partialHead.login, user: undefined });
+        res.cookie('testing', 'Hola mundo', { maxAge: 10000 * 300 });
+        res.render('./users/login', { partialHead: partialHead.login });
+
     },
     logprocess: function (req, res) {
-        let loginValidation = validationResult(req);
+        // return res.send(req.body);
+        let loginValidation = validationResult(req); //Solicita la validación de los campos
         let userToLogin = users.find(user => (user.email == req.body.user));
+        //console.log(userToLogin);
+
 
         /***Chequeamos errores de formulario***/
         if (loginValidation.errors.length > 0) {
-            //console.log(loginValidation.mapped());
-            //console.log(req.body.user);
-            console.log('Hola');
-            res.render('./users/login', { partialHead: partialHead.login, errors: loginValidation.mapped(), oldData: req.body, user: undefined });
+            return res.render('./users/login', {
+                partialHead: partialHead.login,
+                errors: loginValidation.mapped(),
+                oldData: req.body
+            });
         }
 
         /*** Si el formulario está OK, Chequeamos si el mail está en nuestra base de datos***/
-        else if (users.find(user => (user.email == req.body.user)) == undefined) {
+        if (userToLogin) {
 
-            res.render('./users/login', {
+            /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
+            let password = req.body.pass;
+            //console.log('Contraseña: ' + userToLogin.password)
+            let passwordIsOk = bcryptjs.compareSync(password, userToLogin.password);
+            if (passwordIsOk) {
+                //delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
+                //CHEQUEAR PORQUE SI SE BORRA, DESPUÉS BORRA TEMPORALMENTE LA PASSWORD DEL USER
+
+                req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
+                res.cookie('testing', 'Hola mundo', { maxAge: 10000 * 300 });
+                /***Envío de cookies al navegador***/
+                /***Después las utiliza userLoggedMiddleware***/
+                if (req.body.remember_user) {
+                    //console.log(userEmail);
+                    res.cookie('userEmail', req.body.user, { maxAge: (1000 * 60) * 2 })
+                }
+                return res.redirect('/user/profile');
+            }
+            /***Si los datos están mal, enviará el siguiente mensaje***/
+            return res.render('./users/login', {
                 partialHead: partialHead.login,
-                errors: { user: { msg: 'Este email no está registrado' } },
-                user: undefined
+                errors: { user: { msg: 'Las credenciales son inválidas' } }
             });
         }
-        /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
-        else if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
-            delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
-            req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
-            console.log(req.session);
-            res.redirect('/');
-        }
-        /***Si los datos están mal, enviará el siguiente mensaje***/
-        else {
-            res.render('./users/login', {
-                partialHead: partialHead.login,
-                errors: { user: { msg: 'Las credenciales son inválidas' } },
-                user: undefined
-            });
-        }
-        /*let logindata = {
+
+
+        /**Avisa si el email no está en la base de datos */
+        return res.render('./users/login', {
+            partialHead: partialHead.login,
+            errors: {
+                user: {
+                    msg: 'Este email no está registrado'
+                }
+            }
+        });
+
+
+        /*
+        ###Nico###
+        let logindata = {
             email: req.body.usuario,
             password: req.body.password
         };
         if (users.find(user => user.email == logindata.email) != undefined){
             let userLogged = (users.find(user => user.email == logindata.email))
             
-            if (bcrypt.compareSync(logindata.password, userLogged.password)){
+            if (bcryptjs.compareSync(logindata.password, userLogged.password)){
                 req.session.logstatus = "logged"
                 req.session.user = (userLogged.id)
                 res.redirect('../');
@@ -125,9 +148,16 @@ const userController = {
         }*/
     },
     profile: (req, res) => {
-        let user = req.session.userLogged;
-        delete user.password;
-        res.render('./users/profile', { partialHead: partialHead.profile, user })
+        let userLogged = req.session.userLogged; //Se recuperan los datos del usuario logueado a la session
+        //console.log(user);
+        // console.log(req.cookies.userEmail);
+        return res.render('./users/profile', { partialHead: partialHead.profile, user: userLogged })
+    },
+    logout: (req, res) => {
+
+        res.clearCookie('userEmail'); //Se limía la cookie
+        req.session.destroy(); //Borra todo lo que está en sesión
+        return res.redirect('/');
     },
     deleteUser: (req, res) => {
         let allUsers = users;
