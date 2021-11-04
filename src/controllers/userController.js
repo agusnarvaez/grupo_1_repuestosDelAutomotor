@@ -24,9 +24,9 @@ const userController = {
 
         let resultValidation = validationResult(req);
 
-        const addId = () => {
-            let id;
-            if (users.id != undefined) {
+        let addId = () => {
+            let id = 0;
+            if (users[0].id != undefined) {
                 id = users[users.length - 1].id + 1;
             }
             else {
@@ -34,26 +34,34 @@ const userController = {
             }
             return id;
         }
-
+        //Validación del formulario
         if (resultValidation.errors.length > 0) {
             return res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body })
         }
-        let file = req.file
-        let user = {
-            id: addId(),//users[users.length - 1].id + 1,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            nickname: req.body.nickname,
-            password: bcrypt.hashSync(req.body.password, 10),
-            zipCode: req.body.zipCode,
-            img: req.file.filename,
-        };
-        users.push(user)
-        req.session.logstatus = "logged"
-        req.session.user = user.id
-        fs.writeFileSync('src/data/users.json', (JSON.stringify(users, null, " ")))
-        res.redirect('../');
+        //Chequeo si el usuario existe
+        else if (users.find(user => (user.email == req.body.email)) != undefined) {
+            console.log('El usuario existe')
+            res.send('Su usuario ya existe');
+        }
+        /**Si están todos los campos, y el usuario no existe, se crea**/
+        else {
+            let file = req.file
+            let user = {
+                id: addId(),//users[users.length - 1].id + 1,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                nickname: req.body.nickname,
+                password: bcrypt.hashSync(req.body.password, 10),
+                zipCode: req.body.zipCode,
+                img: req.file.filename,
+            }
+            users.push(user);
+            /*req.session.logstatus = "logged"
+            req.session.user = user.id*/
+            fs.writeFileSync('src/data/users.json', (JSON.stringify(users, null, " ")))
+            res.redirect('../');
+        }
     },
     login: function (req, res) { //A página login
 
@@ -68,6 +76,9 @@ const userController = {
         }
         else {
             //console.log('No hay errores');
+            /* 
+            let userFound = users.find(user => user.email == req.params.user);
+            */
             res.redirect('/');
         }
         /*let logindata = {
@@ -85,6 +96,10 @@ const userController = {
 
             console.log(req.body.remember)
         }*/
+    },
+    deleteUser: (req, res) => {
+        let allUsers = users;
+        let finalUsers = allUsers.filter(user => user.id !== req.params.id);
     }
 };
 
