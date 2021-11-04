@@ -98,5 +98,15 @@
   "password": "$2a$10$7O9LvkrIxXqF9b6emKzD7eTDQ2jpeWuJxrno3TqL1VDsN/f3T2k6y",
   "zipCode": "1234",
   "img": "1635991786419.jpg"
+ },
+ {
+  "id": 11,
+  "firstName": "sebastian",
+  "lastName": "leon",
+  "email": "sebastian@hotmail.com",
+  "nickname": "seba",
+  "password": "$2a$10$eJvkQ6Q2GXk9ld7jRrSj3uPxSMEMP/AMjCBVheu1NPAH2evxl8Am6",
+  "zipCode": "1234",
+  "img": "1635992516225.jpg"
  }
 ]

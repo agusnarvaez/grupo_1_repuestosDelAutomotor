@@ -64,26 +64,46 @@ const userController = {
             /*req.session.logstatus = "logged"
             req.session.user = user.id*/
             fs.writeFileSync('src/data/users.json', (JSON.stringify(users, null, " ")))
-            res.redirect('../');
+            res.redirect('./login');
         }
     },
     login: function (req, res) { //A página login
-
+        console.log(req.session);
         res.render('./users/login', { partialHead: partialHead.login });
     },
     logprocess: function (req, res) {
         let loginValidation = validationResult(req);
+        let userToLogin = users.find(user => (user.email == req.body.user));
+
+        /***Chequeamos errores de formulario***/
         if (loginValidation.errors.length > 0) {
             //console.log(loginValidation.mapped());
             //console.log(req.body.user);
+            console.log('Hola');
             res.render('./users/login', { partialHead: partialHead.login, errors: loginValidation.mapped(), oldData: req.body });
         }
-        else {
-            //console.log('No hay errores');
-            /* 
-            let userFound = users.find(user => user.email == req.params.user);
-            */
+
+        /*** Si el formulario está OK, Chequeamos si el mail está en nuestra base de datos***/
+        else if (users.find(user => (user.email == req.body.user)) == undefined) {
+
+            res.render('./users/login', {
+                partialHead: partialHead.login,
+                errors: { user: { msg: 'Este email no está registrado' } }
+            });
+        }
+        /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
+        else if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
+            delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
+            req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
+            console.log(req.session);
             res.redirect('/');
+        }
+        /***Si los datos están mal, enviará el siguiente mensaje***/
+        else {
+            res.render('./users/login', {
+                partialHead: partialHead.login,
+                errors: { user: { msg: 'Las credenciales son inválidas' } }
+            });
         }
         /*let logindata = {
             email: req.body.usuario,

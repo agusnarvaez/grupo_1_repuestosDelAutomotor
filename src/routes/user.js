@@ -52,16 +52,17 @@ const registerValidation = [ //Array de validaciones de registro
         return true
     })
 ];
+/**Solicitud de middleware de validación de login**/
 const loginValidation = require('../middlewares/logInValidationMiddleware');
 
-
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 /* *****A página register***** */
-router.get('/register', userController.register);
+router.get('/register', guestMiddleware, userController.register);
 router.post('/register', userCrud.single('image'), registerValidation, userController.create); //Revisar que si un usuario no se genera, pero si se cargó la foto, la misma se almacena
 
 /* *****A página login***** */
-router.get('/login', userController.login);
+router.get('/login', guestMiddleware, userController.login);
 router.post('/login', loginValidation, userController.logprocess)
 
 

@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head.ejs', {partialHead: partialHead}) %> <!-- Head -->
+<%- include('./partials/head.ejs', {partialHead: partialHead}) %>
+<!-- Head -->
+
 <body>
-<%- include('./partials/header.ejs') %> <!--Header -->
-<%- include('./partials/filter.ejs') %> <!--Filter -->
-    <main>
-        <section class="carrousel"> <!-- Carrousel principal, aquí se mostrarán novedades y promociones -->
-            <i class="fas fa-arrow-circle-right"></i> <!-- Flecha izq carrousel -->
-            <img src="./images/carrousel/banner-utilitarios.jpeg" alt="carrousel"> <!-- Imagen de modelo para carrousel -->
-            <i class="fas fa-arrow-circle-left"></i> <!-- Flecha der carrousel -->
-            <div class="carrouselIndicadores"> <!-- Indicadores de imagen de carrousel. CORREGIR UBICACIÓN CON CSS -->
-                <div><i class="far fa-circle"></i></div> 
-                <div><i class="fas fa-circle"></i></div>
-                <div><i class="fas fa-circle"></i></div>
-                <div><i class="fas fa-circle"></i></div>
-            </div>
-            <!--
+  <%- include('./partials/header.ejs') %>
+  <!--Header -->
+  <%- include('./partials/filter.ejs') %>
+  <!--Filter -->
+  <main>
+    <section class="carrousel">
+      <!-- Carrousel principal, aquí se mostrarán novedades y promociones -->
+      <i class="fas fa-arrow-circle-right"></i> <!-- Flecha izq carrousel -->
+      <img src="./images/carrousel/banner-utilitarios.jpeg" alt="carrousel"> <!-- Imagen de modelo para carrousel -->
+      <i class="fas fa-arrow-circle-left"></i> <!-- Flecha der carrousel -->
+      <div class="carrouselIndicadores">
+        <!-- Indicadores de imagen de carrousel. CORREGIR UBICACIÓN CON CSS -->
+        <div><i class="far fa-circle"></i></div>
+        <div><i class="fas fa-circle"></i></div>
+        <div><i class="fas fa-circle"></i></div>
+        <div><i class="fas fa-circle"></i></div>
+      </div>
+      <!--
                 <img src="" alt="IMG1">
                 <img src="" alt="IMG2">
                 <img src="" alt="IMG3">
                 <img src="" alt="IMG4">
             -->
-        </section>
-        <section class="marcas"> <!-- Zona para filtrar marcas -->
-            <h2>Marcas</h2>
-            <div class="marcasTop"> <!-- Marcas de arriba -->
-                <img id="renault "src="./images/logos-marcas/logo-renault.jpg" alt="IMG1"> <!-- Marca 1, Renault  - REVISAR LOGO, SE DEFORMA-->
-                <img src="./images/logos-marcas/logo-fiat.jpg" alt="IMG2"> <!-- Marca 2, Fiat -->
-                <img src="./images/logos-marcas/logo-volkswagen.jpg" alt="IMG3"> <!-- Marca 3, Volkswagen-->
-            </div>
-            <div class="marcasBottom"> <!-- Marcas de abajo  -->
-                <img src="./images/logos-marcas/logo-chevrolet.jpg" alt="IMG4"> <!-- Marca 4, Chevrolet -->
-                <img src="./images/logos-marcas/logo-peugeot.jpg" alt="IMG5"> <!-- Marca 5, Peugeot -->
-            </div>
-        </section>
-    </main>
-<%- include('./partials/footer.ejs') %> <!--Footer -->
+    </section>
+    <section class="marcas">
+      <!-- Zona para filtrar marcas -->
+      <h2>Marcas</h2>
+      <div class="marcasTop">
+        <!-- Marcas de arriba -->
+        <img id="renault " src="./images/logos-marcas/logo-renault.jpg" alt="IMG1"> <!-- Marca 1, Renault  - REVISAR LOGO, SE DEFORMA-->
+        <img src="./images/logos-marcas/logo-fiat.jpg" alt="IMG2"> <!-- Marca 2, Fiat -->
+        <img src="./images/logos-marcas/logo-volkswagen.jpg" alt="IMG3"> <!-- Marca 3, Volkswagen-->
+      </div>
+      <div class="marcasBottom">
+        <!-- Marcas de abajo  -->
+        <img src="./images/logos-marcas/logo-chevrolet.jpg" alt="IMG4"> <!-- Marca 4, Chevrolet -->
+        <img src="./images/logos-marcas/logo-peugeot.jpg" alt="IMG5"> <!-- Marca 5, Peugeot -->
+      </div>
+    </section>
+  </main>
+  <%- include('./partials/footer.ejs') %>
+  <!--Footer -->
 </body>
+
 </html>
