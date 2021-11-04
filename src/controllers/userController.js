@@ -22,7 +22,7 @@ const userController = {
     },
     create: function (req, res) { //Creación de producto
 
-        const resultValidation = validationResult(req);
+        let resultValidation = validationResult(req);
 
         const addId = () => {
             let id;
@@ -56,9 +56,20 @@ const userController = {
         res.redirect('../');
     },
     login: function (req, res) { //A página login
+
         res.render('./users/login', { partialHead: partialHead.login });
     },
     logprocess: function (req, res) {
+        let loginValidation = validationResult(req);
+        if (loginValidation.errors.length > 0) {
+            //console.log(loginValidation.mapped());
+            //console.log(req.body.user);
+            res.render('./users/login', { partialHead: partialHead.login, errors: loginValidation.mapped(), oldData: req.body });
+        }
+        else {
+            //console.log('No hay errores');
+            res.redirect('/');
+        }
         /*let logindata = {
             email: req.body.usuario,
             password: req.body.password

@@ -11,7 +11,7 @@ let userController = require('../controllers/userController.js');
 const multer = require('multer');
 const { body, validationResult } = require('express-validator');
 
-const validations = [
+const registerValidation = [
     body('firstName').notEmpty().withMessage('Debes ingresar un nombre'),
     body('lastName').notEmpty().withMessage('Debes ingresar un apellido'),
     body('zipCode').notEmpty().withMessage('Debes ingresar un código postal'),
@@ -37,7 +37,11 @@ const validations = [
         }
         return true
     })
+]
 
+const loginValidation = [ //Array de validaciones de login
+    body('user').notEmpty().withMessage('Debes ingresar un usuario o email'),
+    body('password').notEmpty().withMessage('Debes ingresar una contraseña')
 ]
 
 const storage = multer.diskStorage({
@@ -51,15 +55,15 @@ const storage = multer.diskStorage({
     }
 })
 
-const userCrud = multer({ storage: storage })
+const userCrud = multer({ storage: storage });
 
 /* *****A página register***** */
 router.get('/register', userController.register);
-router.post('/register', userCrud.single('image'), validations, userController.create); //Revisar que si un usuario no se genera, pero si se cargó la foto, la misma se almacena
+router.post('/register', userCrud.single('image'), registerValidation, userController.create); //Revisar que si un usuario no se genera, pero si se cargó la foto, la misma se almacena
 
 /* *****A página login***** */
 router.get('/login', userController.login);
-router.post('/login', userController.logprocess)
+router.post('/login', loginValidation, userController.logprocess)
 
 
 

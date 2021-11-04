@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head -->
-<body>  
-    <%- include('../partials/header.ejs') %> <!--Header -->
-    <main>
-        <h2>Ingresá a tu cuenta!</h2>
-        <div class="loginForm">
-            <form action="/user/login" method="POST" enctype="multipart/form-data"> <!-- Formulario para loguearse -->
-                <input class="campo" type="text" name="usuario" id="usuario" placeholder="Ingrese su nombre de usuario o mail" required><br> <!-- Nombre de usuario-->
-                <input class="campo" type="password" placeholder="Ingrese su contraseña" required><br> <!-- Contraseña -->
-                <div class="checkbox">
-                    <input  type="checkbox" name="remember">
-                    <label class="radio">¿Recordar usuario? </label>
-                </div>
-                <button class="submit" type="submit">INICIAR</button><br> <!-- Boton de acceso -->
-            </form>
-            <h5>¿Aún no te registraste?</h5>
-            <h5><a class="loginFormRegister" href="/user/register">Registrate aquí</a></h5> <!-- A página de registro de usuario -->
+<%- include('../partials/head.ejs', {partialHead: partialHead}) %>
+<!-- Head -->
+
+<body>
+  <%- include('../partials/header.ejs') %>
+  <!--Header -->
+  <main>
+    <h2>Ingresá a tu cuenta!</h2>
+    <div class="loginForm">
+      <form action="/user/login" method="POST">
+        <!-- Formulario para loguearse -->
+        <input class="campo" type="text" name="user" id="usuario" placeholder="Ingrese su nombre de usuario o mail" value="<%= locals.oldData ? oldData.user : null %>"><br> <!-- Nombre de usuario-->
+        <% if (locals.errors && errors.user){  %>
+        <div class="text-danger">
+          <%= errors.user.msg %>
         </div>
-    </main>
-    <%- include('../partials/footer.ejs') %> <!--Footer  -->
+        <% } %><br>
+        <input class="campo" type="password" name="password" placeholder="Ingrese su contraseña"><br> <!-- Contraseña -->
+        <% if (locals.errors && errors.password){  %>
+        <div class="text-danger">
+          <%= errors.password.msg %>
+        </div>
+        <% } %><br>
+        <div class="checkbox">
+          <input type="checkbox" name="remember">
+          <label class="radio">¿Recordar usuario? </label>
+        </div>
+        <button class="submit" type="submit">INICIAR</button><br> <!-- Boton de acceso -->
+      </form>
+      <h5>¿Aún no te registraste?</h5>
+      <h5><a class="loginFormRegister" href="/user/register">Registrate aquí</a></h5> <!-- A página de registro de usuario -->
+    </div>
+  </main>
+  <%- include('../partials/footer.ejs') %>
+  <!--Footer  -->
 </body>
+
 </html>
