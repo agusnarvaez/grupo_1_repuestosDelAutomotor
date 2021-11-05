@@ -49,9 +49,9 @@ app.listen(host, () => {
 
 
 /****** Solicitud Rutas ******/
-const mainRoutes = require('./routes/main.js'); /****** Ruta Main ******/
-const userRoutes = require('./routes/user.js'); /****** Ruta Users ******/
-const productRoutes = require('./routes/products.js'); /****** Ruta Products ******/
+const mainRoutes = require('./routes/mainRoutes.js'); /****** Ruta Main ******/
+const userRoutes = require('./routes/userRoutes.js'); /****** Ruta Users ******/
+const productRoutes = require('./routes/productsRoutes.js'); /****** Ruta Products ******/
 
 
 /* #### USO RUTAS #### */
