@@ -80,7 +80,7 @@ Ayudarnos mutuamente cuando nos trabamos en algo.
 Comentar los códigos.
 Realizar ciertos trabajos específicos de forma colaborativa.
 
-* _More of:
+* _More of:_
 Pasar las reuniones de semanales a dailys.
 
 ## :star:SPRINT 5
