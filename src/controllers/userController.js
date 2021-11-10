@@ -6,7 +6,7 @@ const { platform } = require('os')
 
 const bcryptjs = require('bcryptjs');
 
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator'); //Solicitamos módulo para validación de campos
 
 
 /* *****Objeto literal que contiene datos para head dinámico ***** */
@@ -18,14 +18,14 @@ const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));
 /* *****Controlador de usuario***** */
 const userController = {
     register: function (req, res) { //A página register
-        res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 }); //Método que me permite enviar cookies al navegador => (nombre,contenido,duración)
+        /*res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 }); Método que me permite enviar cookies al navegador => (nombre,contenido,duración)*/ 
         res.render('./users/register', { partialHead: partialHead.register });
     },
     create: function (req, res) { //Creación de producto
 
         let resultValidation = validationResult(req);
 
-        let addId = () => {
+        let addId = () => { //Función para generar id de usuario
             let id = 0;
             if (users[0].id != undefined) {
                 id = users[users.length - 1].id + 1;
@@ -41,18 +41,17 @@ const userController = {
         }
         //Chequeo si el usuario existe
         else if (users.find(user => (user.email == req.body.email)) != undefined) {
-            res.render('./users/register', {
+            return res.render('./users/register', {
                 partialHead: partialHead.register,
                 errors: { email: { msg: 'Este email ya está registrado' } },
                 oldData: req.body
             })
-            //res.send('Su usuario ya existe');
         }
         /**Si están todos los campos, y el usuario no existe, se crea**/
         else {
             let file = req.file
             let user = {
-                id: addId(),//users[users.length - 1].id + 1,
+                id: addId(),
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 email: req.body.email,
@@ -62,14 +61,11 @@ const userController = {
                 img: req.file.filename,
             }
             users.push(user);
-            /*req.session.logstatus = "logged"
-            req.session.user = user.id*/
             fs.writeFileSync('src/data/users.json', (JSON.stringify(users, null, " ")))
             res.redirect('./login');
         }
     },
     login: function (req, res) { //A página login
-        res.cookie('testing', 'Hola mundo', { maxAge: 10000 * 300 });
         res.render('./users/login', { partialHead: partialHead.login });
 
     },
@@ -77,8 +73,6 @@ const userController = {
         // return res.send(req.body);
         let loginValidation = validationResult(req); //Solicita la validación de los campos
         let userToLogin = users.find(user => (user.email == req.body.user));
-        //console.log(userToLogin);
-
 
         /***Chequeamos errores de formulario***/
         if (loginValidation.errors.length > 0) {
@@ -94,18 +88,15 @@ const userController = {
 
             /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
             let password = req.body.pass;
-            //console.log('Contraseña: ' + userToLogin.password)
             let passwordIsOk = bcryptjs.compareSync(password, userToLogin.password);
             if (passwordIsOk) {
                 //delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
-                //CHEQUEAR PORQUE SI SE BORRA, DESPUÉS BORRA TEMPORALMENTE LA PASSWORD DEL USER
+                //CHEQUEAR PORQUÉ, SI SE BORRA, DESPUÉS BORRA TEMPORALMENTE LA PASSWORD DEL USER
 
                 req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
-                res.cookie('testing', 'Hola mundo', { maxAge: 10000 * 300 });
                 /***Envío de cookies al navegador***/
                 /***Después las utiliza userLoggedMiddleware***/
                 if (req.body.remember_user) {
-                    //console.log(userEmail);
                     res.cookie('userEmail', req.body.user, { maxAge: (1000 * 60) * 2 })
                 }
                 return res.redirect('/user/profile');
@@ -127,30 +118,10 @@ const userController = {
                 }
             }
         });
-
-
-        /*
-        ###Nico###
-        let logindata = {
-            email: req.body.usuario,
-            password: req.body.password
-        };
-        if (users.find(user => user.email == logindata.email) != undefined){
-            let userLogged = (users.find(user => user.email == logindata.email))
-            
-            if (bcryptjs.compareSync(logindata.password, userLogged.password)){
-                req.session.logstatus = "logged"
-                req.session.user = (userLogged.id)
-                res.redirect('../');
-            }
-
-            console.log(req.body.remember)
-        }*/
     },
     profile: (req, res) => {
         let userLogged = req.session.userLogged; //Se recuperan los datos del usuario logueado a la session
-        //console.log(user);
-        // console.log(req.cookies.userEmail);
+
         return res.render('./users/profile', { partialHead: partialHead.profile, user: userLogged })
     },
     logout: (req, res) => {

@@ -7,6 +7,4 @@ let mainController = require('../controllers/mainController.js');
 /* *****A página index***** */
 router.get('/', mainController.index);
 
-
-
 module.exports = router; // Exportación ruteo
