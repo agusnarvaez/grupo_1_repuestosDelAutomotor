@@ -31,16 +31,16 @@ const productController = {
             error.httpStatusCode = 400
             return next(error)
         }
-        const addId = () => {
-            let id;
-            if (products.id != undefined) {
-                id = products[products.length - 1].id + 1;
-            }
-            else {
-                id = 1;
-            }
-            return id;
-        }
+        
+        function addId() {
+			let id = products[products.length - 1].id + 1
+
+			if (id){
+				return products[products.length - 1].id + 1
+			}else{
+				return 1
+			}
+		}  
         let newProduct = {
             id: addId(),
             productName: req.body.name,

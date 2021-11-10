@@ -1,74 +1,82 @@
 [
-    {
-     "id": 1,
-     "productName": "Amortiguador",
-     "description": "Amortiguador",
-     "category": "Suspensión",
-     "price": "1500",
-     "img": "1634610420990.jpg"
-    },
-    {
-     "id": 2,
-     "productName": "Bomba de nafta",
-     "description": "Bomba de nafta",
-     "category": "Motor",
-     "price": "2000",
-     "img": "1634610443807.jpg"
-    },
-    {
-     "id": 3,
-     "productName": "Carburador",
-     "description": "Carburador",
-     "category": "Motor",
-     "price": "15500",
-     "img": "1634611104412.jpg"
-    },
-    {
-     "id": 4,
-     "productName": "Cigueñal",
-     "description": "Cigueñal",
-     "category": "Motor",
-     "price": "2000",
-     "img": "1634611145963.jpg"
-    },
-    {
-     "id": 5,
-     "productName": "Correa de distribución",
-     "description": "Correa de distribución",
-     "category": "Motor",
-     "price": "1000",
-     "img": "1634611174720.png"
-    },
-    {
-     "id": 6,
-     "productName": "Lámpara",
-     "description": "Lámpara",
-     "category": "Iluminación",
-     "price": "250",
-     "img": "1634611200244.jpg"
-    },
-    {
-     "id": 7,
-     "productName": "Radiador",
-     "description": "Radiador",
-     "category": "Motor",
-     "price": "5000",
-     "img": "1634611227783.jpg"
-    },
-    {
-     "id": 8,
-     "productName": "Sensor de temperatura",
-     "description": "Sensor de temperatura",
-     "category": "Motor",
-     "price": "3000",
-     "img": "1634611248957.jpg"
-    },
-    {
-     "id": 9,
-     "productName": "Kit de distribución",
-     "description": "Kit de distribución",
-     "category": "Motor",
-     "price": "7000",
-     "img": "1634611375114.jpg"
-    }
-   ]
+ {
+  "id": 1,
+  "productName": "Amortiguador",
+  "description": "Amortiguador",
+  "category": "Suspensión",
+  "price": "1500",
+  "img": "1634610420990.jpg"
+ },
+ {
+  "id": 2,
+  "productName": "Bomba de nafta",
+  "description": "Bomba de nafta",
+  "category": "Motor",
+  "price": "2000",
+  "img": "1634610443807.jpg"
+ },
+ {
+  "id": 3,
+  "productName": "Carburador",
+  "description": "Carburador",
+  "category": "Motor",
+  "price": "15500",
+  "img": "1634611104412.jpg"
+ },
+ {
+  "id": 4,
+  "productName": "Cigueñal",
+  "description": "Cigueñal",
+  "category": "Motor",
+  "price": "2000",
+  "img": "1634611145963.jpg"
+ },
+ {
+  "id": 5,
+  "productName": "Correa de distribución",
+  "description": "Correa de distribución",
+  "category": "Motor",
+  "price": "1000",
+  "img": "1634611174720.png"
+ },
+ {
+  "id": 6,
+  "productName": "Lámpara",
+  "description": "Lámpara",
+  "category": "Iluminación",
+  "price": "250",
+  "img": "1634611200244.jpg"
+ },
+ {
+  "id": 7,
+  "productName": "Radiador",
+  "description": "Radiador",
+  "category": "Motor",
+  "price": "5000",
+  "img": "1634611227783.jpg"
+ },
+ {
+  "id": 8,
+  "productName": "Sensor de temperatura",
+  "description": "Sensor de temperatura",
+  "category": "Motor",
+  "price": "3000",
+  "img": "1634611248957.jpg"
+ },
+ {
+  "id": 9,
+  "productName": "Kit de distribución",
+  "description": "Kit de distribución",
+  "category": "Motor",
+  "price": "7000",
+  "img": "1634611375114.jpg"
+ },
+ {
+  "id": 10,
+  "productName": "Zapatillas Adidas",
+  "description": "ffssd",
+  "category": "sdfsfd",
+  "price": "10000",
+  "img": "1636515933771.jpg"
+ }
+]
