@@ -58,5 +58,15 @@
   "password": "$2a$10$441OvuVYukIPurNUr9KP1u7ow30PFN1gfuTXicdjtzqOAE.LOBLky",
   "zipCode": "1235",
   "img": "1636017222695.jpg"
+ },
+ {
+  "id": 7,
+  "firstName": "Jonatan",
+  "lastName": "Ibarra",
+  "email": "jony@gmail.com",
+  "nickname": "jony",
+  "password": "$2a$10$4CiUvRPUSDFc7vb.UloTKuGrVnkYzy/JAOI4uB/Rk7UOiJE50mwhS",
+  "zipCode": "1234",
+  "img": "1636705343301.jpg"
  }
 ]

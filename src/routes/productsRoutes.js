@@ -5,21 +5,12 @@ const path = require('path'); //Módulo Path de Express
 /* *****Controlador de productos***** */
 let productController = require('../controllers/productController.js');
 
-// ************ Configuración Multer (Va en route) ***************
-const multer = require('multer');
-
 let imagesCounter = '1' /* Variable que en un futuro usaremos para subir más de una imágen*/
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/images/productsImages'); //Define la ruta de destino
-    },
-    filename: function (req, file, cb) {
-        cb(null, (Date.now() + path.extname(file.originalname))); //Define el nombre del arhchivo
-    }
-})
+/* *** Configuración middleware multer ***/
+let productCrud = require('../middlewares/productMulterMiddleware.js');
 
-const productCrud = multer({ storage: storage })
+
 
 /* *****A página productos**** */
 router.get('/', productController.index);

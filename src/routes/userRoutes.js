@@ -5,18 +5,8 @@ const path = require('path'); //Módulo Path de Express
 /* *****Controlador de usuario***** */
 let userController = require('../controllers/userController.js');
 
-/* *** Configuración multer ***/
-const multer = require('multer');
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/images/usersImages')
-    },
-    filename: function (req, file, cb) {
-        cb(null, (Date.now() + path.extname(file.originalname)));
-    }
-})
-
-const userCrud = multer({ storage: storage });
+/* *** Configuración middleware multer ***/
+let userCrud = require('../middlewares/userMulterMiddleware.js');
 
 /***** Middlewares de validación de formularios *****/
 const registerValidation = require('../middlewares/registerValidationMiddleware'); // Validación de register
