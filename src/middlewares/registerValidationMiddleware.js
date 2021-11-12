@@ -29,4 +29,4 @@ const validations = [ //Array de validaciones de login
     })
 ];
 
-module.exports = validations;E
+module.exports = validations;
