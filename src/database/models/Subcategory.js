@@ -17,11 +17,11 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'subcategories',
         timestamps: false
     }
-    let Subcategorie = sequelize.define(alias, cols, config); //Creación de la tabla con sus datos
+    let Subcategory = sequelize.define(alias, cols, config); //Creación de la tabla con sus datos
 
     // ***Asociaciones que tenga esta tabla***
-    Subcategorie.associate = (models) => {
-        Subcategorie.belongsTo( //Indicamos el tipod e relación
+    Subcategory.associate = (models) => {
+        Subcategor.belongsTo( //Indicamos el tipod e relación
             models.Category, // Llamamos al modelo
             {
                 as: 'categories', //Nombre tabla
@@ -29,5 +29,5 @@ module.exports = (sequelize, dataTypes) => {
             })
     };
 
-    return Subcategorie; //Exportamos modelo de tabla
+    return Subcategory; //Exportamos modelo de tabla
 }
