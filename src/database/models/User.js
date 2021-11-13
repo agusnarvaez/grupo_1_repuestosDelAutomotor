@@ -4,28 +4,35 @@ module.exports = (sequelize,dataTypes) => {
         id: {
             type: dataTypes.INTEGER, //Indicamos tipo de dato
             primaryKey: true, //Indicamos si es clave primaria
-            autoincrement: true // Indicamos si es autoincremental, en el caso de id lo es
+            autoincrement: true, // Indicamos si es autoincremental, en el caso de id lo es
+            allowNull: false //No permite valor nulo
         },
         first_name: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false //No permite valor nulo
         },
         last_name: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false //No permite valor nulo
         },
         email: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false //No permite valor nulo
         },
         nickname: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false //No permite valor nulo
         },
         password: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false //No permite valor nulo
         },
         user_image: {
             type: dataTypes.STRING
         },
         role_id: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            allowNull: false //No permite valor nulo
         }
     };
     let config = { //Configuraciones adicionales de la tabla
