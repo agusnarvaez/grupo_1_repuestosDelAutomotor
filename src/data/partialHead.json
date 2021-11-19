@@ -1,38 +1,38 @@
 {
     "index": {
         "title": "El rastrojero",
-        "style": "../../css/styles.css"
+        "style": "/css/styles.css"
     },
     "login": {
         "title": "Login",
-        "style": "../css/login.css"
+        "style": "/css/login.css"
     },
     "register": {
         "title": "Register",
-        "style": "../css/register.css"
+        "style": "/css/register.css"
     },
     "profile": {
         "title": "Profile",
-        "style": "../css/profile.css"
+        "style": "/css/profile.css"
     },
     "productDetail": {
         "title": "Product Detail",
-        "style": "../../css/productDetail.css"
+        "style": "/css/productDetail.css"
     },
     "productCart": {
         "title": "Product Carrito",
-        "style": "../css/productCart.css"
+        "style": "/css/productCart.css"
     },
     "productCreation": {
         "title": "Product Creation",
-        "style": "../css/productCrud.css"
+        "style": "/css/productCrud.css"
     },
     "productEdition": {
         "title": "Product Edition",
-        "style": "../../css/productCrud.css"
+        "style": "/css/productCrud.css"
     },
     "products": {
         "title": "Productos",
-        "style": "../css/products.css"
+        "style": "/css/products.css"
     }
 }
