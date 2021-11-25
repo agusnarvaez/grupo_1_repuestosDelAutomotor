@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = { //Configuraciones adicionales de la tabla
-        tableName: 'invoicing_address',
+        tableName: 'invoicing_addresses',
         timestamps: false
     }
     let Invoicing_address = sequelize.define(alias, cols, config); //Creación de la tabla con sus datos

@@ -39,7 +39,7 @@ module.exports = (sequelize,dataTypes) => {
         }
     };
     let config = { //Configuraciones adicionales de la tabla
-        tableName: 'shipping_address',
+        tableName: 'shipping_addresses',
         timestamps: false
     }
     let Shipping_address = sequelize.define(alias, cols, config); //Creación de la tabla con sus datos
