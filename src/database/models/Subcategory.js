@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
 
     // ***Asociaciones que tenga esta tabla***
     Subcategory.associate = (models) => {
-        Subcategor.belongsTo( //Indicamos el tipod e relación
+        Subcategory.belongsTo( //Indicamos el tipod e relación
             models.Category, // Llamamos al modelo
             {
                 as: 'categories', //Nombre tabla

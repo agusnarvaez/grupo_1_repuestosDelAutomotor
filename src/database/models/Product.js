@@ -30,12 +30,12 @@ module.exports = (sequelize, dataTypes) => {
     let Product = sequelize.define(alias, cols, config); //Creación de la tabla con sus datos
 
     //Asociaciones que tenga esta tabla
-    Product.associate = (models) => {
+    /* Product.associate = (models) => {
         Product.belongsTo( //Indicamos el tipo de relación
             models.Subcategory, // Llamamos al modelo
             {
                 as: 'subcategories', //Nombre tabla
-                foreignKey: 'subcatgegory_id' //Clave foránea
+                foreignKey: 'subcategory_id' //Clave foránea
             });
 
         Product.belongsToMany( //Relación N:M
@@ -47,6 +47,6 @@ module.exports = (sequelize, dataTypes) => {
                 otherKey: 'sales_id', //Otra clave foránea
                 timestamps: false
             });
-    }
+    } */
     return Product; //Exportamos modelo de tabla
 }

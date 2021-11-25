@@ -11,10 +11,31 @@ let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8
 /* Array con los productos del sitio */
 const products = JSON.parse(fs.readFileSync('src/data/products.json', 'utf-8'));
 
+const db = require('../database/models');
+
+
+
+
+
+
 /* *****Controlador de productos***** */
 const productController = {
     index: function (req, res) { //Página de products
-        res.render("./products/products", { partialHead: partialHead.products, products: products })
+
+        db.Product.findAll ()
+        .then (function (product){
+            res.send(product)
+        })
+        .catch (error => {
+            res.send (error)
+        })
+
+
+        /* res.render("./products/products", { partialHead: partialHead.products, products: products }) */
+        
+
+
+
     },
     register: function (req, res) { //Página de registro de producto
         res.render("./products/creation", { partialHead: partialHead.productCreation });
