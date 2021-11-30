@@ -9,32 +9,17 @@ const { nextTick } = require("process");
 let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"));
 
 /* Array con los productos del sitio */
-const products = JSON.parse(fs.readFileSync('src/data/products.json', 'utf-8'));
+//const products = JSON.parse(fs.readFileSync('src/data/products.json', 'utf-8'));
 
 const db = require('../database/models');
-
-
-
-
-
+const products = db.Product
+let productList = []
+db.Product.findAll().then((products) => {productList = products}).catch((error) => {return error})
 
 /* *****Controlador de productos***** */
 const productController = {
     index: function (req, res) { //Página de products
-
-        db.Product.findAll ()
-        .then (function (product){
-            res.send(product)
-        })
-        .catch (error => {
-            res.send (error)
-        })
-
-
-        /* res.render("./products/products", { partialHead: partialHead.products, products: products }) */
-        
-
-
+        res.render("./products/products", { partialHead: partialHead.products, products: productList /*products.findAll()*/})
 
     },
     register: function (req, res) { //Página de registro de producto
@@ -52,82 +37,86 @@ const productController = {
             error.httpStatusCode = 400
             return next(error)
         }
-        
-        function addId() {
-			let id = products[products.length - 1].id + 1
+        /*function addId() {
+			let id = products[productList.length - 1].id + 1
 
 			if (id){
-				return products[products.length - 1].id + 1
+				return products[productList.length - 1].id + 1
 			}else{
 				return 1
 			}
-		}  
+		}  */
         let newProduct = {
-            id: addId(),
-            productName: req.body.name,
+            /*id: addId(),*/
+            product_name: req.body.name,
             description: req.body.description,
-            category: req.body.category,
+            subcategory_id: req.body.category,
             price: req.body.price,
-            img: req.file.filename
+            product_image: req.file.filename
             /* img: '1_' + req.body.name + '.jpg' */
         };
-        products.push(newProduct);
-        fs.writeFileSync('src/data/products.json', (JSON.stringify(products, null, " "))); //Se agrega null y " " para que mantenga la estructura de objeto
-        res.redirect('detail/' + newProduct.id);
+        //products.push(newProduct);
+        db.Product.create(newProduct).then(res.redirect('../')).catch((error) => {return next(error)})
+        //fs.writeFileSync('src/data/products.json', (JSON.stringify(products, null, " "))); //Se agrega null y " " para que mantenga la estructura de objeto
+        //products.findOne({where: {product_image: newProduct.product_image}}).then((result) => {res.redirect('detail/' + result.id)}).catch((error) => {res.send(error)});
     },
     cart: function (req, res) { //Página de carrito de productos
         res.render('./products/cart', { partialHead: partialHead.productCart });
     },
     detail: function (req, res) { //Página de detalle de producto
-        let product = products.find(product => product.id == req.params.id);
-        res.render('./products/detail', { partialHead: partialHead.productDetail, product: product });
+        let product = db.Product.findByPk(req.params.id).then((result) => {
+            res.render('./products/detail', { partialHead: partialHead.productDetail, product: result })
+        }).catch((error) => {return next(error)})
+        //let product = products.find(product => product.id == req.params.id);
+        ;
     },
     edition: function (req, res) { //Página de edición de producto (PUT)
-        let product = products.find(product => product.id == req.params.id);
-        res.render("./products/edition", { partialHead: partialHead.productEdition, product: product });
+        //let product = products.find(product => product.id == req.params.id);
+        let product = db.Product.findByPk(req.params.id).then((result) => {
+            res.render("./products/edition", { partialHead: partialHead.productEdition, product: result })
+            }).catch((error) => {return next(error)})
     },
     edit: function (req, res) { //Edición de producto
-
         const id = req.body.productId;
-        let productToEdit = products.find(product => product.id == id);
+        //let productToEdit = products.find(product => product.id == id);
+        products.findByPk(req.params.id).then((result) => {
+            let productToEdit = result
+            let fileUpdate = function (imgNew) {
+                if (imgNew) {
+                    fs.unlinkSync(('public/images/productsImages/') + productToEdit.product_image);
+                    return imgNew;
+                }
+                else {
+                    return productToEdit.product_image;
+                }
+            }
+            productToEdit = {
+                product_name: req.body.name,
+                description: req.body.description,
+                subcategory_id: req.body.category,
+                price: req.body.price,
+                product_image: fileUpdate(req.file.filename),
+            };
+            db.Product.update(productToEdit, {where:{id: req.body.productId}}).then(res.redirect('/products/detail/' + result.id))
+        }).catch((error) => {return next(error)})
         /*products[product.id - 1].productName = req.body.name,
         products[product.id - 1].description = req.body.description,
         products[product.id - 1].category = req.body.category,
         products[product.id - 1].price = req.body.price,
         products[product.id - 1].img = '../../images/productos/1_' + req.body.name + '.jpg',*/
-
-        let fileUpdate = function (imgNew) {
-            if (imgNew) {
-                fs.unlinkSync(('public/images/productsImages/') + productToEdit.img);
-                return imgNew;
-            }
-            else {
-                return productToEdit.img;
-            }
-        }
-
-        productToEdit = {
-            id: productToEdit.id,
-            productName: req.body.name,
-            description: req.body.description,
-            category: req.body.category,
-            price: req.body.price,
-            img: /*req.file ?*/ fileUpdate(req.file.filename) /* : productToEdit.img*/
-        };
-
-        let newProducts = products;
-        newProducts[id - 1] = productToEdit;
-        fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
-        res.redirect('/products/detail/' + productToEdit.id);
+        
+        //let newProducts = products;
+        //newProducts[id - 1] = productToEdit;
+        //fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
     },
     delete: function (req, res) {
-
-        let newProducts = products;
+        /*let newProducts = products;
         let productToEdit = products.find(product => product.id == req.params.id);
 
         newProducts.splice((req.params.id - 1), 1);
         (('public/images/productsImages/') + productToEdit.img);
-        fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));
+        fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));*/
+        products.destroy({where:{id:req.params.id}})
         res.redirect('..');
     }
 };

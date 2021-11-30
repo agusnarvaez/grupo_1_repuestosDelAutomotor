@@ -5,7 +5,7 @@ module.exports = (sequelize,dataTypes) => {
             type: dataTypes.INTEGER, //Indicamos tipo de dato
             primaryKey: true, //Indicamos si es clave primaria
             autoincrement: true, // Indicamos si es autoincremental, en el caso de id lo es
-            allowNull: false //No permite valor nulo
+            //allowNull: false //No permite valor nulo
         },
         first_name: {
             type: dataTypes.STRING,

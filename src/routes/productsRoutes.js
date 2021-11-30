@@ -10,15 +10,11 @@ let imagesCounter = '1' /* Variable que en un futuro usaremos para subir más de
 /* *** Configuración middleware multer ***/
 let productCrud = require('../middlewares/productMulterMiddleware.js');
 
-
-
 /* *****A página productos**** */
 router.get('/', productController.index);
 
-
 /* *****A página carrito**** */
 router.get('/cart', productController.cart);
-
 
 /* *****A página detalle***** */
 router.get('/detail/:id', productController.detail);

@@ -45,9 +45,6 @@ app.listen(host, () => {
 });
 
 
-
-
-
 /****** Solicitud Rutas ******/
 const mainRoutes = require('./routes/mainRoutes.js'); /****** Ruta Main ******/
 const userRoutes = require('./routes/userRoutes.js'); /****** Ruta Users ******/
