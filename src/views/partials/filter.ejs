@@ -31,9 +31,12 @@
             <input type="number" min="1952" max="2021">
             <p>Modelo</p> <!-- El modelo depende de la marca, hay que hacer script -->
             <input type="button" value="Filtrar">
-        </form>
+        </form> 
     </div>
-    <div class="search">
-        <textarea>Buscar marcas, repuestos</textarea><i class="fas fa-search"></i>
-    </div>
+    <form class="search" method="POST" action="/products/search?_method=PUT" enctype="multipart/form-data" enctype="multipart/form-data">
+        <input name="search" id="search" type="text" placeholder="Buscar marcas, repuestos...">
+        <button class="submit" type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
 </section>

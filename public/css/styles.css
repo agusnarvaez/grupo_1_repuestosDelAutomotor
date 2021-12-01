@@ -110,7 +110,7 @@ main {
   padding: 0.5%;
   text-align: center;
 }
-.search textarea {
+.search input {
   display: inline-block;
   width: 90%;
   height: 100%;
@@ -121,7 +121,7 @@ main {
   resize: none;
   outline: none;
 }
-.search i {
+.search button {
   width: 10%;
   padding: auto;
   margin: auto;

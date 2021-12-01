@@ -13,6 +13,8 @@ let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8
 
 const db = require('../database/models');
 const products = db.Product
+const Op = db.Sequelize.Op
+
 let productList = []
 db.Product.findAll().then((products) => {productList = products}).catch((error) => {return error})
 
@@ -118,7 +120,19 @@ const productController = {
         fs.writeFileSync('src/data/products.json', (JSON.stringify(newProducts, null, " ")));*/
         products.destroy({where:{id:req.params.id}})
         res.redirect('..');
-    }
+    },
+    search: function (req, res) {
+        console.log(req.body.search)
+        db.Product.findAll({
+            where: {
+                product_name: {[Op.Like]:('%' + req.body.search + '%')}
+            }
+        }).then((result) =>{
+            res.render("./products/products", { partialHead: partialHead.products, products: result})
+            }).catch((error) =>{
+                res.send("No se han encontrado resultados para su búsqueda")
+            })
+    },
 };
 
 module.exports = productController; // Exportación de controlador de productos
