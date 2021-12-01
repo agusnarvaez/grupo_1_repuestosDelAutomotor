@@ -15,13 +15,15 @@ const db = require('../database/models');
 const products = db.Product
 const Op = db.Sequelize.Op
 
-let productList = []
-db.Product.findAll().then((products) => {productList = products}).catch((error) => {return error})
+db.Product.findAll().then((products) => {let productList = products}).catch((error) => {return error})
 
 /* *****Controlador de productos***** */
 const productController = {
     index: function (req, res) { //Página de products
-        res.render("./products/products", { partialHead: partialHead.products, products: productList /*products.findAll()*/})
+        db.Product.findAll().then((products) => {
+            res.render("./products/products", { partialHead: partialHead.products, products: products /*products.findAll()*/})
+        }).catch((error) => {return next(error)} )
+        
 
     },
     register: function (req, res) { //Página de registro de producto
