@@ -32,6 +32,6 @@ router.put("/edition/:id", productCrud.single('image'), productController.edit);
 router.delete("/delete/:id", productController.delete)
 
 /****Métodos para búsqueda de producto****/
-router.put("/search", productController.search)
+router.get("/search", productController.search)
 
 module.exports = router; // Exportación ruteo

@@ -15,8 +15,6 @@ const db = require('../database/models');
 const products = db.Product
 const Op = db.Sequelize.Op
 
-db.Product.findAll().then((products) => {let productList = products}).catch((error) => {return error})
-
 /* *****Controlador de productos***** */
 const productController = {
     index: function (req, res) { //Página de products
@@ -86,6 +84,7 @@ const productController = {
         products.findByPk(req.params.id).then((result) => {
             let productToEdit = result
             let fileUpdate = function (imgNew) {
+                console.log(imgNew)
                 if (imgNew) {
                     fs.unlinkSync(('public/images/productsImages/') + productToEdit.product_image);
                     return imgNew;
@@ -124,10 +123,10 @@ const productController = {
         res.redirect('..');
     },
     search: function (req, res) {
-        console.log(req.body.search)
+        let search = req.query.search
         db.Product.findAll({
             where: {
-                product_name: {[Op.Like]:('%' + req.body.search + '%')}
+                product_name: {[Op.like]:('%' + search + '%')}
             }
         }).then((result) =>{
             res.render("./products/products", { partialHead: partialHead.products, products: result})
