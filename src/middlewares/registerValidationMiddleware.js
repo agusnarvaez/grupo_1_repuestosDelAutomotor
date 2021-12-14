@@ -14,14 +14,14 @@ const validations = [ //Array de validaciones de login
     body('repeatPassword').notEmpty().withMessage('Debes repetir la contraseña'),
     body('image').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
+        let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
 
         if (!file) {
             throw new Error('Tienes que subir una imagen');
         } else {
             let fileExtension = path.extname(file.originalname);
             if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error('Las extensiones de archivo permitidas son .jpg, .png, .jpeg');
+                throw new Error('Las extensiones de archivo permitidas son .jpg, .png, .jpeg .gif');
 
             }
         }

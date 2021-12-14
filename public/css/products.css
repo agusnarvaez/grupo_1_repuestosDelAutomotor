@@ -5,13 +5,11 @@
   padding: 0;
   text-decoration: none;
   color: black;
-  
-  
 }
 
 main {
   display: flex;
-  background-color: bisque;
+  background-color: #ffff;
   width: 100%;
   min-height: 78vh;
   padding: 2%;
@@ -19,7 +17,6 @@ main {
 }
 
 .products {
-  
   width: 70%;
   display: flex;
   justify-content: space-around;
@@ -31,7 +28,7 @@ main {
   background-color: white;
   text-align: center;
   margin: 1%;
-  border-radius: 10px;
+  box-shadow: -3px 3px 10px #a5a5a5;
 }
 .product h1 {
   padding: 1%;
