@@ -1,4 +1,4 @@
-Intrucciones para crar la base de datos desde cero:
+Intrucciones para crear la base de datos desde cero:
 
 
 1) Utilizando DBeaver, Workbench o cualquier software similiar, ejectuar el código sql contenido en el archivo structure.sql. 

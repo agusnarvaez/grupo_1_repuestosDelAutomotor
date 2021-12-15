@@ -5,6 +5,9 @@ const fs = require('fs'); //Solicito módulo de archivos
 const { platform } = require('os');
 const { nextTick } = require("process");
 
+const { validationResult } = require('express-validator'); //Solicitamos módulo para validación de campos
+
+
 /* *****Objeto literal que contiene datos para head dinámico ***** */
 let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"));
 
@@ -33,6 +36,15 @@ const productController = {
             const newProduct = {
                 id: products[products.length - 1].id + 1,*/
     create: function (req, res, next) { //Creación de producto
+        let resultValidation = validationResult(req);
+
+        
+
+        if (resultValidation.errors.length > 0) {
+            return res.render('./products/creation', { partialHead: partialHead.productCreation, errors: resultValidation.mapped(), oldData: req.body })
+
+        } 
+        
         let file = req.file
         if (!file) {
             let error = new Error('Es necesaria una imágen para crear el producto')
@@ -52,7 +64,7 @@ const productController = {
             /*id: addId(),*/
             product_name: req.body.name,
             description: req.body.description,
-            subcategory_id: req.body.category,
+            subcategory_id: req.body.subcategory,
             price: req.body.price,
             product_image: req.file.filename
             /* img: '1_' + req.body.name + '.jpg' */

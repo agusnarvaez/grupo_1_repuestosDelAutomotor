@@ -50,6 +50,24 @@ h2{
   font-weight: bold;
 }
 
+select{
+  display: flex;
+  width: 50vw;
+  font-size: 14px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.text-danger{
+
+  color: red;
+  font-weight: bold;
+}
+
+
 .inputImage{
   display: flex;
   justify-content: left;
