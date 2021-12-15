@@ -24,7 +24,7 @@ const userController = {
         /*res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 }); Método que me permite enviar cookies al navegador => (nombre,contenido,duración)*/ 
         res.render('./users/register', { partialHead: partialHead.register });
     },
-    create: function (req, res) { //Creación de producto
+    create: function (req, res) { //Creación de usuario
         let resultValidation = validationResult(req);
         //Validación del formulario
         if (resultValidation.errors.length > 0) {

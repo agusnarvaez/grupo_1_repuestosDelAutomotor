@@ -10,6 +10,9 @@ let imagesCounter = '1' /* Variable que en un futuro usaremos para subir más de
 /* *** Configuración middleware multer ***/
 let productCrud = require('../middlewares/productMulterMiddleware.js');
 
+/* *** Configuración middleware multer ***/
+let productCreateValidation = require('../middlewares/productCreateValidationMiddleware.js');
+
 /* *****A página productos**** */
 router.get('/', productController.index);
 
@@ -22,7 +25,7 @@ router.get('/detail/:id', productController.detail);
 /* *****Métodos para registro de producto ***** */
 router.get("/creation", productController.register); /* A página creación de producto */
 
-router.post("/creation", productCrud.single('image'), productController.create); /* *****Creación de producto***** */
+router.post("/creation", productCrud.single('image'), productCreateValidation , productController.create); /* *****Creación de producto***** */
 
 /* *****Métodos para edición de producto ***** */
 router.get("/edition/:id", productController.edition); /* A página edición de producto */

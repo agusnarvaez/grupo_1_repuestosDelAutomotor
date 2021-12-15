@@ -8,28 +8,71 @@
   <div class="productCrudForm">
     <form method="POST" action="/products/creation" enctype="multipart/form-data">
       <div class= "campo">
-        <label for="name">Nombre de producto</label> <br>
-        <input class="input" name="name" id="name" type="text">
+        <label for="name">Nombre del producto</label> <br>
+        <input class="input" name="name" id="name" type="text" value = "<%= locals.oldData ? oldData.name : null %>">
+        <% if (locals.errors && errors.name){  %> 
+          <div class="text-danger">
+             <%= errors.name.msg %>
+          </div>
+       <% } %>
+
       </div>
       <div class= "campo">
         <label for="description">Descripción</label> <br>
-        <input class="input" name="description" id="description" type="text">
+        <input class="input" name="description" id="description" type="text" value = "<%= locals.oldData ? oldData.description : null %>">
+        <% if (locals.errors && errors.description){  %> 
+          <div class="text-danger">
+             <%= errors.description.msg %>
+          </div>
+       <% } %>  
       </div>
       <div class= "campo">
         <label for="image">Imagen</label> <br>     
         <input type="file" name="image" class="inputImage"  id="image" >
+        <% if (locals.errors && errors.image){  %> 
+          <div class="text-danger">
+             <%= errors.image.msg %>
+          </div>
+       <% } %>  
       </div>
       <div class= "campo">
-        <label for="category">Categoría</label> <br>
-        <input class="input" name="category" id="category" type="text">
+        <label for="subcategory">Subcategoría</label> <br>
+        <select name="subcategory">
+         
+          <option value="">Elegí una subcategoría</option>
+          
+          <% 
+              let subcategories = ['Subcategoría 1','Subcategoría 2','Subcategoría 3','Subcategoría 4','Subcategoría 5','Subcategoría 6',]
+          %>
+
+          <% for (const oneSubcategory of subcategories ) { %>
+          
+            <option 
+              value="<%= oneSubcategory %>"
+              <%= locals.oldData && (oneSubcategory === oldData.subcategory) ? 'selected' : null %> 
+              
+              > <%= oneSubcategory %> </option>
+          
+          <% } %>          
+        </select>
+      
+        <% if (locals.errors && errors.subcategory){  %> 
+          <div class="text-danger">
+             <%= errors.subcategory.msg %>
+          </div>
+       <% } %>  
+
+
       </div>
       <div class= "campo">
-        <label for="variable">Color</label> <br>
-        <input class="color" value="Agregar variantes" id="variable" type="color">
-      </div>
-      <div class= "campo">
+
         <label for="price">Precio</label> <br>
         <input class="input" name="price" id="price" type="text" placeholder="$">
+        <% if (locals.errors && errors.price){  %> 
+          <div class="text-danger">
+             <%= errors.price.msg %>
+          </div>
+       <% } %> 
       </div>
       <div class="buttons">
         <input class="button" value="CREAR" type="submit">
