@@ -1,5 +1,5 @@
 body {
-  height: 500px;
+  max-height: 1000px;
 }
 main {
   width: 100%;
@@ -7,7 +7,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 75%;
-  max-height: 700px;
+  max-height: 1000px;
 }
 main h2 {
   text-align: center;
@@ -16,7 +16,7 @@ main h2 {
 
 .loginForm {
   background-color: bisque;
-  margin: 0 auto;
+  margin: 1% auto;
   width: 75%;
   height: 75%;
   padding: 10%;
@@ -29,6 +29,9 @@ main h2 {
 .loginForm form {
   align-items: center;
 }
+.errors {
+  padding: 5%;
+}
 .campo {
   background-color: rgb(255, 255, 255);
   padding: 1.5%;
@@ -37,6 +40,13 @@ main h2 {
   width: 50vw;
   font-weight: bold;
   outline: none;
+}
+.is-invalid {
+  border: 2px solid red;
+}
+
+.is-valid {
+  border: 2px solid green;
 }
 .submit {
   padding: 5px;
@@ -62,6 +72,6 @@ main h2 {
   text-decoration: none;
   color: black;
 }
-.checkbox{
-  padding: 2% 0 10% 0
+.checkbox {
+  padding: 2% 0 10% 0;
 }

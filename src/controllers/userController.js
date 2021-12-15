@@ -14,8 +14,8 @@ let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8
 
 /* Array con los usuarios del sitio */
 //const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));
-const db = require("../database/models");
 const e = require('express');
+const db = require("../database/models");
 const users = db.User
 
 /* *****Controlador de usuario***** */

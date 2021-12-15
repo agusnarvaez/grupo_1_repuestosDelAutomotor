@@ -9,15 +9,16 @@
   <main>
     <h2>Ingresá a tu cuenta!</h2>
     <div class="loginForm">
-      <form action="/user/login" method="POST">
+      <ul class='errors'></ul>
+      <form class='form' action="/user/login" method="POST">
         <!-- Formulario para loguearse -->
-        <input class="campo" type="text" name="user" id="usuario" placeholder="Ingrese su nombre de usuario o mail" value="<%= locals.oldData ? oldData.user : null %>"><br> <!-- Nombre de usuario-->
+        <input class="campo" type="text" name="user" id="user" placeholder="Ingrese su mail" value="<%= locals.oldData ? oldData.user : null %>"><br> <!-- Nombre de usuario-->
         <% if (locals.errors && errors.user){  %>
         <div class="text-danger">
           <%= errors.user.msg %>
         </div>
         <% } %><br>
-        <input class="campo" type="password" name="pass" placeholder="Ingrese su contraseña"><br> <!-- Contraseña -->
+        <input class="campo" type="password" name="pass" placeholder="Ingrese su contraseña" id='password'><br> <!-- Contraseña -->
         <% if (locals.errors && errors.password){  %>
         <div class="text-danger">
           <%= errors.password.msg %>
@@ -36,7 +37,7 @@
   </main>
   <%- include('../partials/footer.ejs') %>
   <!--Footer  -->
-  <script src='/js/users/loginValidation.js'></script>
+  <script src='/js/users/loginValidation.js'></script> <!-- Insertamos script de validación de formulario -->
 </body>
 
 </html>
