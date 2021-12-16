@@ -4,54 +4,52 @@ window.onload = function () { //Esperamos a que cargue la pantalla
     let form = document.querySelector('.form');
     let user = document.querySelector('#user');
     let password = document.querySelector('#password');
+    //let passInput = document.querySelector('.passInput');
     let submit = document.querySelector('.submit');
-    /*     const db = require("../../../src/database/models");
-        const users = db.User; */
+    let userCheck = document.querySelector('#userCheck');
+    let userAlert = document.querySelector('#userAlert');
+    let passCheck = document.querySelector('#passCheck');
+    let passAlert = document.querySelector('#passAlert');
+    let users = document.querySelector('.users');
+    let usersDB = users.textContent;
+    users.innerHTML = '0';
+    console.log(usersDB);
     user.focus();
 
     form.addEventListener('submit', function (e) {
         let errors = [];
         e.preventDefault();
         //Validamos el campo user
-        //console.log(!(user.value.indexOf('@hotmail.com') != (-1) || user.value.indexOf('@gmail.com') != (-1)))
-        if (user.value.length < 2) {//Validamos que no esté vacío
+        if (user.value.length < 1) {//Validamos que no esté vacío
             errors.push('El mail no puede quedar vacío');
             user.classList.add('is-invalid');
             console.log(errors);
+            userAlert.classList.remove('hidden');
         }
         else if (!(user.value.indexOf('@hotmail.com') != (-1) || user.value.indexOf('@gmail.com') != (-1) || user.value.indexOf('@outlook.com') != (-1) || user.value.indexOf('@live.com') != (-1) || user.value.indexOf('@yahoo.com') != (-1) || user.value.indexOf('@gmx.') != (-1) || user.value.indexOf('@aol.com') != (-1))) {//Validamos que sea formato mail
             errors.push('Formato de email inválido!');
             user.classList.add('is-invalid');
+            userAlert.classList.remove('hidden');
+        } else if (usersDB.indexOf(user.value) == (-1)) {//Validamos que esté en la base de datos
+            errors.push('Su email no se encuentra en la base de datos...registrese!');
+            user.classList.add('is-invalid');
+            userAlert.classList.remove('hidden');
         } else {
             user.classList.remove('is-invalid');
             user.classList.add('is-valid');
+            userAlert.classList.add('hidden');
+            userCheck.classList.remove('hidden');
         }
-
-        /* else {//Validamos que esté en la base de datos
-            users.findOne({
-                where: {
-                    email: user.value
-                }
-            })
-                .then((result) => {
-                    if (result != null) {
-                        errors.push('Su email no se encuentra registrado');
-                        password.classList.add('is-invalid');
-                    }
-                    else {
-                        password.classList.remove('is-invalid');
-                        password.classList.add('is-valid');
-                    }
-                })
-
-        } */
         // Validamos si la contraseña existe
         if (password.value.length < 1) {
             errors.push('Debe ingresar una contraseña');
             password.classList.add('is-invalid');
+            passAlert.classList.remove('hidden');
         } else {
             password.classList.remove('is-invalid');
             password.classList.add('is-valid');
+            passAlert.classList.add('hidden');
+            passCheck.classList.remove('hidden');
         }
         let ulErrors = document.querySelector('.errors');
         if (errors.length > 0) {
@@ -64,7 +62,8 @@ window.onload = function () { //Esperamos a que cargue la pantalla
             })
         } else {
             ulErrors.innerHTML = '';
-            alert('La validación fue exitosa!');
+            //alert('La validación fue exitosa!');
+
         }
     })
 }
