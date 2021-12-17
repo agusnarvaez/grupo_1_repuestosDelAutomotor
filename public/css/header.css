@@ -15,11 +15,28 @@
 }
 .burgerMenu {
   display: inline-block;
-  width: 10%;
+  width: 20%;
   padding: auto;
   margin: auto 0;
   border-radius: 50%;
-  background-color: #eec643;
+  background-color: #818181;
+}
+.burgerMenu:hover .burger-menu-items{
+  display: block;
+  z-index: 2;
+  position: absolute;
+  background-color:hsla(0, 0%, 100%, 0.671)
+}
+.burger-menu-items{
+  display:none;
+  text-align: start;
+  justify-self: center;
+  justify-items: space-around;
+  align-self: center;
+  padding: 2%;
+  border-radius: 20px;
+  margin-top: 16%;
+  width: 60vw
 }
 .mainHeader .logo {
   display: inline-block;
@@ -46,6 +63,9 @@
   }
   .burgerMenu {
     display: none;
+  }
+  .burger-menu{
+    display: none
   }
   .menu {
     display: flex;
