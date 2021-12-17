@@ -14,15 +14,20 @@ let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8
 
 /* Array con los usuarios del sitio */
 //const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));
-const db = require("../database/models");
 const e = require('express');
+const db = require("../database/models");
 const users = db.User
 
 /* *****Controlador de usuario***** */
 const userController = {
     register: function (req, res) { //A página register
-        /*res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 }); Método que me permite enviar cookies al navegador => (nombre,contenido,duración)*/ 
-        res.render('./users/register', { partialHead: partialHead.register });
+        /*res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 }); Método que me permite enviar cookies al navegador => (nombre,contenido,duración)*/
+        users.findAll()
+            .then((users) => {
+                return res.render('./users/register', { partialHead: partialHead.register, users });
+            })
+            .catch((error) => { return next(error) })
+
     },
     create: function (req, res) { //Creación de usuario
         let resultValidation = validationResult(req);
@@ -33,16 +38,17 @@ const userController = {
         else {
             users.findOne({
                 where: {
-                    email: req.body.email}
-                })
+                    email: req.body.email
+                }
+            })
                 .then((result) => {
-                    if(result != null) {
+                    if (result != null) {
                         return res.render('./users/register', {
                             partialHead: partialHead.register,
                             errors: { email: { msg: 'Este email ya está registrado' } },
                             oldData: req.body
                         })
-                    }else{
+                    } else {
                         /**Si están todos los campos, y el usuario no existe, se crea**/
                         let file = req.file
                         let user = {
@@ -60,11 +66,15 @@ const userController = {
                         users.create(user).then(res.redirect('./login'));
                         //fs.writeFileSync('src/data/users.json', (JSON.stringify(users, null, " ")))
                     }
-                }).catch((error) => {return next(error)})
+                }).catch((error) => { return next(error) })
         }
     },
     login: function (req, res) { //A página login
-        res.render('./users/login', { partialHead: partialHead.login });
+        users.findAll()
+            .then((users) => {
+                res.render('./users/login', { partialHead: partialHead.login, users });
+            })
+            .catch((error) => { return next(error) })
     },
     logprocess: function (req, res) {
         // return res.send(req.body);
@@ -79,7 +89,7 @@ const userController = {
                 oldData: req.body
             });
         }
-    
+
         users.findOne({
             where: {
                 email: req.body.user
@@ -108,17 +118,17 @@ const userController = {
                     partialHead: partialHead.login,
                     errors: { user: { msg: 'Las credenciales son inválidas' } }
                 });
-        }
-        /**Avisa si el email no está en la base de datos */
-        return res.render('./users/login', {
-            partialHead: partialHead.login,
-            errors: {
-                user: {
-                    msg: 'Este email no está registrado'
-                }
             }
-        });
-        }).catch((error) => {res.send(error)})
+            /**Avisa si el email no está en la base de datos */
+            return res.render('./users/login', {
+                partialHead: partialHead.login,
+                errors: {
+                    user: {
+                        msg: 'Este email no está registrado'
+                    }
+                }
+            });
+        }).catch((error) => { res.send(error) })
     },
     profile: (req, res) => {
         let userLogged = req.session.userLogged; //Se recuperan los datos del usuario logueado a la session
@@ -132,7 +142,7 @@ const userController = {
         return res.redirect('/');
     },
     deleteUser: (req, res) => {
-        users.destroy({where:{id:req.params.id}}).then(res.redirect('..'))
+        users.destroy({ where: { id: req.params.id } }).then(res.redirect('..'))
     }
 };
 

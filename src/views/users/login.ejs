@@ -7,17 +7,32 @@
   <%- include('../partials/header.ejs') %>
   <!--Header -->
   <main>
+    <div class='users hidden'><% users.forEach(user=>{%>
+      <%= user.email %>
+      <%}) %>
+    </div>
     <h2>Ingresá a tu cuenta!</h2>
     <div class="loginForm">
-      <form action="/user/login" method="POST">
+      <ul class='errors'></ul>
+      <form class='form' action="/user/login" method="POST">
         <!-- Formulario para loguearse -->
-        <input class="campo" type="text" name="user" id="usuario" placeholder="Ingrese su nombre de usuario o mail" value="<%= locals.oldData ? oldData.user : null %>"><br> <!-- Nombre de usuario-->
+        <div class='input'>
+          <input class="campo" type="text" name="user" id="user" placeholder="Ingrese su mail" value="<%= locals.oldData ? oldData.user : null %>">
+          <ion-icon class='alert hidden' id='userAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='userCheck' name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <br> <!-- Nombre de usuario-->
         <% if (locals.errors && errors.user){  %>
         <div class="text-danger">
           <%= errors.user.msg %>
         </div>
         <% } %><br>
-        <input class="campo" type="password" name="password" placeholder="Ingrese su contraseña"><br> <!-- Contraseña -->
+        <div class='input'>
+          <input class="campo" type="password" name="password" placeholder="Ingrese su contraseña" id='password'>
+          <ion-icon class='alert hidden' id='passAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='passCheck' name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <br> <!-- Contraseña -->
         <% if (locals.errors && errors.password){  %>
         <div class="text-danger">
           <%= errors.password.msg %>
@@ -36,7 +51,9 @@
   </main>
   <%- include('../partials/footer.ejs') %>
   <!--Footer  -->
-  <script src='/js/users/loginValidation.js'></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src='/js/users/loginValidation.js'></script> <!-- Insertamos script de validación de formulario -->
 </body>
 
 </html>

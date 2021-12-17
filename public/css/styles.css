@@ -132,6 +132,8 @@ main {
   display: none;
 }
 
+
+
 @media (min-width: 460px) {
   /*.menu {
     display: inline;

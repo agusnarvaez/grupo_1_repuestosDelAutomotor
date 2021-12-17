@@ -1,5 +1,5 @@
 body {
-  height: 500px;
+  max-height: 1000px;
 }
 main {
   width: 100%;
@@ -7,7 +7,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 75%;
-  max-height: 700px;
+  max-height: 1000px;
 }
 main h2 {
   text-align: center;
@@ -16,7 +16,7 @@ main h2 {
 
 .loginForm {
   background-color: bisque;
-  margin: 0 auto;
+  margin: 1% auto;
   width: 75%;
   height: 75%;
   padding: 10%;
@@ -29,14 +29,50 @@ main h2 {
 .loginForm form {
   align-items: center;
 }
+.errors {
+  padding: 5%;
+}
 .campo {
   background-color: rgb(255, 255, 255);
-  padding: 1.5%;
+  padding: 1%;
   border: 1px solid rgb(255, 255, 255);
-  border-radius: 5px;
-  width: 50vw;
+  width: 100%;
   font-weight: bold;
+  border-radius: 10px;
   outline: none;
+}
+.input {
+  /*   background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px; */
+  width: 50vw;
+  display: flex;
+  align-items: center;
+}
+.is-valid {
+  border: 2px solid green;
+  border-radius: 10px;
+}
+.is-invalid {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+.alert {
+  color: red;
+  padding: 1%;
+}
+.check {
+  color: green;
+  padding: 1%;
+}
+.hidden {
+  display: none;
+}
+
+.errors {
+  list-style: none;
+  color: red;
+  font-weight: bold;
 }
 .submit {
   padding: 5px;
@@ -62,6 +98,6 @@ main h2 {
   text-decoration: none;
   color: black;
 }
-.checkbox{
-  padding: 2% 0 10% 0
+.checkbox {
+  padding: 2% 0 10% 0;
 }
