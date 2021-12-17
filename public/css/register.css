@@ -1,11 +1,11 @@
 * {
-    font-family: "Lato", sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  main {
+main {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -14,14 +14,14 @@
   box-sizing: content-box;
   padding-top: 2%;
   padding-bottom: 2%;
-  }
+}
 
-h2{
+h2 {
   text-align: center;
   margin-bottom: 15px;
 }
 
-.registerForm{
+.registerForm {
   background-color: bisque;
   width: 60%;
   height: 60%;
@@ -38,7 +38,7 @@ h2{
 .loginForm form {
   align-items: center;
 }
-.input{
+.input {
   width: 50vw;
   font-size: 14px;
   height: 20px;
@@ -50,26 +50,55 @@ h2{
   outline: none;
 }
 
-main label{
-  display:flex;
+.inputSpace {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+}
+.is-valid {
+  border: 2px solid green;
+  border-radius: 10px;
+}
+.is-invalid {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+.alert {
+  color: red;
+  padding: 1%;
+}
+.check {
+  color: green;
+  padding: 1%;
+}
+.hidden {
+  display: none;
+}
+
+.errors {
+  list-style: none;
+  color: red;
+  font-weight: bold;
+}
+
+main label {
+  display: flex;
   height: 0.5vh;
   margin-bottom: 0.7%;
   margin-left: 1%;
   font-weight: bold;
 }
 
-.campo{
+.campo {
   margin-bottom: 4%;
 }
 
-.text-danger{
-
+.text-danger {
   color: red;
   font-weight: bold;
 }
- 
 
-.buttons{
+.buttons {
   margin-top: 6%;
   justify-self: center;
   display: flex;
@@ -83,8 +112,8 @@ button {
   padding: 2%;
   border-radius: 5px;
   border: none;
-  }
-.checkbox{
+}
+.checkbox {
   display: flex;
   flex-direction: row;
   margin-top: 5%;
@@ -92,11 +121,11 @@ button {
   justify-content: center;
   max-width: 50vw;
 }
-.checkbox input{
+.checkbox input {
   display: flex;
   margin-left: 3%;
 }
-.radio{
+.radio {
   display: flex;
   height: auto;
   margin-bottom: auto;
@@ -104,18 +133,18 @@ button {
   font-size: small;
 }
 
-
-
 input:focus {
   color: blue;
   font-weight: bold;
-  }
+}
 
-input:focus { border-color: yellow; } 
-  input:hover {
-    background-color: gold;
-    }
-a{
+input:focus {
+  border-color: yellow;
+}
+input:hover {
+  background-color: gold;
+}
+a {
   text-decoration: none;
   color: whitesmoke;
 }

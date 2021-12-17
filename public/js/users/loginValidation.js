@@ -4,16 +4,13 @@ window.onload = function () { //Esperamos a que cargue la pantalla
     let form = document.querySelector('.form');
     let user = document.querySelector('#user');
     let password = document.querySelector('#password');
-    //let passInput = document.querySelector('.passInput');
-    let submit = document.querySelector('.submit');
     let userCheck = document.querySelector('#userCheck');
     let userAlert = document.querySelector('#userAlert');
     let passCheck = document.querySelector('#passCheck');
     let passAlert = document.querySelector('#passAlert');
     let users = document.querySelector('.users');
     let usersDB = users.textContent;
-    users.innerHTML = '0';
-    console.log(usersDB);
+    users.innerHTML = '';
     user.focus();
 
     form.addEventListener('submit', function (e) {
@@ -23,7 +20,6 @@ window.onload = function () { //Esperamos a que cargue la pantalla
         if (user.value.length < 1) {//Validamos que no esté vacío
             errors.push('El mail no puede quedar vacío');
             user.classList.add('is-invalid');
-            console.log(errors);
             userAlert.classList.remove('hidden');
         }
         else if (!(user.value.indexOf('@hotmail.com') != (-1) || user.value.indexOf('@gmail.com') != (-1) || user.value.indexOf('@outlook.com') != (-1) || user.value.indexOf('@live.com') != (-1) || user.value.indexOf('@yahoo.com') != (-1) || user.value.indexOf('@gmx.') != (-1) || user.value.indexOf('@aol.com') != (-1))) {//Validamos que sea formato mail
