@@ -60,11 +60,28 @@ const productController = {
 				return 1
 			}
 		}  */
+
+        function subcategory(category){
+            if(category == "Subcategoría 1"){
+                return 1
+            }else if(category == "Subcategoría 2"){
+                return 2
+            }else if(category == "Subcategoría 3"){
+                return 3
+            }else if(category == "Subcategoría 4"){
+                return 4
+            }else if(category == "Subcategoría 5"){
+                return 5
+            }else if(category == "Subcategoría 6"){
+                return 6
+            }
+        }
+
         let newProduct = {
             /*id: addId(),*/
             product_name: req.body.name,
             description: req.body.description,
-            subcategory_id: req.body.subcategory,
+            subcategory_id: subcategory(req.body.subcategory),
             price: req.body.price,
             product_image: req.file.filename
             /* img: '1_' + req.body.name + '.jpg' */
