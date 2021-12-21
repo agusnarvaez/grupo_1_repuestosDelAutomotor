@@ -121,18 +121,18 @@ main {
   resize: none;
   outline: none;
 }
-.search button {
+.search .submit {
   width: 10%;
   padding: auto;
   margin: auto;
   text-align: center;
+  background-color: #0000;
+  border: #0000;
 }
 
 .filters {
   display: none;
 }
-
-
 
 @media (min-width: 460px) {
   /*.menu {

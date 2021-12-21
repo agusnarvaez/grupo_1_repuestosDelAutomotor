@@ -7,12 +7,8 @@
   <%- include('../partials/header.ejs') %>
   <!--Header -->
   <main>
-    <div class='users hidden'><% users.forEach(user=>{%>
-      <%= user.email %>
-      <%}) %>
-    </div>
-    <h2>Registre su cuenta</h2>
 
+    <h2>Registre su cuenta</h2>
     <div class="registerForm">
       <ul class='errors'></ul>
       <form class="form" action="/user/register" method="POST" enctype="multipart/form-data">
@@ -127,6 +123,7 @@
             Deseo recibir correos con información y ofertas de la página.
           </label>
         </div>
+        <div id="map"></div>
         <div class="buttons campo">
           <button type="submit">ENVIAR</button>
           <button type="reset"> BORRAR </button>
@@ -139,6 +136,8 @@
   <!--Footer  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+  <script src='/js/products/mapValidation.js'></script>
   <script src='/js/users/registerValidation.js'></script>
 </body>
 

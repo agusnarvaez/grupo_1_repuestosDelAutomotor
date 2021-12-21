@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head dinámico -->
-<body>
-  <%- include('../partials/header.ejs') %>  <!-- Header -->
-<main>
-  <h2>Edición de producto <%= product.id %> </h2>
-  <div class="productCrudForm">
-    <form method="POST" action="/products/edition/<%= product.id%>?_method=PUT" enctype="multipart/form-data">
-      <div class= "hiddenCamp productId">
-        <input class="hiddenInput productId" name="productId" id="productId" type="text" value="<%= product.id %>">
-      </div>
-      <div class= "campo">
-        <label for="name">Nombre de producto</label> <br>
-        <input class="input" name="name" id="name" type="text" value="<%= product.product_name %>">
-      </div>
-      <div class= "campo">
-        <label for="description">Descripción</label> <br>
-        <input class="input" name="description" id="description" type="text" value="<%= product.description %>">
-      </div>
-      <div class= "campo">
-        <label for="image">Imagen</label> <br>     
-        <input class="inputImage" name="image" id="image" type="file">
-      </div>
-      <div class= "campo">
-        <label for="category">Categoría</label> <br>
-        <input class="input" name="category" id="category" type="text" value="<%= product.subcategory_id %>">
-      </div>
-      <div class= "campo">
-        <label for="price">Precio</label> <br>
-        <input class="input" name="price" id="price" type="text" placeholder="$" value="<%= product.price %>">
-      </div>
-      <div class="buttons">
-        <input class="button" value="Editar" type="submit">
-      </div>
-    </form>
-    <form method="POST" action="/products/delete/<%= product.id%>?_method=DELETE" enctype="multipart/form-data">
-        <!--<input class="button" id="delete-button" value="Eliminar" type="submit">-->
-        <button  method="POST" type="submit" class="action-button  button delete">ELIMINAR</button> 
-    </form>
+<%- include('../partials/head.ejs', {partialHead: partialHead}) %>
+<!-- Head dinámico -->
 
-</div>
-</main>
-<%- include('../partials/footer.ejs') %>  <!-- Footer -->
-<script src='/js/products/editionValidation.js'></script>
+<body>
+  <%- include('../partials/header.ejs') %>
+  <!-- Header -->
+  <main>
+    <h2>Edición de producto <%= product.id %> </h2>
+    <div class="productCrudForm">
+      <ul class='errors'></ul>
+      <form method="POST" action="/products/edition/<%= product.id%>?_method=PUT" enctype="multipart/form-data" class='form'>
+        <div class="hiddenCamp productId">
+          <input class="hiddenInput productId" name="productId" id="productId" type="text" value="<%= product.id %>">
+        </div>
+        <div class="campo">
+          <label for="name">Nombre de producto</label> <br>
+          <input class="input" name="name" id="name" type="text" value="<%= product.product_name %>">
+          <ion-icon class='alert hidden' id='nameAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='nameCheck' name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <div class="campo">
+          <label for="description">Descripción</label> <br>
+          <input class="input" name="description" id="description" type="text" value="<%= product.description %>">
+          <ion-icon class='alert hidden' id='descriptionAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='descriptionCheck' name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <div class="campo">
+          <label for="image">Imagen</label> <br>
+          <input class="inputImage" name="image" id="image" type="file">
+          <ion-icon class='alert hidden' id='imageAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='imageCheck' name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <div class="campo">
+          <label for="category">Categoría</label> <br>
+          <input class="input" name="category" id="category" type="text" value="<%= product.subcategory_id %>">
+          <ion-icon class='alert hidden' id='categoryAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='categoryCheck' name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <div class="campo">
+          <label for="price">Precio</label> <br>
+          <input class="input" name="price" id="price" type="text" placeholder="$" value="<%= product.price %>">
+          <ion-icon class='alert hidden' id='priceAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='priceCheck' name="checkmark-circle-outline"></ion-icon>
+        </div>
+        <div class="buttons">
+          <input class="button" value="Editar" type="submit">
+        </div>
+      </form>
+      <form method="POST" action="/products/delete/<%= product.id%>?_method=DELETE" enctype="multipart/form-data">
+        <!--<input class="button" id="delete-button" value="Eliminar" type="submit">-->
+        <button method="POST" type="submit" class="action-button  button delete">ELIMINAR</button>
+      </form>
+
+    </div>
+  </main>
+  <%- include('../partials/footer.ejs') %>
+  <!-- Footer -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src='/js/products/editionValidation.js'></script>
 </body>
+
 </html>

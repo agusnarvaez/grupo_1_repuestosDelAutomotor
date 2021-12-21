@@ -1,86 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head.ejs', {partialHead: partialHead}) %> <!-- Head dinámico -->
-<body>
-  <%- include('../partials/header.ejs') %>  <!-- Header -->
-<main>
-  <h2>Creación de producto</h2>
-  <div class="productCrudForm">
-    <form method="POST" action="/products/creation" enctype="multipart/form-data">
-      <div class= "campo">
-        <label for="name">Nombre del producto</label> <br>
-        <input class="input" name="name" id="name" type="text" value = "<%= locals.oldData ? oldData.name : null %>">
-        <% if (locals.errors && errors.name){  %> 
-          <div class="text-danger">
-             <%= errors.name.msg %>
-          </div>
-       <% } %>
+<%- include('../partials/head.ejs', {partialHead: partialHead}) %>
+<!-- Head dinámico -->
 
-      </div>
-      <div class= "campo">
-        <label for="description">Descripción</label> <br>
-        <input class="input" name="description" id="description" type="text" value = "<%= locals.oldData ? oldData.description : null %>">
-        <% if (locals.errors && errors.description){  %> 
+<body>
+  <%- include('../partials/header.ejs') %>
+  <!-- Header -->
+  <main>
+    <h2>Creación de producto</h2>
+    <div class="productCrudForm">
+      <ul class='errors'></ul>
+      <form method="POST" action="/products/creation" enctype="multipart/form-data" class='form'>
+        <div class="campo">
+          <label for="name">Nombre del producto</label> <br>
+          <input class="input" name="name" id="name" type="text" value="<%= locals.oldData ? oldData.name : null %>">
+          <ion-icon class='alert hidden' id='nameAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='nameCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.name){  %>
           <div class="text-danger">
-             <%= errors.description.msg %>
+            <%= errors.name.msg %>
           </div>
-       <% } %>  
-      </div>
-      <div class= "campo">
-        <label for="image">Imagen</label> <br>     
-        <input type="file" name="image" class="inputImage"  id="image" >
-        <% if (locals.errors && errors.image){  %> 
+          <% } %>
+        </div>
+        <div class="campo">
+          <label for="description">Descripción</label> <br>
+          <input class="input" name="description" id="description" type="text" value="<%= locals.oldData ? oldData.description : null %>">
+          <ion-icon class='alert hidden' id='descriptionAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='descriptionCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.description){  %>
           <div class="text-danger">
-             <%= errors.image.msg %>
+            <%= errors.description.msg %>
           </div>
-       <% } %>  
-      </div>
-      <div class= "campo">
-        <label for="subcategory">Subcategoría</label> <br>
-        <select name="subcategory">
-         
-          <option value="">Elegí una subcategoría</option>
-          
-          <% 
+          <% } %>
+        </div>
+        <div class="campo">
+          <label for="image">Imagen</label> <br>
+          <div class='inputSpace'>
+            <input type="file" name="image" class="inputImage" id="image">
+
+          </div>
+          <ion-icon class='alert hidden' id='imageAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='imageCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.image){  %>
+          <div class="text-danger">
+            <%= errors.image.msg %>
+          </div>
+          <% } %>
+        </div>
+        <div class="campo">
+          <label for="subcategory">Subcategoría</label> <br>
+          <select name="subcategory" id='category' class='category'>
+
+            <option value="">Elegí una subcategoría</option>
+
+            <% 
               let subcategories = ['Subcategoría 1','Subcategoría 2','Subcategoría 3','Subcategoría 4','Subcategoría 5','Subcategoría 6',]
           %>
 
-          <% for (const oneSubcategory of subcategories ) { %>
-          
-            <option 
-              value="<%= oneSubcategory %>"
-              <%= locals.oldData && (oneSubcategory === oldData.subcategory) ? 'selected' : null %> 
-              
-              > <%= oneSubcategory %> </option>
-          
-          <% } %>          
-        </select>
-      
-        <% if (locals.errors && errors.subcategory){  %> 
+            <% for (const oneSubcategory of subcategories ) { %>
+
+            <option value="<%= oneSubcategory %>" <%= locals.oldData && (oneSubcategory === oldData.subcategory) ? 'selected' : null %>> <%= oneSubcategory %> </option>
+
+            <% } %>
+          </select>
+          <ion-icon class='alert hidden' id='categoryAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='categoryCheck' name="checkmark-circle-outline"></ion-icon>
+
+          <% if (locals.errors && errors.subcategory){  %>
           <div class="text-danger">
-             <%= errors.subcategory.msg %>
+            <%= errors.subcategory.msg %>
           </div>
-       <% } %>  
+          <% } %>
 
 
-      </div>
-      <div class= "campo">
+        </div>
+        <div class="campo">
 
-        <label for="price">Precio</label> <br>
-        <input class="input" name="price" id="price" type="text" placeholder="$">
-        <% if (locals.errors && errors.price){  %> 
+          <label for="price">Precio</label> <br>
+          <input class="input" name="price" id="price" type="text" placeholder="$">
+          <ion-icon class='alert hidden' id='priceAlert' name="alert-circle-outline"></ion-icon>
+          <ion-icon class='check hidden' id='priceCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.price){  %>
           <div class="text-danger">
-             <%= errors.price.msg %>
+            <%= errors.price.msg %>
           </div>
-       <% } %> 
-      </div>
-      <div class="buttons">
-        <input class="button" value="CREAR" type="submit">
-      </div>
-    </form>
-</div>
-</main>
-<%- include('../partials/footer.ejs') %>  <!-- Footer -->
-<script src='/js/products/creationValidation.js'></script>
+          <% } %>
+        </div>
+        <div class="buttons">
+          <input class="button" value="CREAR" type="submit">
+        </div>
+      </form>
+    </div>
+  </main>
+  <%- include('../partials/footer.ejs') %>
+  <!-- Footer -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src='/js/products/creationValidation.js'></script>
+
 </body>
+
 </html>

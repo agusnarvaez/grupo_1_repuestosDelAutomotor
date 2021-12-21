@@ -1,8 +1,8 @@
 * {
-    font-family: "Lato", sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 main {
   width: 100%;
@@ -14,12 +14,12 @@ main {
   padding-top: 2%;
   padding-bottom: 2%;
 }
-h2{
+h2 {
   text-align: center;
   margin-bottom: 15px;
 }
 
-.productCrudForm{
+.productCrudForm {
   background-color: bisque;
   width: 60%;
   height: 60%;
@@ -38,9 +38,9 @@ h2{
   display: flex;
   flex-direction: column;
 }
-.input{
+.input {
   display: flex;
-  width: 50vw;
+  width: 40vw;
   font-size: 14px;
   height: 20px;
   border-radius: 5px;
@@ -49,10 +49,35 @@ h2{
   border: 1px solid rgb(255, 255, 255);
   font-weight: bold;
 }
+.is-valid {
+  border: 2px solid green;
+  border-radius: 10px;
+}
+.is-invalid {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+.alert {
+  color: red;
+  padding: 1%;
+}
+.check {
+  color: green;
+  padding: 1%;
+}
+.hidden {
+  display: none;
+}
 
-select{
+.errors {
+  list-style: none;
+  color: red;
+  font-weight: bold;
+}
+
+.category {
   display: flex;
-  width: 50vw;
+  width: 40vw;
   font-size: 14px;
   height: 30px;
   border-radius: 5px;
@@ -61,62 +86,62 @@ select{
   font-weight: bold;
 }
 
-.text-danger{
-
+.text-danger {
   color: red;
   font-weight: bold;
 }
 
-
-.inputImage{
+.inputImage {
   display: flex;
   justify-content: left;
   align-content: left;
   font-size: 14px;
-  width: 50vw;
+  width: 40vw;
   height: 30px;
   padding: 1%;
   padding-left: 0;
   font-weight: bold;
+  background-color: #0000;
 }
 
-.hiddenInput{
+.hiddenInput {
   display: none;
 }
-.hiddenCamp{
+.hiddenCamp {
   display: none;
 }
-.productId{
-  display:none;
+.productId {
+  display: none;
 }
 
-.color{
-  width: 30px;
-  height: 30px;
-  margin: 1%;
-  margin-left: 0;
-  border-radius: 5px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgb(255, 255, 255);
+main label {
+  display: flex;
+  height: 0.5vh;
+  margin-left: 0.7%;
+  margin-bottom: 0.7%;
+  font-weight: bold;
 }
-main label{
-    display:flex;
-    height: 0.5vh;
-    margin-left: 0.7%;
-    margin-bottom: 0.7%;
-    font-weight: bold;
-}
-  
-.campo{
+
+.campo {
   margin-bottom: 3%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 50vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
-  
 
-.buttons{
+label {
+  width: 100%;
+  padding: 3% 0;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  align-content: center;
+}
+
+.buttons {
   margin-top: 6%;
   justify-self: center;
   display: flex;
@@ -134,23 +159,24 @@ main label{
   border-radius: 5px;
   border: none;
 }
-#delete-button{
+#delete-button {
   background-color: rgb(238, 58, 58);
 }
-  
-  
+
 input:focus {
   color: blue;
   font-weight: bold;
 }
-  
-input:focus { border-color: yellow; } 
+
+input:focus {
+  border-color: yellow;
+}
 
 input:hover {
   background-color: gold;
 }
-  
-a{
+
+a {
   text-decoration: none;
   color: whitesmoke;
-  }
+}

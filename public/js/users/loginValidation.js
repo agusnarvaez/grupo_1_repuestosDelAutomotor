@@ -15,7 +15,7 @@ window.onload = function () { //Esperamos a que cargue la pantalla
 
     form.addEventListener('submit', function (e) {
         let errors = [];
-        e.preventDefault();
+        //e.preventDefault();
         //Validamos el campo user
         if (user.value.length < 1) {//Validamos que no esté vacío
             errors.push('El mail no puede quedar vacío');
@@ -26,11 +26,11 @@ window.onload = function () { //Esperamos a que cargue la pantalla
             errors.push('Formato de email inválido!');
             user.classList.add('is-invalid');
             userAlert.classList.remove('hidden');
-        } else if (usersDB.indexOf(user.value) == (-1)) {//Validamos que esté en la base de datos
+        } /* else if (usersDB.indexOf(user.value) == (-1)) {//Validamos que esté en la base de datos
             errors.push('Su email no se encuentra en la base de datos...registrese!');
             user.classList.add('is-invalid');
             userAlert.classList.remove('hidden');
-        } else {
+        } */ else {
             user.classList.remove('is-invalid');
             user.classList.add('is-valid');
             userAlert.classList.add('hidden');
@@ -59,7 +59,6 @@ window.onload = function () { //Esperamos a que cargue la pantalla
         } else {
             ulErrors.innerHTML = '';
             //alert('La validación fue exitosa!');
-
         }
     })
 }

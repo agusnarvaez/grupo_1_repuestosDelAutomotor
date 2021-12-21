@@ -35,7 +35,7 @@ window.onload = function () { //Esperamos a que cargue la pantalla
     form.addEventListener('submit', function (e) {
         let ulErrors = document.querySelector('.errors');
         let errors = [];
-        e.preventDefault();
+        //e.preventDefault();
         //Validamos el campo nombre
         if (firstName.value.length < 1) {//Validamos que no esté vacío
             errors.push('Debe ingresar un nombre');
@@ -67,7 +67,7 @@ window.onload = function () { //Esperamos a que cargue la pantalla
         }
 
         //Validamos el campo código Postal
-        if (lastName.value.length < 1) {//Validamos que no esté vacío
+        if (zipCode.value.length < 1) {//Validamos que no esté vacío
             errors.push('Debe ingresar un código postal');
             zipCode.classList.add('is-invalid');
             alert.zipCode.classList.remove('hidden');

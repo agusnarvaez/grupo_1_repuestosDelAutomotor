@@ -22,7 +22,7 @@ router.post('/register', userCrud.single('image'), registerValidation, userContr
 
 /* *****A página login***** */
 router.get('/login', guestMiddleware, userController.login);
-router.post('/login', loginValidation, userController.logprocess)
+router.post('/login', loginValidation, userController.logProcess)
 
 /* ****A página de perfil de usuario ***** */
 router.get('/profile', authMiddleware, userController.profile);

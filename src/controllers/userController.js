@@ -70,13 +70,9 @@ const userController = {
         }
     },
     login: function (req, res) { //A página login
-        users.findAll()
-            .then((users) => {
-                res.render('./users/login', { partialHead: partialHead.login, users });
-            })
-            .catch((error) => { return next(error) })
+        return res.render('./users/login', { partialHead: partialHead.login })
     },
-    logprocess: function (req, res) {
+    logProcess: function (req, res) {
         // return res.send(req.body);
         let loginValidation = validationResult(req); //Solicita la validación de los campos
         //let userToLogin = users.find(user => (user.email == req.body.user));
@@ -89,7 +85,6 @@ const userController = {
                 oldData: req.body
             });
         }
-
         users.findOne({
             where: {
                 email: req.body.user
@@ -99,7 +94,8 @@ const userController = {
             /*** Si el formulario está OK, Chequeamos si el mail está en nuestra base de datos***/
             if (userToLogin) {
                 /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
-                let password = req.body.pass;
+
+                let password = req.body.password;
                 let passwordIsOk = bcryptjs.compareSync(password, userToLogin.password);
                 if (passwordIsOk) {
                     //delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
@@ -116,7 +112,11 @@ const userController = {
                 /***Si los datos están mal, enviará el siguiente mensaje***/
                 return res.render('./users/login', {
                     partialHead: partialHead.login,
-                    errors: { user: { msg: 'Las credenciales son inválidas' } }
+                    errors: {
+                        user: {
+                            msg: 'Las credenciales son inválidas'
+                        }
+                    }
                 });
             }
             /**Avisa si el email no está en la base de datos */
@@ -124,11 +124,14 @@ const userController = {
                 partialHead: partialHead.login,
                 errors: {
                     user: {
-                        msg: 'Este email no está registrado'
+                        msg: 'Las credenciales son inválidas'
                     }
                 }
             });
-        }).catch((error) => { res.send(error) })
+        }).catch((error) => {
+            console.log(error);
+            return res.send(error)
+        })
     },
     profile: (req, res) => {
         let userLogged = req.session.userLogged; //Se recuperan los datos del usuario logueado a la session
