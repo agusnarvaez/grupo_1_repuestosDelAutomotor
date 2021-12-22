@@ -5,7 +5,7 @@
 - Que se hizo:
 
   - Juan Pablo:
-    - Que Establercer modelo MVC. Se crearon controladores y rutas
+    - Establecer modelo MVC. Se crearon controladores y rutas
     - Creación de carpetas para separar vistas de user y product
   - Agustín:
     - Creación de carpetas para separar vistas de user y product
