@@ -8,9 +8,6 @@ window.onload = function () { //Esperamos a que cargue la pantalla
     let userAlert = document.querySelector('#userAlert');
     let passCheck = document.querySelector('#passCheck');
     let passAlert = document.querySelector('#passAlert');
-    let users = document.querySelector('.users');
-    let usersDB = users.textContent;
-    users.innerHTML = '';
     user.focus();
 
     form.addEventListener('submit', function (e) {

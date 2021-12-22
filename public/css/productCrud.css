@@ -18,6 +18,33 @@ h2 {
   text-align: center;
   margin-bottom: 15px;
 }
+/*Formato de input de imagen*/
+input[type="file"]#image {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.labelImage {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #106ba0;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 15px 40px !important;
+  text-transform: uppercase;
+  width: fit-content;
+  text-align: center;
+}
+#inputImage {
+  display: flex;
+  justify-content: center;
+}
 
 .productCrudForm {
   background-color: bisque;
@@ -91,7 +118,7 @@ h2 {
   font-weight: bold;
 }
 
-.inputImage {
+/* .inputImage {
   display: flex;
   justify-content: left;
   align-content: left;
@@ -102,7 +129,7 @@ h2 {
   padding-left: 0;
   font-weight: bold;
   background-color: #0000;
-}
+} */
 
 .hiddenInput {
   display: none;
@@ -114,14 +141,14 @@ h2 {
   display: none;
 }
 
-main label {
+/* .label {
   display: flex;
   height: 0.5vh;
   margin-left: 0.7%;
   margin-bottom: 0.7%;
   font-weight: bold;
 }
-
+ */
 .campo {
   margin-bottom: 3%;
   display: flex;
@@ -132,11 +159,10 @@ main label {
   text-align: center;
 }
 
-label {
+.label {
   width: 100%;
   padding: 3% 0;
   align-items: center;
-  justify-self: center;
   text-align: center;
   align-content: center;
 }

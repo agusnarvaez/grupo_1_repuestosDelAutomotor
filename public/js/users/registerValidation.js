@@ -1,5 +1,4 @@
 window.onload = function () { //Esperamos a que cargue la pantalla
-
     /***Captamos cada input y el form***/
     let form = document.querySelector('.form');
     let firstName = document.querySelector('#firstName');
@@ -27,15 +26,13 @@ window.onload = function () { //Esperamos a que cargue la pantalla
         password: document.querySelector('#passAlert'),
         repeatPassword: document.querySelector('#repPassAlert')
     }
+    let text = document.querySelector('.labelImage');
+    let ulErrors = document.querySelector('.errors');
 
-    let users = document.querySelector('.users');
-    let usersDB = users.textContent;
-    users.innerHTML = '';
     firstName.focus();
     form.addEventListener('submit', function (e) {
-        let ulErrors = document.querySelector('.errors');
         let errors = [];
-        //e.preventDefault();
+        e.preventDefault();
         //Validamos el campo nombre
         if (firstName.value.length < 1) {//Validamos que no esté vacío
             errors.push('Debe ingresar un nombre');
@@ -113,10 +110,6 @@ window.onload = function () { //Esperamos a que cargue la pantalla
             errors.push('Formato de email inválido!');
             email.classList.add('is-invalid');
             emailAlert.classList.remove('hidden');
-        } else if (usersDB.indexOf(email.value) != (-1)) {//Validamos que esté en la base de datos
-            errors.push('Su email ya se encuentra en la base de datos!');
-            email.classList.add('is-invalid');
-            alert.email.classList.remove('hidden');
         } else {//Si está todo ok!
             email.classList.remove('is-invalid');
             email.classList.add('is-valid');
@@ -188,7 +181,6 @@ window.onload = function () { //Esperamos a que cargue la pantalla
             alert.repeatPassword.classList.add('hidden');
             check.repeatPassword.classList.remove('hidden');
         }
-
         if (errors.length > 0) { //Chequeo si existen errores
             e.preventDefault();
             ulErrors.classList.add('alert');
@@ -199,7 +191,45 @@ window.onload = function () { //Esperamos a que cargue la pantalla
         } else {
             ulErrors.innerHTML = '';
             //alert('La validación fue exitosa!');
-
         }
+    })
+    form.addEventListener('reset', function () {
+        ulErrors.innerHTML = '';
+        firstName.classList.remove('is-invalid')
+        firstName.classList.remove('is-valid')
+        alert.name.classList.add('hidden');
+        check.name.classList.add('hidden');
+
+        lastName.classList.remove('is-invalid')
+        lastName.classList.remove('is-valid')
+        alert.lastName.classList.add('hidden');
+        check.lastName.classList.add('hidden');
+
+        zipCode.classList.remove('is-invalid')
+        zipCode.classList.remove('is-valid')
+        alert.zipCode.classList.add('hidden');
+        check.zipCode.classList.add('hidden');
+
+        image.classList.remove('is-invalid')
+        image.classList.remove('is-valid')
+        alert.image.classList.add('hidden');
+        check.image.classList.add('hidden');
+        text.innerHTML = 'SELECCIONE ARCHIVO <ion-icon name="cloud-upload-outline"></ion-icon>'
+        image.value = '';
+
+        email.classList.remove('is-invalid')
+        email.classList.remove('is-valid')
+        alert.email.classList.add('hidden');
+        check.email.classList.add('hidden');
+
+        password.classList.remove('is-invalid')
+        password.classList.remove('is-valid')
+        alert.password.classList.add('hidden');
+        check.password.classList.add('hidden');
+
+        repeatPassword.classList.remove('is-invalid')
+        repeatPassword.classList.remove('is-valid')
+        alert.repeatPassword.classList.add('hidden');
+        check.repeatPassword.classList.add('hidden');
     })
 }

@@ -55,6 +55,47 @@ h2 {
   display: flex;
   align-items: center;
 }
+.label {
+  display: flex;
+  height: 0.5vh;
+  margin-bottom: 0.7%;
+  margin-left: 1%;
+  font-weight: bold;
+}
+
+/*Formato de input de imagen*/
+input[type="file"]#image {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.labelImage {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #106ba0;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+  padding: 15px 40px !important;
+  text-transform: uppercase;
+  width: fit-content;
+  text-align: center;
+}
+#inputImage {
+  display: flex;
+  justify-content: center;
+}
+.upload {
+  align-self: center;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+}
+
 .is-valid {
   border: 2px solid green;
   border-radius: 10px;
@@ -78,14 +119,6 @@ h2 {
 .errors {
   list-style: none;
   color: red;
-  font-weight: bold;
-}
-
-main label {
-  display: flex;
-  height: 0.5vh;
-  margin-bottom: 0.7%;
-  margin-left: 1%;
   font-weight: bold;
 }
 

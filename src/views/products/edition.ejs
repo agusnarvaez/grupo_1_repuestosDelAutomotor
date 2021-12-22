@@ -15,31 +15,35 @@
           <input class="hiddenInput productId" name="productId" id="productId" type="text" value="<%= product.id %>">
         </div>
         <div class="campo">
-          <label for="name">Nombre de producto</label> <br>
+          <label for="name" class='label'>Nombre de producto</label> <br>
           <input class="input" name="name" id="name" type="text" value="<%= product.product_name %>">
           <ion-icon class='alert hidden' id='nameAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='nameCheck' name="checkmark-circle-outline"></ion-icon>
         </div>
         <div class="campo">
-          <label for="description">Descripción</label> <br>
+          <label for="description" class='label'>Descripción</label> <br>
           <input class="input" name="description" id="description" type="text" value="<%= product.description %>">
           <ion-icon class='alert hidden' id='descriptionAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='descriptionCheck' name="checkmark-circle-outline"></ion-icon>
         </div>
-        <div class="campo">
-          <label for="image">Imagen</label> <br>
-          <input class="inputImage" name="image" id="image" type="file">
+        <div class="">
+          <span class='inputImage'>
+            <input type="file" name="image" class="" id="image">
+          </span>
+          <label for="image" class='labelImage'>
+            <span class='inputImage'>Seleccione archivo</span>
+          </label>
           <ion-icon class='alert hidden' id='imageAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='imageCheck' name="checkmark-circle-outline"></ion-icon>
         </div>
         <div class="campo">
-          <label for="category">Categoría</label> <br>
+          <label for="category" class='label'>Categoría</label> <br>
           <input class="input" name="category" id="category" type="text" value="<%= product.subcategory_id %>">
           <ion-icon class='alert hidden' id='categoryAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='categoryCheck' name="checkmark-circle-outline"></ion-icon>
         </div>
         <div class="campo">
-          <label for="price">Precio</label> <br>
+          <label for="price" class='label'>Precio</label> <br>
           <input class="input" name="price" id="price" type="text" placeholder="$" value="<%= product.price %>">
           <ion-icon class='alert hidden' id='priceAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='priceCheck' name="checkmark-circle-outline"></ion-icon>
@@ -60,6 +64,7 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src='/js/products/editionValidation.js'></script>
+  <script type="text/javascript" src='/js/inputImage.js'></script>
 </body>
 
 </html>

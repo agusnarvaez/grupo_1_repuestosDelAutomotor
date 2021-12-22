@@ -22,12 +22,7 @@ const users = db.User
 const userController = {
     register: function (req, res) { //A página register
         /*res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 }); Método que me permite enviar cookies al navegador => (nombre,contenido,duración)*/
-        users.findAll()
-            .then((users) => {
-                return res.render('./users/register', { partialHead: partialHead.register, users });
-            })
-            .catch((error) => { return next(error) })
-
+        return res.render('./users/register', { partialHead: partialHead.register, users });
     },
     create: function (req, res) { //Creación de usuario
         let resultValidation = validationResult(req);
