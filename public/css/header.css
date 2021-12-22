@@ -9,19 +9,25 @@
   background-color: #f4f3ee;
   border-bottom: 1px solid #141414;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   padding: 1%;
+  align-items: center;
   /*height: 8vh;*/
 }
-.burgerMenu {
+.burger-menu{
   display: inline-block;
-  width: 20%;
-  padding: auto;
-  margin: auto 0;
+  width: 15vw;
+  height: 15vw;
+}
+.burgermenu-icon {
+  display: flex;
+  width: 15vw;
+  height: 15vw;
+  align-self: center;
   border-radius: 50%;
   background-color: #818181;
 }
-.burgerMenu:hover .burger-menu-items{
+.burger-menu:hover .burger-menu-items{
   display: block;
   z-index: 2;
   position: absolute;
@@ -33,19 +39,22 @@
   justify-self: center;
   justify-items: space-around;
   align-self: center;
-  padding: 2%;
-  border-radius: 20px;
-  margin-top: 16%;
+  padding: 4% 2% 2% 2%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-top: 0.555vh;
+  margin-left: -1vw;
   width: 60vw
 }
 .mainHeader .logo {
-  display: inline-block;
-  width: 15%;
+  display: block;
   max-width: 60px;
-  align-self: center;
+  padding: auto;
+  width: 15vw;
+  height: 15vw;
 }
-.mainHeaderAuxiliar {
-  width: 10%;
+.logo-container{
+  margin-left: 25vw;
 }
 
 .menu {

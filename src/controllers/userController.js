@@ -26,9 +26,10 @@ const userController = {
     },
     create: function (req, res) { //Creación de usuario
         let resultValidation = validationResult(req);
+        console.log(validationResult(req))
         //Validación del formulario
         if (resultValidation.errors.length > 0) {
-            return res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body })
+            res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body })
         } //Chequeo si el usuario existe
         else {
             users.findOne({
