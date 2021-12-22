@@ -32,7 +32,7 @@ window.onload = function () { //Esperamos a que cargue la pantalla
     firstName.focus();
     form.addEventListener('submit', function (e) {
         let errors = [];
-        e.preventDefault();
+        //e.preventDefault();
         //Validamos el campo nombre
         if (firstName.value.length < 1) {//Validamos que no esté vacío
             errors.push('Debe ingresar un nombre');
