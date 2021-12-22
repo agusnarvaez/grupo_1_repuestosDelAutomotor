@@ -19,12 +19,22 @@
           <input class="input" name="name" id="name" type="text" value="<%= product.product_name %>">
           <ion-icon class='alert hidden' id='nameAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='nameCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.name){  %>
+          <div class="text-danger">
+            <%= errors.name.msg %>
+          </div>
+          <% } %>
         </div>
         <div class="campo">
           <label for="description" class='label'>Descripción</label> <br>
           <input class="input" name="description" id="description" type="text" value="<%= product.description %>">
           <ion-icon class='alert hidden' id='descriptionAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='descriptionCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.description){  %>
+          <div class="text-danger">
+            <%= errors.description.msg %>
+          </div>
+          <% } %>
         </div>
         <div class="">
           <span class='inputImage'>
@@ -35,18 +45,33 @@
           </label>
           <ion-icon class='alert hidden' id='imageAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='imageCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.image){  %>
+          <div class="text-danger">
+            <%= errors.image.msg %>
+          </div>
+          <% } %>
         </div>
         <div class="campo">
           <label for="category" class='label'>Categoría</label> <br>
           <input class="input" name="category" id="category" type="text" value="<%= product.subcategory_id %>">
           <ion-icon class='alert hidden' id='categoryAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='categoryCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.category){  %>
+          <div class="text-danger">
+            <%= errors.category.msg %>
+          </div>
+          <% } %>
         </div>
         <div class="campo">
           <label for="price" class='label'>Precio</label> <br>
           <input class="input" name="price" id="price" type="text" placeholder="$" value="<%= product.price %>">
           <ion-icon class='alert hidden' id='priceAlert' name="alert-circle-outline"></ion-icon>
           <ion-icon class='check hidden' id='priceCheck' name="checkmark-circle-outline"></ion-icon>
+          <% if (locals.errors && errors.price){  %>
+          <div class="text-danger">
+            <%= errors.price.msg %>
+          </div>
+          <% } %>
         </div>
         <div class="buttons">
           <input class="button" value="Editar" type="submit">

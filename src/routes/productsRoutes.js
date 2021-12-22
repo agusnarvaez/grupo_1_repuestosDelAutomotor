@@ -13,6 +13,8 @@ let productCrud = require('../middlewares/productMulterMiddleware.js');
 /* *** Configuración middleware multer ***/
 let productCreateValidation = require('../middlewares/productCreateValidationMiddleware.js');
 
+let productEditValidation = require('../middlewares/productEditValidationMiddleware.js');
+
 /* *****A página productos**** */
 router.get('/', productController.index);
 
@@ -25,11 +27,11 @@ router.get('/detail/:id', productController.detail);
 /* *****Métodos para registro de producto ***** */
 router.get("/creation", productController.register); /* A página creación de producto */
 
-router.post("/creation", productCrud.single('image'), productCreateValidation , productController.create); /* *****Creación de producto***** */
+router.post("/creation", productCrud.single('image'), productCreateValidation, productController.create); /* *****Creación de producto***** */
 
 /* *****Métodos para edición de producto ***** */
 router.get("/edition/:id", productController.edition); /* A página edición de producto */
-router.put("/edition/:id", productCrud.single('image'), productController.edit); /* *****Edición de producto***** */
+router.put("/edition/:id", productCrud.single('image'), productEditValidation, productController.edit); /* *****Edición de producto***** */
 
 /****Métodos para eliminación de producto****/
 router.delete("/delete/:id", productController.delete)

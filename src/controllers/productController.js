@@ -108,12 +108,22 @@ const productController = {
         }).catch((error) => { return next(error) })
     },
     edit: function (req, res) { //Edición de producto
+
+        let resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            db.Product.findByPk(req.params.id).then((result) => {
+                return res.render('./products/edition', { partialHead: partialHead.productEdition, errors: resultValidation.mapped(), product: result})
+            }).catch((error) => { return next(error) })
+            
+        }
+
+        
+
         const id = req.body.productId;
-        console.log(id);
-        console.log('Haciendo Prueba: ' + db.Product + '!!')
+        //console.log(id);
+        //console.log('Haciendo Prueba: ' + db.Product + '!!')
         products.findByPk(req.params.id)
             .then((result) => {
-                console.log(result);
                 let productToEdit = result
                 let fileUpdate = function (imgNew) {
                     console.log()
