@@ -110,7 +110,6 @@
     - Actualizar JSON de producto 1
     - Cambiar creation por create en ruta
 
-- Próxima reunión 14/10
 
 ## 13/12
 
@@ -123,27 +122,74 @@
   - Nico:
     - Armar menú desplegable
 
-- Próxima reunión 15/10
 
 ## 15/12
 
 - Que se hizo:
-  - Nico:
-    -
   - Agustín:
     - Validación frontend login
   - Juna Pablo:
     - Corrección de bugs en código
 
 - Que se va a hacer:
-
   - Agustín:
-
     - Armar validación frontend register
 
   - Juan Pablo:
     - Armar validación backend general
   - Nico:
-    -
+    - Implementar menú desplegable
 
-- Próxima reunión 17/10
+
+## 17/12
+
+- Que se hizo:
+  - Agustín:
+    - Armar validación frontend register
+  - Juna Pablo:
+    - Armar validación backend general
+
+- Que se va a hacer:
+  - Agustín:
+    - Armar validación frontend CRUD de productos
+  - Juan Pablo:
+    - Finalizar validación backend general
+  - Nico:
+    - Implementar menú desplegable
+
+
+## 20/12
+
+- Que se hizo:
+  - Agustín:
+    - Armar validación frontend CRUD de productos
+  - Juna Pablo:
+    - Finalizar validación backend general
+
+- Que se va a hacer:
+  - Agustín:
+    - Corregir bugs validación frontend CRUD de productos
+  - Juan Pablo:
+    - Comenzar a revisar retrospectiva
+  - Nico:
+    - Implementar menú desplegable
+
+## 22/12
+
+- Que se hizo:
+  - Agustín:
+    - Corregir bugs validación frontend CRUD de productos
+    - Cambiar visual de input en CRUD de productos
+  - Juna Pablo:
+    - Comenzar a revisar retrospectiva
+
+- Que se va a hacer:
+  - Agustín:
+    - Terminar retrospectiva
+  - Juan Pablo:
+    - Terminar retrospectiva
+  - Nico:
+    - Terminar retrospectiva
+
+
+- Próxima reunión a definir
