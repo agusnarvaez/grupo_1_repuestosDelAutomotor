@@ -29,7 +29,7 @@
 }
 .burger-menu:hover .burger-menu-items{
   display: block;
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   background-color:hsla(0, 0%, 100%, 0.671)
 }
@@ -37,14 +37,45 @@
   display:none;
   text-align: start;
   justify-self: center;
-  justify-items: space-around;
   align-self: center;
   padding: 4% 2% 2% 2%;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   margin-top: 0.555vh;
   margin-left: -1vw;
-  width: 60vw
+  width: 60vw;
+
+}
+.burger-menu-items ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-weight: bold;
+  list-style:none;
+  font-size: 4.5vw;
+}
+.first-li{
+  margin-top: 0;
+}
+.login-action{
+  margin-top: 5%;
+  margin-bottom: 1%;
+  margin-left: 18vw;
+  text-justify: center;
+  font-size: 3.5vw;
+  font-weight: bold;
+  text-decoration-color: transparent;
+  color:#141414
+}
+.burger-menu-items ul li{
+  height: 5vh;
+  padding: 6% 0% 6% 2%;
+  padding-bottom: 15%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.336)
+}
+.burger-menu-items ul li a{ 
+  color: black;
+  text-decoration-color: transparent;
 }
 .mainHeader .logo {
   display: block;
@@ -53,7 +84,7 @@
   width: 15vw;
   height: 15vw;
 }
-.logo-container{
+.logo-container-mobile{
   margin-left: 25vw;
 }
 
@@ -62,10 +93,14 @@
 }
 
 @media (min-width: 768px) {
+  .logo-container-mobile{
+    display: none;
+  }
   .mainHeader {
     display: flex;
     height: 8vh;
     align-items: center;
+    justify-content: space-around;
   }
   .mainHeaderAuxiliar {
     display: none;
@@ -80,21 +115,32 @@
     display: flex;
     padding-top: 1%;
     padding-bottom: 1%;
-    width: 60%;
     justify-content: space-between;
+    justify-items: space-between;
     align-items: center;
   }
   .menu ul {
     display: flex;
-    width: 70%;
+    width: 70vw;
     justify-content: space-between;
     align-items: center;
     list-style: none;
   }
-  .menu a {
+  .menu ul li{
+    flex-wrap: nowrap;
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+  .menu ul li a {
+    flex-wrap: nowrap;
     text-decoration: none;
     color: #141414;
     font-weight: bold;
+  }
+  .logo-container{
+    width: 30px;
+    height: 30px;
+    margin-right: 10vw;
   }
   .home {
     width: 30px;
@@ -103,6 +149,8 @@
   .login {
     height: 35px;
     width: 35px;
-    margin: 0 auto;
+  }
+  .login-container{
+    margin-left: 10vw;
   }
 }
