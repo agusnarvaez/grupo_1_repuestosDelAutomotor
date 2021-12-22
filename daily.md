@@ -182,6 +182,8 @@
     - Cambiar visual de input en CRUD de productos
   - Juna Pablo:
     - Comenzar a revisar retrospectiva
+  - Nico:
+    - Implementar menú desplegable
 
 - Que se va a hacer:
   - Agustín:
