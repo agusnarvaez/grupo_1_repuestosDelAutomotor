@@ -188,10 +188,21 @@
 - Que se va a hacer:
   - Agustín:
     - Terminar retrospectiva
+    - Revisar gama de colores general y diseño de index
   - Juan Pablo:
     - Terminar retrospectiva
+    - Investigar ideas de animaciones, transiciones, etc
+    - Acomodar vistas
   - Nico:
     - Terminar retrospectiva
+    - Recopilar información de productos para base de datos
 
 
-- Próxima reunión a definir
+## 27/12
+
+- Que se hizo:
+    - Terminar retrospectiva
+
+- Que se va a hacer:
+
+- Próxima reunión 27/12
