@@ -125,4 +125,19 @@ Enfocarse en la funcionalidad y navegación dentro del sitio.
 * _More of:_
 Comenzar a mejorar el estilo de la página, mediante la aplicación de transiciones, animaciones, mejora en las imágenes y colores.(Javascript para Frontend).
 Ayudarnos mutuamente cuando nos trabamos en algo.
-Comentar los códigos.
+Comentar los códigos!
+
+
+## :star:SPRINT 7
+
+* _Start Doing:_
+
+* _Stop Doing:_
+
+* _Less Of:_
+
+
+* _Keep Doing:_
+
+* _More of:_
+
