@@ -62,7 +62,9 @@ const productController = {
         }  */
 
         function subcategory(category) {
-            if (category == "Subcategoría 1") {
+            let n = category.slice(12)
+            return parseInt(n,10)
+            /*if (category == "Subcategoría 1") {
                 return 1
             } else if (category == "Subcategoría 2") {
                 return 2
@@ -74,7 +76,7 @@ const productController = {
                 return 5
             } else if (category == "Subcategoría 6") {
                 return 6
-            }
+            }*/
         }
 
         let newProduct = {
