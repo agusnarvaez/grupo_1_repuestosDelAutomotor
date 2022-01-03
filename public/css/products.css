@@ -7,55 +7,81 @@
   color: black;
 }
 
-main {
+main{
+   
   display: flex;
-  background-color: #ffff;
+  flex-direction: row;
+  background-color: #ebebeb;
   width: 100%;
   min-height: 78vh;
   padding: 2%;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.products {
-  width: 70%;
+
+
+.products{
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   flex-wrap: wrap;
 }
-.product {
-  padding: 1%;
-  width: 30%;
-  background-color: white;
-  text-align: center;
-  margin: 1%;
-  box-shadow: -3px 3px 10px #a5a5a5;
-}
-.product h1 {
-  padding: 1%;
-}
-.image {
-  display: flex;
-  margin: auto;
-  min-height: 50%;
+
+.product{
+  display:flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  margin: 5px;
+  height: 300px;
+  background-color: #FFF ;
+  border-radius: 3%;
+    
+  
+  
+}
+
+
+
+.image{
+  
+  width: 100%;
+  height: 38vh;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  background-size: cover;
+
 }
-.image img {
-  max-width: 150px;
-  margin: auto;
-  padding: auto;
+
+
+
+.productimages{
+  width: 60%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  max-height: 200px;
 }
-/*.product {
-  width: ;
-}*/
+
+.descriptionProduct {
+  display: none;
+}
+
+
 .filter {
   background-color: lightgray;
   padding: 1%;
   padding-top: 0.5%;
+  display: none;
+  
 }
+
 .filterSelect {
   padding-bottom: 0.5%;
 }
+
 .filterSelect p {
   display: inline-block;
   text-align: center;
@@ -68,6 +94,7 @@ main {
   height: 20px;
   margin-left: 36%;
 }
+
 .search {
   width: 49%;
   display: flex;
@@ -80,6 +107,7 @@ main {
   padding: 0.5%;
   text-align: center;
 }
+
 .search textarea {
   display: inline-block;
   width: 90%;
@@ -91,6 +119,7 @@ main {
   resize: none;
   outline: none;
 }
+
 .search i {
   width: 10%;
   padding: auto;
@@ -98,9 +127,45 @@ main {
   text-align: center;
 }
 
-.filters {
-  display: none;
+
+
+@media (min-width: 768px) {
+
+.products {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  width: 65%;
+  min-height: 75vh;
+  
+  }
+
+.product{
+
+  width: 32%;
+  min-height: 35vh;
+  transition: box-shadow;
+
 }
 
-@media (min-width: 481px) {
+.product:hover {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+   }
+
+
+   .product:hover .descriptionProduct{ 
+    display: block; 
+  }
+
+.filter {
+
+display: block;
+
 }
+
+}
+
+
+
+

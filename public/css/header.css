@@ -134,8 +134,9 @@
   .menu ul li a {
     flex-wrap: nowrap;
     text-decoration: none;
-    color: #141414;
+    color: grey;
     font-weight: bold;
+    transition: color;
   }
   .logo-container{
     width: 30px;
@@ -153,4 +154,9 @@
   .login-container{
     margin-left: 10vw;
   }
+  .menu ul li a:hover {
+    color: black;
+  }
+
+
 }
