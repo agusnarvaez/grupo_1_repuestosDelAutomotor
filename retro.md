@@ -106,3 +106,38 @@ Enfocarse en la funcionalidad y navegación dentro del sitio.
 * _More of:_
 Realizar ciertos trabajos específicos de forma colaborativa.
 Pasar las reuniones de semanales a dailys.
+
+## :star:SPRINT 6
+
+* _Start Doing:_
+Brainstorming
+
+* _Stop Doing:_
+
+* _Less Of:_
+Subestimar el tiempo de aprendizaje de ciertos contenidos.
+
+* _Keep Doing:_
+Investigar gama de colores del sitio.
+Reuniones Dailys
+Enfocarse en la funcionalidad y navegación dentro del sitio.
+
+* _More of:_
+Comenzar a mejorar el estilo de la página, mediante la aplicación de transiciones, animaciones, mejora en las imágenes y colores.(Javascript para Frontend).
+Ayudarnos mutuamente cuando nos trabamos en algo.
+Comentar los códigos!
+
+
+## :star:SPRINT 7
+
+* _Start Doing:_
+
+* _Stop Doing:_
+
+* _Less Of:_
+
+
+* _Keep Doing:_
+
+* _More of:_
+
