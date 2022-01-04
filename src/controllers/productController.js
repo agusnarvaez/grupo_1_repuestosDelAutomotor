@@ -21,7 +21,8 @@ const Op = db.Sequelize.Op
 /* *****Controlador de productos***** */
 const productController = {
     index: function (req, res) { //Página de products
-        db.Product.findAll().then((products) => {
+        db.Product.findAll()
+            .then((products) => {
             res.render("./products/products", { partialHead: partialHead.products, products: products /*products.findAll()*/ })
         }).catch((error) => { return next(error) })
 

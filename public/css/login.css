@@ -3,7 +3,7 @@ body {
 }
 main {
   width: 100%;
-  background-color: #eef0f2;
+  background-color: #0000;
   display: flex;
   flex-direction: column;
   height: 75%;

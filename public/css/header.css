@@ -3,18 +3,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 12px;
 }
 
 .mainHeader {
-  background-color: #f4f3ee;
-  border-bottom: 1px solid #141414;
+  background-color: #ffc107;
   display: flex;
   flex-direction: row;
   padding: 1%;
   align-items: center;
   /*height: 8vh;*/
 }
-.burger-menu{
+.burger-menu {
   display: inline-block;
   width: 15vw;
   height: 15vw;
@@ -27,14 +27,14 @@
   border-radius: 50%;
   background-color: #818181;
 }
-.burger-menu:hover .burger-menu-items{
+.burger-menu:hover .burger-menu-items {
   display: block;
   z-index: 3;
   position: absolute;
-  background-color:hsla(0, 0%, 100%, 0.671)
+  background-color: hsla(0, 0%, 100%, 0.671);
 }
-.burger-menu-items{
-  display:none;
+.burger-menu-items {
+  display: none;
   text-align: start;
   justify-self: center;
   align-self: center;
@@ -44,20 +44,19 @@
   margin-top: 0.555vh;
   margin-left: -1vw;
   width: 60vw;
-
 }
-.burger-menu-items ul{
+.burger-menu-items ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   font-weight: bold;
-  list-style:none;
+  list-style: none;
   font-size: 4.5vw;
 }
-.first-li{
+.first-li {
   margin-top: 0;
 }
-.login-action{
+.login-action {
   margin-top: 5%;
   margin-bottom: 1%;
   margin-left: 18vw;
@@ -65,15 +64,15 @@
   font-size: 3.5vw;
   font-weight: bold;
   text-decoration-color: transparent;
-  color:#141414
+  color: #141414;
 }
-.burger-menu-items ul li{
+.burger-menu-items ul li {
   height: 5vh;
   padding: 6% 0% 6% 2%;
   padding-bottom: 15%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.336)
+  border-bottom: 1px solid rgba(0, 0, 0, 0.336);
 }
-.burger-menu-items ul li a{ 
+.burger-menu-items ul li a {
   color: black;
   text-decoration-color: transparent;
 }
@@ -84,7 +83,7 @@
   width: 15vw;
   height: 15vw;
 }
-.logo-container-mobile{
+.logo-container-mobile {
   margin-left: 25vw;
 }
 
@@ -93,7 +92,7 @@
 }
 
 @media (min-width: 768px) {
-  .logo-container-mobile{
+  .logo-container-mobile {
     display: none;
   }
   .mainHeader {
@@ -108,8 +107,8 @@
   .burgerMenu {
     display: none;
   }
-  .burger-menu{
-    display: none
+  .burger-menu {
+    display: none;
   }
   .menu {
     display: flex;
@@ -126,7 +125,7 @@
     align-items: center;
     list-style: none;
   }
-  .menu ul li{
+  .menu ul li {
     flex-wrap: nowrap;
     margin-right: 4%;
     margin-left: 4%;
@@ -136,8 +135,9 @@
     text-decoration: none;
     color: #141414;
     font-weight: bold;
+    font-size: 1.5em;
   }
-  .logo-container{
+  .logo-container {
     width: 30px;
     height: 30px;
     margin-right: 10vw;
@@ -150,7 +150,7 @@
     height: 35px;
     width: 35px;
   }
-  .login-container{
+  .login-container {
     margin-left: 10vw;
   }
 }

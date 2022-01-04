@@ -105,6 +105,7 @@ window.onload = function () { //Esperamos a que cargue la pantalla
             errors.push('Debe ingresar un email');
             email.classList.add('is-invalid');
             alert.email.classList.remove('hidden');
+            check.email.classList.add('hidden');
         }
         else if (!(email.value.indexOf('@hotmail.com') != (-1) || email.value.indexOf('@gmail.com') != (-1) || email.value.indexOf('@outlook.com') != (-1) || email.value.indexOf('@live.com') != (-1) || email.value.indexOf('@yahoo.com') != (-1) || email.value.indexOf('@gmx.') != (-1) || email.value.indexOf('@aol.com') != (-1))) {//Validamos que sea formato mail
             errors.push('Formato de email inválido!');
