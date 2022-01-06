@@ -56,14 +56,11 @@ const usersAPIController = {
         .then((user)=>{
 
             let userToSend = {
-
                 id: user.id,
                 first_name: user.first_name,
                 last_name: user.last_name,
                 email: user.email,
                 imageURL: `http://localhost:5000/images/usersImages/${user.user_image}`
-
-
             }
 
 
