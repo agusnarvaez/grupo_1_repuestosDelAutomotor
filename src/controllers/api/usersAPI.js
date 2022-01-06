@@ -10,7 +10,7 @@ const path = require('path'); //Módulo Path de Express
 //const users = JSON.parse(fs.readFileSync('src/data/users.json', 'utf-8'));
 const e = require('express');
 const db = require("../../database/models");
-const users = db.User
+const users = db.User;
 
 /* let infoUsers = {
     count: 0,
@@ -21,12 +21,61 @@ const users = db.User
 const usersAPIController = {
 
     users: function (req, res) {
-        console.log('Ruta api/users')
-        return res.send('Ruta api/users')
+        
+        db.User.findAll()
+            .then(users => {
+
+                let usersToSend = users.map((user) => {
+
+                    return user.dataValues
+
+                })
+
+                usersToSend.forEach((user) => {
+                    // Elinamos la información sensible que no queremos enviar
+                    delete user.password;
+                    delete user.user_image;
+                    delete user.nickname
+                    delete user.role_id
+                    user.detail = `http://localhost:5000/api/users/${user.id}`
+
+                })
+
+                let respuesta = {
+                    count: users.length,
+                    users: usersToSend
+
+                }
+                res.json(respuesta);
+            })
+
     },
     detail: function (req, res) {
-        console.log('Ruta api/users/:id')
-        return res.send('Ruta api/users/id')
+
+        db.User.findByPk(req.params.id)
+        .then((user)=>{
+
+            let userToSend = {
+
+                id: user.id,
+                first_name: user.first_name,
+                last_name: user.last_name,
+                email: user.email,
+                imageURL: `http://localhost:5000/images/usersImages/${user.user_image}`
+
+
+            }
+
+
+
+            res.json(userToSend)
+
+        } )
+
+
+
+        /* console.log('Ruta api/users/:id')
+        return res.send('Ruta api/users/id') */
     }
 };
 // Exportación de controlador de API de usuario
