@@ -8,7 +8,13 @@ let userAPIController = require('../../controllers/api/usersAPI');
 /* **** A API de users***** */
 router.get('/', userAPIController.users);
 
+/* *****A API de paginado de user***** */
+router.get('/pagination/:offset', userAPIController.pagination);
+
 /* *****A API de detalle de user***** */
 router.get('/:id', userAPIController.detail);
+
+
+
 
 module.exports = router; // Exportación ruteo
