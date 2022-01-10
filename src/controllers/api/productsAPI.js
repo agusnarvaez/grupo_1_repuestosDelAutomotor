@@ -9,7 +9,7 @@ const Op = db.Sequelize.Op
 const productAPIController = {
     products: function (req, res) {
         db.Product.findAll().then(products => {
-            let productsList = products.map((product) =>{
+            let productsList = products.map((product) => {
                 return product.dataValues
             })
 
@@ -34,22 +34,23 @@ const productAPIController = {
     },
 
     detail: function (req, res) {
-        db.Product.findByPk(req.params.id).then((product) =>{
-            let productToSend = {
-                id: product.id,
-                name: product.product_name,
-                description: product.description,
-                subcategory_id: product.subcategory_id,
-                price: product.price,
-                similar_products: db.Product.findAll({
-                    where: {
-                        subcategory_id: product.subcategory_id
-                    }
-                }),
-                imageURL: `http://localhost:5000/images/productsImages/${product.product_image}`
-            }
-            return res.json(productToSend)
-        });
+        db.Product.findByPk(req.params.id)
+            .then((product) => {
+                let productToSend = {
+                    id: product.id,
+                    name: product.product_name,
+                    description: product.description,
+                    subcategory_id: product.subcategory_id,
+                    price: product.price,
+                    similar_products: db.Product.findAll({
+                        where: {
+                            subcategory_id: product.subcategory_id
+                        }
+                    }),
+                    imageURL: `http://localhost:5000/images/productsImages/${product.product_image}`
+                }
+                return res.json(productToSend)
+            });
     }
 };
 

@@ -39,10 +39,15 @@ app.use(userLoggedMiddleware);
 app.use(express.urlencoded({ extended: false })); //Se indica a la aplicación que todo lo que recibamos proveniente de un formulario lo capture en forma de objeto literal
 app.use(express.json()); //Nos permite convertir el objeto literal de la línea anterior a un formto JSON, si es que así lo queremos
 
-/***Corremos el servidor indicado en la variable host***/
-app.listen(host, () => {
-    console.log('Servidor corriendo => http://localhost:' + host + '/');
-});
+
+/**Para que funcione API en dashboard**/
+const cors = require("cors");
+const corsOptions = {
+    origin: '*',
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+}
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 
 /****** Solicitud Rutas ******/
@@ -59,3 +64,7 @@ app.use('/products', productRoutes); //A rutas de productos
 app.use('/api/users', usersAPI); //A rutas de API de usuarios
 app.use('/api/products', productsAPI); //A rutas de API de productos
 
+/***Corremos el servidor indicado en la variable host***/
+app.listen(host, () => {
+    console.log('Servidor corriendo => http://localhost:' + host + '/');
+});
