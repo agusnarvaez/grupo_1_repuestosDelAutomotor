@@ -74,7 +74,7 @@ const usersAPIController = {
         
         // asignamos el paginado que viene por URL en una variable y lo convertimos en número, dado que viene como string
         let offset= parseInt(req.params.offset)  
-            
+            //Corregir offset*10
         db.User.findAll({limit:10, offset:offset }) //se envían como parámetros tanto el limit que queramos, como el offset que llega por la URL
             .then(users => {
 

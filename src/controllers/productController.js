@@ -23,8 +23,8 @@ const productController = {
     index: function (req, res) { //Página de products
         db.Product.findAll()
             .then((products) => {
-            res.render("./products/products", { partialHead: partialHead.products, products: products /*products.findAll()*/ })
-        }).catch((error) => { return next(error) })
+                res.render("./products/products", { partialHead: partialHead.products, products: products /*products.findAll()*/ })
+            }).catch((error) => { return next(error) })
 
 
     },
@@ -64,7 +64,7 @@ const productController = {
 
         function subcategory(category) {
             let n = category.slice(12)
-            return parseInt(n,10)
+            return parseInt(n, 10)
             /*if (category == "Subcategoría 1") {
                 return 1
             } else if (category == "Subcategoría 2") {
@@ -115,12 +115,12 @@ const productController = {
         let resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             db.Product.findByPk(req.params.id).then((result) => {
-                return res.render('./products/edition', { partialHead: partialHead.productEdition, errors: resultValidation.mapped(), product: result})
+                return res.render('./products/edition', { partialHead: partialHead.productEdition, errors: resultValidation.mapped(), product: result })
             }).catch((error) => { return next(error) })
-            
+
         }
 
-        
+
 
         const id = req.body.productId;
         //console.log(id);
@@ -129,11 +129,9 @@ const productController = {
             .then((result) => {
                 let productToEdit = result
                 let fileUpdate = function (imgNew) {
-                    console.log()
-
                     if (imgNew) {
                         fs.unlinkSync(('public/images/productsImages/') + productToEdit.product_image);
-                        console.log('Nueva imagen: ' + imgNew + 'Vieja Imagen: ' + productToEdit.product_image)
+                        /* console.log('Nueva imagen: ' + imgNew + 'Vieja Imagen: ' + productToEdit.product_image) */
                         return imgNew.filename;
                     }
                     else {
