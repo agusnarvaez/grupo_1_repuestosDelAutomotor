@@ -7,8 +7,9 @@
   <%- include('../partials/header.ejs') %>
   <!-- Header -->
   <main>
-    <h2>Edición de producto <%= product.id %> </h2>
+
     <div class="productCrudForm">
+      <h2>Edición de producto <%= product.id %> </h2>
       <ul class='errors'></ul>
       <form method="POST" action="/products/edition/<%= product.id%>?_method=PUT" enctype="multipart/form-data" class='form'>
         <div class="hiddenCamp productId">
@@ -74,7 +75,7 @@
           <% } %>
         </div>
         <div class="buttons">
-          <input class="button" value="Editar" type="submit">
+          <input class="edit" value="Editar" type="submit">
         </div>
       </form>
       <form method="POST" action="/products/delete/<%= product.id%>?_method=DELETE" enctype="multipart/form-data">

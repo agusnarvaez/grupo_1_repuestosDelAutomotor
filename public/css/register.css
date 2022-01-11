@@ -20,17 +20,19 @@ main {
 h2 {
   text-align: center;
   margin-bottom: 15px;
+  font-size: 1.5em;
 }
 
 .registerForm {
-  background-color: bisque;
+  background-color: #f5f5f5;
+  box-shadow: 12px 12px 16px #dddddd, -12px -12px 16px #ffffff;
+  border-radius: 32px;
   width: 60%;
   height: 60%;
   margin: 0 auto;
-  padding: 10%;
+  padding: 5%;
   padding-bottom: 5%;
   padding-top: 5%;
-  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -46,7 +48,7 @@ h2 {
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   padding: 1.5%;
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid #dddddd;
   font-weight: bold;
   outline: none;
 }
@@ -77,7 +79,7 @@ input[type="file"]#image {
   font-size: 14px;
   font-weight: 600;
   color: #fff;
-  background-color: #106ba0;
+  background-color: #7098af;
   display: inline-block;
   transition: all 0.5s;
   cursor: pointer;
@@ -139,14 +141,29 @@ input[type="file"]#image {
   flex-direction: row;
   justify-content: space-around;
 }
-button {
+.registerButton {
   font-weight: bold;
   color: white;
-  background-color: rgb(71, 71, 184);
+  background-color: #ffc107;
   padding: 2%;
   border-radius: 5px;
   border: none;
 }
+.registerButton:hover {
+  background-color: rgb(172, 192, 236);
+}
+.deleteButton:hover {
+  background-color: rgb(134, 44, 9);
+}
+.deleteButton {
+  font-weight: bold;
+  color: white;
+  background-color: rgb(204, 61, 61);
+  padding: 2%;
+  border-radius: 5px;
+  border: none;
+}
+
 .checkbox {
   display: flex;
   flex-direction: row;
@@ -173,10 +190,10 @@ input:focus {
 }
 
 input:focus {
-  border-color: yellow;
+  border-color: rgb(196, 191, 169);
 }
 input:hover {
-  background-color: gold;
+  background-color: rgb(243, 241, 226);
 }
 a {
   text-decoration: none;

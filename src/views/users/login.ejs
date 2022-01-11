@@ -7,8 +7,9 @@
   <%- include('../partials/header.ejs') %>
   <!--Header -->
   <main>
-    <h2>Ingresá a tu cuenta!</h2>
+
     <div class="loginForm">
+      <h2>Ingresá a tu cuenta!</h2>
       <ul class='errors'></ul>
       <form class='form' action="/user/login" method="POST">
         <!-- Formulario para loguearse -->
@@ -39,7 +40,7 @@
           <input type="checkbox" name="remember_user"> Recordar mi usuario
           </label>
         </div>
-        <button class="submit" type="submit">INICIAR</button><br> <!-- Boton de acceso -->
+        <button class="submit" type="submit">INGRESAR</button><br> <!-- Boton de acceso -->
       </form>
       <h5>¿Aún no te registraste?</h5>
       <h5><a class="loginFormRegister" href="/user/register">Registrate aquí</a></h5> <!-- A página de registro de usuario -->
