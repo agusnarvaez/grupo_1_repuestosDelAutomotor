@@ -16,20 +16,16 @@ const productAPIController = {
                 let productsList = products.map((product) =>{
                     return product.dataValues
                 })
-
-                console.log(subcategoriesList)
-                console.log(productsList)
-    
+                let productsListOriginal = products.map((product) =>{
+                    return product.dataValues
+                })
                 productsList.forEach((product) => {
                     delete product.price;
                     delete product.product_image;
+                    let similarProducts = productsListOriginal.filter(selectedProduct => selectedProduct.subcategory_id == product.subcategory_id)
                     product.detail = `http://localhost:5000/products/detail/${product.id}`;
                     product.api = `http://localhost:5000/api/products/${product.id}`;
-                    product.similar_products = db.Product.findAll({
-                        where: {
-                            subcategory_id: product.subcategory_id
-                        }
-                    })
+                    product.similar_products = similarProducts.map((similarProduct) => {return similarProduct.product_name})
                 })
 
                 let subcategoriesCount = subcategoriesList.map((subcategory) => {
