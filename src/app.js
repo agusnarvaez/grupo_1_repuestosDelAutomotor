@@ -8,6 +8,10 @@ const publicPath = path.resolve(__dirname, '../public');
 app.use(express.static(publicPath));
 
 
+const fs = require('fs'); //Solicito módulo de archivos
+//Pedimos patial Head para error 404
+let partialHead = JSON.parse(fs.readFileSync("src/data/partialHead.json", "utf-8"))
+
 /***Implementación ejs***/
 app.set('views', __dirname + '/views'); // Redireccionamiento de carpeta views (sino no funciona)
 app.set('view engine', 'ejs'); // Establezco EJS como motor de plantilla
@@ -63,7 +67,9 @@ app.use('/user', userRoutes) //A rutas de usuarios
 app.use('/products', productRoutes); //A rutas de productos
 app.use('/api/users', usersAPI); //A rutas de API de usuarios
 app.use('/api/products', productsAPI); //A rutas de API de productos
-
+app.use((req, res, next) => {
+    res.status(404).render('notFound', { partialHead: partialHead.notFound })
+})
 /***Corremos el servidor indicado en la variable host***/
 app.listen(host, () => {
     console.log('Servidor corriendo => http://localhost:' + host + '/');

@@ -45,7 +45,6 @@ main {
 
 .cont img {
   width: calc(100% / 2 - 2em);
-  background-color: lime;
   min-height: 10vh;
   max-height: 700px;
   border-radius: 10px;

@@ -34,5 +34,9 @@
     "products": {
         "title": "Productos",
         "style": "/css/products.css"
+    },
+    "notFound": {
+        "title": "Página no encontrada",
+        "style": "/css/notFound.css"
     }
 }
