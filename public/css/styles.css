@@ -15,13 +15,13 @@ main {
   align-items: center;
 }
 
-/****** Implementación CARROUSEL ******/
+/****** INICIO-Implementación CARROUSEL ******/
 .carrousel {
   width: 95%;
   /* max-width: 120em; */
   margin: 1%;
   justify-content: center;
-  border-radius: 32px;
+  border-radius: 10px;
   background: #f5f5f5;
   box-shadow: 12px 12px 16px #dddddd /* , -12px -12px 16px #ffffff */;
   overflow: hidden;
@@ -75,29 +75,54 @@ main {
   background: #efe9e6;
   box-shadow: inset 3px 3px 5px #969696, inset -3px -3px 5px #ffffff;
 }
-/****** Implementación CARROUSEL ******/
+/****** FIN-Implementación CARROUSEL ******/
 
-.marcas h2 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 35px;
-}
-.marcasTop {
-  display: flex;
-  justify-content: space-between;
-  padding: 2%;
-}
-.marcasBottom {
+/***** INICIO-Implementación categorías *****/
+
+.categories {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
-  padding: 2%;
+  flex-wrap: wrap;
 }
-.marcas img {
-  width: 25%;
-  border-radius: 50%;
-  border: 2px solid #141414;
-  transition: all 500ms;
+.categories h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  padding: 0.5em;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
+.categorie {
+  display: block;
+  width: 45%;
+  position: relative;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  box-shadow: 12px 12px 16px #dddddd;
+}
+.categorie img {
+  width: 100%;
+  height: 100%;
+}
+.categorie h6 {
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 2em;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #ffc107;
+  color: white;
+  vertical-align: center;
+}
+
+.categorie:active {
+  border: solid 3px #ffc107;
+}
+/***** FIN-Implementación categorías *****/
 
 .filter {
   background-color: #141414;
@@ -164,11 +189,25 @@ main {
   display: none;
 }
 
-@media (min-width: 460px) {
+@media (min-width: 768px) {
   /*.menu {
     display: inline;
   }*/
   .burger-menu {
     display: none;
   }
+  /***** INICIO-Implementación categorías *****/
+  .categorie h6 {
+    display: none;
+  }
+  .categorie {
+    width: 30%;
+  }
+  .categorie:hover {
+    border: solid 2px #ffc107;
+  }
+  .categorie:hover h6 {
+    display: block;
+  }
+  /***** FIN-Implementación categorías *****/
 }
