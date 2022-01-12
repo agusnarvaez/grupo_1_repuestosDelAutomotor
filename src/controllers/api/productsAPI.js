@@ -122,32 +122,31 @@ const productAPIController = {
         db.Product.findAll()
             .then(function (products) {
 
-                /*** 4 - GUARDA en productsList un array con todas las propiedades de las lista de productos***/
+                /*** 1 - GUARDA en productsList un array con todas las propiedades de las lista de productos***/
                 let productsList = products.map((product) => {
                     return product.dataValues
                 })
 
-                /*** 5 - GUARDA en productsListOriginal un array con todas las propiedades de las lista de productos***/
+                /*** 2 - GUARDA en productsListOriginal un array con todas las propiedades de las lista de productos***/
                 let productsListOriginal = products.map((product) => {
                     return product.dataValues
                 })
-
+                // 3 - Inicializo producto a enviar
                 let productToSend = {}
-                /** 6 - RECORRO la lista de productos donde les borro el precio y la imagen de productos */
+                /** 4 - RECORRO la lista de productos donde les borro el precio y la imagen de productos */
                 productsList.forEach((product) => {
-                    /** 6.2 - RECORRO la lista productsOriginal fitrando aquellos que coincidan sus categorías a la lista de productos similares*/
+                    /** 4.2 - RECORRO la lista productsOriginal fitrando aquellos que coincidan sus categorías a la lista de productos similares*/
                     let similarProducts = productsListOriginal.filter(selectedProduct => selectedProduct.subcategory_id == product.subcategory_id);
 
-                    /** 6.3 - AGREGA el DETALLE del producto, la API y la lista de productos SIMILARES a la LISTA DE PRODUCTOS */
+                    /** 4.3 - AGREGA la url de imagen y la lista de productos SIMILARES a la LISTA DE PRODUCTOS */
                     product.imageURL = `http://localhost:5000/images/productsImages/${product.product_image}`
                     product.similar_products = similarProducts.map((similarProduct) => { return similarProduct.product_name })
+                    // 4.4 - Chequea producto elegido y lo asigna
                     if (req.params.id == product.id) {
                         productToSend = product
                     }
-
-
                 })
-                console.log(productToSend)
+                // 5 - Envía producto elegido
                 return res.json(productToSend)
             }).catch(e => { console.log(e) })
 
