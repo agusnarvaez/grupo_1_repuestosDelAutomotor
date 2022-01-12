@@ -95,7 +95,7 @@ const userController = {
                 let passwordIsOk = bcryptjs.compareSync(password, userToLogin.password);
                 if (passwordIsOk) {
                     //delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
-                    //CHEQUEAR PORQUÉ, SI SE BORRA, DESPUÉS BORRA TEMPORALMENTE LA PASSWORD DEL USER
+                    //CHEQUEAR PORQUÉ, SI SE BORRA, DESPUÉS BORRA TEMPORALMENTE LA PASSWORD DEL USER!!!!
 
                     req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
                     /***Envío de cookies al navegador***/
@@ -131,7 +131,6 @@ const userController = {
     },
     profile: (req, res) => {
         let userLogged = req.session.userLogged; //Se recuperan los datos del usuario logueado a la session
-
         return res.render('./users/profile', { partialHead: partialHead.profile, user: userLogged })
     },
     logout: (req, res) => {

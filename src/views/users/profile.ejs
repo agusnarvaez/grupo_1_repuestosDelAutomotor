@@ -7,9 +7,16 @@
   <%- include('../partials/header.ejs') %>
   <!--Header -->
   <main>
-    <h1>Bienvenido <%= user.first_name +' ' + user.last_name %> </h1><br>
-    <h5><a href='/user/logout'>Logout</a></h5>
-    <img>
+    <div clasS='container'>
+      <h1>Bienvenido <%= user.first_name +' ' + user.last_name %> </h1><br>
+      <div class='email'>
+        <h5>Email: </h5>
+        <p><%= user.email %> </p>
+      </div>
+      <div class='img'><img src='/images/usersImages/<%= user.user_image %> '></div>
+      <a class='logout' href='/user/logout'>Logout</a>
+      <img>
+    </div>
   </main>
   <%- include('../partials/footer.ejs') %>
   <!--Footer  -->
