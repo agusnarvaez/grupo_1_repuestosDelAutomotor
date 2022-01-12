@@ -26,7 +26,7 @@ const userController = {
     },
     create: function (req, res) { //Creación de usuario
         let resultValidation = validationResult(req);
-        console.log(validationResult(req))
+        /* console.log(validationResult(req)) */
         //Validación del formulario
         if (resultValidation.errors.length > 0) {
             res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body })
@@ -85,27 +85,39 @@ const userController = {
             where: {
                 email: req.body.user
             }
-        }).then((result) => {
-            let userToLogin = result
-            /*** Si el formulario está OK, Chequeamos si el mail está en nuestra base de datos***/
-            if (userToLogin) {
-                /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
+        })
+            .then((result) => {
+                let userToLogin = result.dataValues
+                /*** Si el formulario está OK, Chequeamos si el mail está en nuestra base de datos***/
+                if (userToLogin) {
+                    /**Si el mail está en nuestra base de datos, Chequeamos si la contraseña es la correcta***/
 
-                let password = req.body.password;
-                let passwordIsOk = bcryptjs.compareSync(password, userToLogin.password);
-                if (passwordIsOk) {
-                    //delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
-                    //CHEQUEAR PORQUÉ, SI SE BORRA, DESPUÉS BORRA TEMPORALMENTE LA PASSWORD DEL USER!!!!
+                    let password = req.body.password;
+                    let passwordIsOk = bcryptjs.compareSync(password, userToLogin.password);
+                    if (passwordIsOk) {
+                        delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
+                        console.log(userToLogin)
+                        req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
 
-                    req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
-                    /***Envío de cookies al navegador***/
-                    /***Después las utiliza userLoggedMiddleware***/
-                    if (req.body.remember_user) {
-                        res.cookie('userEmail', req.body.user, { maxAge: (1000 * 60) * 2 })
+                        /***Envío de cookies al navegador***/
+                        /***Después las utiliza userLoggedMiddleware***/
+                        console.log(req.session.userLogged)
+                        if (req.body.remember_user == 'on') { // Si el usuario tildó la casilla "mantener sesión iniciada" envía la cookie
+                            res.cookie('userEmail', userToLogin, { maxAge: (1000 * 60) * 5 })
+                        }
+                        return res.redirect('/user/profile');
                     }
-                    return res.redirect('/user/profile');
+                    /***Si los datos están mal, enviará el siguiente mensaje***/
+                    return res.render('./users/login', {
+                        partialHead: partialHead.login,
+                        errors: {
+                            user: {
+                                msg: 'Las credenciales son inválidas'
+                            }
+                        }
+                    });
                 }
-                /***Si los datos están mal, enviará el siguiente mensaje***/
+                /**Avisa si el email no está en la base de datos */
                 return res.render('./users/login', {
                     partialHead: partialHead.login,
                     errors: {
@@ -114,20 +126,10 @@ const userController = {
                         }
                     }
                 });
-            }
-            /**Avisa si el email no está en la base de datos */
-            return res.render('./users/login', {
-                partialHead: partialHead.login,
-                errors: {
-                    user: {
-                        msg: 'Las credenciales son inválidas'
-                    }
-                }
-            });
-        }).catch((error) => {
-            console.log(error);
-            return res.send(error)
-        })
+            }).catch((error) => {
+                console.log(error);
+                return res.send(error)
+            })
     },
     profile: (req, res) => {
         let userLogged = req.session.userLogged; //Se recuperan los datos del usuario logueado a la session

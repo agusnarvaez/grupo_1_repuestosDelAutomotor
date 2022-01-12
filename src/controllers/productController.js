@@ -123,15 +123,14 @@ const productController = {
 
 
         const id = req.body.productId;
-        //console.log(id);
-        //console.log('Haciendo Prueba: ' + db.Product + '!!')
+
         products.findByPk(req.params.id)
             .then((result) => {
                 let productToEdit = result
                 let fileUpdate = function (imgNew) {
                     if (imgNew) {
                         fs.unlinkSync(('public/images/productsImages/') + productToEdit.product_image);
-                        /* console.log('Nueva imagen: ' + imgNew + 'Vieja Imagen: ' + productToEdit.product_image) */
+
                         return imgNew.filename;
                     }
                     else {
@@ -170,17 +169,45 @@ const productController = {
         res.redirect('..');
     },
     search: function (req, res) {
-        let search = req.query.search
-        db.Product.findAll({
-            where: {
-                product_name: { [Op.like]: ('%' + search + '%') }
+        if(req.query.search){
+            let search = req.query.search
+            db.Product.findAll({
+                where: {
+                    product_name: { [Op.like]: ('%' + search + '%') }
+                }
+            }).then((result) => {
+                res.render("./products/products", { partialHead: partialHead.products, products: result })
+            }).catch((error) => {
+                res.send("No se han encontrado resultados para su búsqueda")
+            })
+        }
+        else if(req.query.category){
+            let selectedCategory = req.query.category
+            db.Subcategory.findAll({
+                    where: {
+                        category_id: selectedCategory
+                    }
+            }).then(function (subcategories) {
+                let subcategoriesResultList = subcategories.map((subcategory) => {
+                    return subcategory.dataValues
+                })
+                db.Product.findAll().then((products1) => {
+                    let productsList = products1.map((product) => {
+                        return product.dataValues
+                    })
+
+                    let productsSearchResult = []
+
+                    subcategoriesResultList.map((subcategory) => {
+                        let productsFiltered = productsList.filter(product => product.subcategory_id == subcategory.id)        
+                        productsFiltered.map((product) => {productsSearchResult.push(product)})
+                        })
+    
+                    res.render("./products/products", { partialHead: partialHead.products, products: productsSearchResult })
+                })
+                })
             }
-        }).then((result) => {
-            res.render("./products/products", { partialHead: partialHead.products, products: result })
-        }).catch((error) => {
-            res.send("No se han encontrado resultados para su búsqueda")
-        })
-    },
+        }
 };
 
 module.exports = productController; // Exportación de controlador de productos

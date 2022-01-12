@@ -25,16 +25,19 @@ app.use(methodOverride('_method'));
 /***Habilitamos las session de la página***/
 /**Session es un objeto literal que vive en el request**/
 const session = require('express-session'); // Requerimos módulo Session de express
+
 app.use(session({ //Se pasa como middleware de APLICACIÓN
     secret: "El Rastrojero", //Propiedad secret
     resave: false,  //Propiedad resave
     saveUninitialized: false //Propiedad saveUninitialized
 }));
+
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 /**Implementación global cookies ***/
 app.use(cookies());
 
+/*** Implementación de middleware que chequea usuario logueado mediante**/
 app.use(userLoggedMiddleware);
 
 
@@ -45,26 +48,26 @@ app.use(express.json()); //Nos permite convertir el objeto literal de la línea 
 
 
 /**Para que funcione API en dashboard**/
-const cors = require("cors");
+/* const cors = require("cors");
 const corsOptions = {
     origin: '*',
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200,
 }
-app.use(cors(corsOptions)) // Use this after the variable declaration
+app.use(cors(corsOptions)) */ // Use this after the variable declaration
 
 
 /****** Solicitud Rutas ******/
 const mainRoutes = require('./routes/mainRoutes.js'); /****** Ruta Main ******/
 const userRoutes = require('./routes/userRoutes.js'); /****** Ruta Users ******/
-const productRoutes = require('./routes/productsRoutes.js'); /****** Ruta Products ******/
+const productsRoutes = require('./routes/productsRoutes.js'); /****** Ruta Products ******/
 const productsAPI = require('./routes/api/productsAPIRoutes.js');
 const usersAPI = require('./routes/api/usersAPIRoutes.js');
 
 /* #### USO RUTAS #### */
 app.use('/', mainRoutes); //A rutas principales
 app.use('/user', userRoutes) //A rutas de usuarios
-app.use('/products', productRoutes); //A rutas de productos
+app.use('/products', productsRoutes); //A rutas de productos
 app.use('/api/users', usersAPI); //A rutas de API de usuarios
 app.use('/api/products', productsAPI); //A rutas de API de productos
 app.use((req, res, next) => {
