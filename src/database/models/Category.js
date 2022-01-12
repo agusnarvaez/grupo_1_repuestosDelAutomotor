@@ -7,9 +7,9 @@ module.exports = (sequelize, dataTypes) => {
             autoincrement: true, // Indicamos si es autoincremental, en el caso de id lo es
             allowNull: false //No permite valor nulo
         },
-        subcategory_name: {
+        /* subcategory_name */category_name: {
             type: dataTypes.STRING,
-            allowNull: false 
+            allowNull: false
         }
     };
     let config = { //Configuraciones adicionales de la tabla
