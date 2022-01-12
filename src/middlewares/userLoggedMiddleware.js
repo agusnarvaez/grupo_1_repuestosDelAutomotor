@@ -8,7 +8,6 @@ function userLoggedMiddleware(req, res, next) {
     console.log('En userLoggedMiddlware')
     // 1 - Res.locals son variables que se comparten en todas las vistas sin importar el controlador.
     res.locals.isLogged = false; // La inicializo como falso
-    console.log(req.session)
     /***Gestión de cookies ANTES de aplicar session***/
     /* console.log(req.locals) */
     // Guarda el mail que está en la cookie
@@ -29,14 +28,16 @@ function userLoggedMiddleware(req, res, next) {
                     req.session.userLogged = userFromCookie;
                 }
 
-                if (req.session && req.session.userLogged) { //Si existe usuario en sesión y además existe 
-                    console.log('Funciona IF')
-                    res.locals.isLogged = true;
-                    console.log(res.locals.isLogged)
-                    res.locals.userLogged = req.session.userLogged; //Paso a locals los datos de la sesión para poder usarlos a nivel global
-                }
+
             })
             .catch((error) => { console.log(error) })
+
+    }
+    if (req.session && req.session.userLogged) { //Si existe usuario en sesión y además existe 
+        console.log('Funciona IF')
+        res.locals.isLogged = true;
+        /* console.log(res.locals.isLogged) */
+        res.locals.userLogged = req.session.userLogged; //Paso a locals los datos de la sesión para poder usarlos a nivel global
     }
     next();
 }

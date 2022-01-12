@@ -90,15 +90,12 @@ main {
     justify-content: space-around;
     width: 80%;
     padding: 1%;
-    
   }
-
-
 
   .container img {
     max-width: 300px;
     max-height: 300px;
-    border-radius:10%
+    border-radius: 10%;
   }
   .container .img {
     margin: 1%;
@@ -123,9 +120,6 @@ main {
   }
 }
 
-
-.email{
-
-
-  color:brown;
+.email {
+  color: brown;
 }
