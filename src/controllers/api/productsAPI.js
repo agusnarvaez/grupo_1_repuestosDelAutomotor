@@ -21,7 +21,6 @@ const productAPIController = {
                 //3 - Busca todos los productos
                 db.Product.findAll()
                     .then(function (products) {
-
                         /*** 4 - GUARDA en productsList un array con todas las propiedades de las lista de productos***/
                         let productsList = products.map((product) => {
                             return product.dataValues
@@ -88,11 +87,8 @@ const productAPIController = {
 
                                     subcategoriesCount.forEach(object => {// 8.2.2 - Recorro el array de subcategorías
                                         /* console.log(subcategory) */
-
-
                                         if (category.id === object.category_id) { // 8.2.2.1 - Si la categoría coincide, suma los productos de esa subcategoría
                                             quantity = quantity + object.products_quantity
-
                                         }
                                     })
                                     // 8.2.3 - Agrego la cantidad de productos a la categoría actual

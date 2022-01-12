@@ -57,14 +57,14 @@ app.use(cors(corsOptions)) // Use this after the variable declaration
 /****** Solicitud Rutas ******/
 const mainRoutes = require('./routes/mainRoutes.js'); /****** Ruta Main ******/
 const userRoutes = require('./routes/userRoutes.js'); /****** Ruta Users ******/
-const productRoutes = require('./routes/productsRoutes.js'); /****** Ruta Products ******/
+const productsRoutes = require('./routes/productsRoutes.js'); /****** Ruta Products ******/
 const productsAPI = require('./routes/api/productsAPIRoutes.js');
 const usersAPI = require('./routes/api/usersAPIRoutes.js');
 
 /* #### USO RUTAS #### */
 app.use('/', mainRoutes); //A rutas principales
 app.use('/user', userRoutes) //A rutas de usuarios
-app.use('/products', productRoutes); //A rutas de productos
+app.use('/products', productsRoutes); //A rutas de productos
 app.use('/api/users', usersAPI); //A rutas de API de usuarios
 app.use('/api/products', productsAPI); //A rutas de API de productos
 app.use((req, res, next) => {
