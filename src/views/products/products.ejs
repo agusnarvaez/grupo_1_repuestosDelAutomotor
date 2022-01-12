@@ -9,9 +9,12 @@
   <!--Header -->
 
   <main>
-    <%- include('../partials/filter.ejs') %>
-    <!-- Filter -->
-
+    <form class="search" method="GET" action="/products/search" enctype="multipart/form-data">
+      <input name="search" id="search" type="text" placeholder="Buscar marcas, repuestos...">
+      <button class="submit" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
     <section class="products">
       <% products.forEach(product => { %>
       <a class="product" href="/products/detail/<%= product.id %>">
@@ -20,6 +23,7 @@
           <img class="productimages" src="/images/productsImages/<%=product.product_image%>" alt="<%=product.product_image%>">
         </div>
         <p class="descriptionProduct"><%= product.description %></p>
+        <p class="priceProduct">$<%= product.price %></p>
       </a>
       <% }) %>
     </section>
