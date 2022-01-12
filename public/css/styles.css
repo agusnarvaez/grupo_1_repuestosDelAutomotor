@@ -133,6 +133,7 @@ main {
   font-weight: bold;
 }
 .filterSelect {
+  display: none;
   padding-bottom: 0.5%;
   color: white;
   font-weight: bold;

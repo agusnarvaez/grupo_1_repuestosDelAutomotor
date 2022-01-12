@@ -1,6 +1,6 @@
 <header class="mainHeader">
   <div class="burger-menu">
-    <img class="burgermenu-icon" src="/images/iconos/menu.png">
+    <img class="burgermenu-icon" src="/images/iconos/dots.png">
     <!--Home -->
     <div class="burger-menu-items">
       <ul>
@@ -10,20 +10,23 @@
         <li><a href="">Contacto</a></li>
         <li><a href="/products/creation">Crear Producto</a></li>
       </ul>
-      <% if(locals.isLogged==true){ %>
-      <%= locals.userLogged.nickname %>
-      <a href="/user/profile"><img class="login" src="/images/usersImages/<%= locals.userLogged.img %> " alt="profile" height=25px></a> <!-- Login -->
+
+      <% if(locals.isLogged===true){ %>
+      <div class='headerProfile'>
+        <p><%= locals.userLogged.nickname %></p>
+        <a href="/user/profile"><img class="login" src="/images/usersImages/<%=locals.userLogged.user_image%> " alt="profile" height=25px></a>
+      </div> <!-- Login -->
       <% } else { %>
       <a href="/user/login" class="login-action"> Iniciar sesión </a> <!-- Login -->
       <% } %>
     </div>
   </div>
-  <a href="/" class="logo-container-mobile"><img class="logo" src="/images/iconos/home.png" alt="LOGO"></a>
+  <a href="/" class="logo-container-mobile"><img class="logo" src="/images/iconos/logo.png" alt="LOGO"></a>
   <!--Logo -->
   <!-- div class="mainHeaderAuxiliar"></div> -->
 
   <div class="menu">
-    <a href="/" class="logo-container"><img class="home" src="/images/iconos/home.png" alt="HOME" height=25px></a>
+    <a href="/" class="logo-container"><img class="home" src="/images/iconos/logo.png" alt="HOME" height=25px></a>
     <!--Home -->
     <ul>
       <li><a href="">Nosotros</a></li>
@@ -33,8 +36,10 @@
       <li><a href="/products/creation">Crear Producto</a></li>
     </ul>
     <% if(locals.isLogged){ %>
-    <%= locals.userLogged.nickname %>
-    <a href="/user/profile"><img class="login" src="/images/usersImages/<%= locals.userLogged.img %> " alt="profile" height=25px></a> <!-- Login -->
+    <div class='headerProfile'>
+      <p><%= locals.userLogged.nickname %></p>
+      <a href="/user/profile"><img class="login" src="/images/usersImages/<%=locals.userLogged.user_image%> " alt="profile" height=25px></a>
+    </div><!-- Login -->
     <% } else { %>
     <a href="/user/login" class="login-container">
       <img class="login" src="/images/iconos/login.png" alt="LOGIN" height=25px></a> <!-- Login -->

@@ -96,12 +96,12 @@ const userController = {
                     let passwordIsOk = bcryptjs.compareSync(password, userToLogin.password);
                     if (passwordIsOk) {
                         delete userToLogin.password; //Por seguridad borramos la password que se transmite a la session
-                        console.log(userToLogin)
+
                         req.session.userLogged = userToLogin; //Se le transmiten los datos del usuario logueado a la session
 
                         /***Envío de cookies al navegador***/
                         /***Después las utiliza userLoggedMiddleware***/
-                        console.log(req.session.userLogged)
+
                         if (req.body.remember_user == 'on') { // Si el usuario tildó la casilla "mantener sesión iniciada" envía la cookie
                             res.cookie('userEmail', userToLogin, { maxAge: (1000 * 60) * 5 })
                         }
