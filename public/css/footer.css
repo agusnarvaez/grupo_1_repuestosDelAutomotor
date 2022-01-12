@@ -1,5 +1,5 @@
 .mainFooter {
-  background-color: #8a817c;
+  background-color: #ffc107;
   padding: 1%;
 }
 .mainFooterRed {
@@ -33,7 +33,7 @@
   margin: auto 2%;
 }
 .mainFooter .logo {
-  width: 30px;
+  width: 80px;
 }
 .copyright {
   text-align: center;
