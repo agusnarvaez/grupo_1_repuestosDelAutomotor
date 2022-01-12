@@ -31,14 +31,14 @@ function userLoggedMiddleware(req, res, next) {
 
             })
             .catch((error) => { console.log(error) })
+        if (req.session && req.session.userLogged) { //Si existe usuario en sesión y además existe 
+            console.log('Funciona IF')
+            res.locals.isLogged = true;
+            /* console.log(res.locals.isLogged) */
+            res.locals.userLogged = req.session.userLogged; //Paso a locals los datos de la sesión para poder usarlos a nivel global
+        }
+    }
 
-    }
-    if (req.session && req.session.userLogged) { //Si existe usuario en sesión y además existe 
-        console.log('Funciona IF')
-        res.locals.isLogged = true;
-        /* console.log(res.locals.isLogged) */
-        res.locals.userLogged = req.session.userLogged; //Paso a locals los datos de la sesión para poder usarlos a nivel global
-    }
     next();
 }
 module.exports = userLoggedMiddleware;
