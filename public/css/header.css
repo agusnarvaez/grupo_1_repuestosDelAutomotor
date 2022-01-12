@@ -7,7 +7,7 @@
 }
 
 .mainHeader {
-  background-color: #ffc107;
+  background-color: #8ba7c7;
   display: flex;
   flex-direction: row;
   padding: 1%;
@@ -24,6 +24,7 @@
   height: 10vw;
   align-self: center;
   border-radius: 50%;
+  margin-top: 10%;
   padding-top: 1%;
   padding-bottom: 1%;
 }
@@ -151,7 +152,7 @@
   .menu ul li a {
     flex-wrap: nowrap;
     text-decoration: none;
-    color: grey;
+    color: black;
     font-weight: bold;
     font-size: 1.5em;
     transition: color;
