@@ -1,8 +1,11 @@
 function authMiddleware(req, res, next) {
-    if (!req.session.userLogged) {
+    /*     console.log('Entrando a auth middleware')
+        console.log(req.session.userLogged) */
+    if (req.session.userLogged == undefined) {
         return res.redirect('/user/login');
+    } else {
+        next();
     }
-    next();
 }
 
 module.exports = authMiddleware;
