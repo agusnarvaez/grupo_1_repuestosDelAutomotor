@@ -123,15 +123,14 @@ const productController = {
 
 
         const id = req.body.productId;
-        //console.log(id);
-        //console.log('Haciendo Prueba: ' + db.Product + '!!')
+
         products.findByPk(req.params.id)
             .then((result) => {
                 let productToEdit = result
                 let fileUpdate = function (imgNew) {
                     if (imgNew) {
                         fs.unlinkSync(('public/images/productsImages/') + productToEdit.product_image);
-                        /* console.log('Nueva imagen: ' + imgNew + 'Vieja Imagen: ' + productToEdit.product_image) */
+
                         return imgNew.filename;
                     }
                     else {

@@ -136,7 +136,7 @@ window.onload = function () { //Esperamos a que cargue la pantalla
             password.classList.add('is-invalid');
             check.password.classList.add('hidden');
             alert.password.classList.remove('hidden');
-        } else if (password.value.length <= 8) {
+        } else if (password.value.length < 8) {
             errors.push('Su contraseña debe tener al menos 8 caracteres');
             password.classList.add('is-invalid');
             check.password.classList.add('hidden');
