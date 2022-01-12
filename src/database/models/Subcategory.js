@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Subcategories'; //Asignamos Alias
+    let alias = 'Subcategory'; //Asignamos Alias
     let cols = { //Asignamos columnas
         id: {
             type: dataTypes.INTEGER, //Indicamos tipo de dato

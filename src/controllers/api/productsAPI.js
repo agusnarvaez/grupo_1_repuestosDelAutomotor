@@ -8,29 +8,40 @@ const Op = db.Sequelize.Op
 /* *****Controlador de productos***** */
 const productAPIController = {
     products: function (req, res) {
-        db.Product.findAll().then(products => {
-            let productsList = products.map((product) => {
-                return product.dataValues
+        db.Subcategory.findAll().then(function(subcategories){
+            let subcategoriesList = subcategories.map((subcategory) => {
+                return subcategory.dataValues
             })
-
-            productsList.forEach((product) => {
-                delete product.price;
-                delete product.product_image;
-                product.detail = `http://localhost:5000/products/detail/${product.id}`;
-                product.api = `http://localhost:5000/api/products/${product.id}`;
-                product.similar_products = db.Product.findAll({
-                    where: {
-                        subcategory_id: product.subcategory_id
-                    }
+            db.Product.findAll().then(function(products){
+                let productsList = products.map((product) =>{
+                    return product.dataValues
                 })
-            });
+                let productsListOriginal = products.map((product) =>{
+                    return product.dataValues
+                })
+                productsList.forEach((product) => {
+                    delete product.price;
+                    delete product.product_image;
+                    let similarProducts = productsListOriginal.filter(selectedProduct => selectedProduct.subcategory_id == product.subcategory_id)
+                    product.detail = `http://localhost:5000/products/detail/${product.id}`;
+                    product.api = `http://localhost:5000/api/products/${product.id}`;
+                    product.similar_products = similarProducts.map((similarProduct) => {return similarProduct.product_name})
+                })
 
-            let respuesta = {
-                count: products.length,
-                products: productsList
-            }
-            return res.json(respuesta)
-        });
+                let subcategoriesCount = subcategoriesList.map((subcategory) => {
+                    let currentSubcategory = subcategory.subcategory_name
+                    let subcategoryCount = (productsList.filter(product => product.subcategory_id == subcategory.id)).length
+                    return ( String(currentSubcategory) + ": " + String(subcategoryCount))
+                })
+
+                let respuesta = {
+                    count: productsList.length,
+                    products: productsList,
+                    subcategoriesCount: subcategoriesCount,
+                }     
+                return res.json(respuesta)
+        })
+        })
     },
 
     detail: function (req, res) {
