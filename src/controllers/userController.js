@@ -26,7 +26,6 @@ const userController = {
     },
     create: function (req, res) { //Creación de usuario
         let resultValidation = validationResult(req);
-        /* console.log(validationResult(req)) */
         //Validación del formulario
         if (resultValidation.errors.length > 0) {
             res.render('./users/register', { partialHead: partialHead.register, errors: resultValidation.mapped(), oldData: req.body })
@@ -103,7 +102,7 @@ const userController = {
                         /***Después las utiliza userLoggedMiddleware***/
 
                         if (req.body.remember_user == 'on') { // Si el usuario tildó la casilla "mantener sesión iniciada" envía la cookie
-                            res.cookie('userEmail', userToLogin, { maxAge: (1000 * 60) * 5 })
+                            res.cookie('userEmail', userToLogin.email, { maxAge: (1000 * 60) * 5 })
                         }
                         return res.redirect('/user/profile');
                     }
@@ -112,7 +111,7 @@ const userController = {
                         partialHead: partialHead.login,
                         errors: {
                             user: {
-                                msg: 'Las credenciales son inválidas'
+                                msg: 'Los datos son inválidos'
                             }
                         }
                     });
